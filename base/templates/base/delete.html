@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 
 {% block title %}
-- Delete Template
+    - Delete Template
 {% endblock %}
 
 {% block content %}
@@ -28,7 +28,7 @@
                         {% csrf_token %}
 
                         <div class="form__group">
-                            <p>Are you sure you want to delete 🔥{{obj}}🔥?</p>
+                            <p>Are you sure you want to delete 🔥{{obj}}{{message}}🔥?</p>
                         </div>
 
                         <div class="for__group text-center m-0">

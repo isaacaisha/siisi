@@ -1,7 +1,13 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% block title %}
     - Chat Forum Template
+{% endblock %}
+
+{% block favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
 {% endblock %}
 
 {% block content %}

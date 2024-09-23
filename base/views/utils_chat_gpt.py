@@ -6,12 +6,11 @@ import pytz
 import numpy as np
 from scipy.spatial.distance import cosine
 
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse
 from django.conf import settings
-from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 
-from .models import Conversation, User
+from ..models import Conversation, User
 from langchain.chains import ConversationChain
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory

@@ -34,16 +34,6 @@ class Conversation(models.Model):
     def __str__(self):
         return f"Conversation {self.id}"
     
-    
-class ChatData(models.Model):
-    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    message = models.CharField(max_length=999991)
-    response = models.CharField(max_length=999991)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.message
-    
 
 class Room(models.Model):
     host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

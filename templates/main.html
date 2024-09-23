@@ -83,10 +83,11 @@
         </div>
         <div class="profile__info">
           <h3>{{user.username}} 🚀</h3>
-          <p>@{{user.email}}</p>
+          <p>{{user.email}}</p>
     
+          {% block edit_profile_btn %}
           <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
-    
+          {% endblock %}
         </div>
       </div>
     </div>
@@ -117,18 +118,6 @@
           SìįSí FastAPI
         </a>
       </h6>
-      <!--<div class="text-center mb-3">
-                <button id="fastapi-docs" type="button" class="btn fastapi-docs" aria-label="SìįSí FastAPI Documentation">
-                    <a href="https://www.siisi-api.online/docs" target="_blank" class="white">SìįSíFastAPI</a>
-                </button>
-
-                <img src="{% static 'assets/images/crown.webp' %}" alt="Crown Icon"
-                    class="crown img-fluid mx-auto" width="100" height="100">
-
-                <button id="fastapi-redoc" type="button" class="btn fastapi-redoc mb-3" aria-label="BlogFastAPI Documentation">
-                    <a href="https://blog-fast-api-dfbb3cc5fdaf.herokuapp.com/docs" target="_blank" class="white">BlogFastAPI</a>
-                </button>
-            </div>-->
 
       <div class="">
         <div class="row">
@@ -176,17 +165,6 @@
       </div>
       {% endif %}
     </footer>
-    {% endblock %}
-
-    <!-- Block google_translate_element -->
-    {% block google_translate_element %}
-    <script type="text/javascript" defer>
-      function googleTranslateElementInit() {
-        new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-      }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-      defer></script>
     {% endblock %}
 
     <script src="{% static 'js/script.js' %}"></script>
