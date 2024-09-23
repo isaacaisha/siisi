@@ -1,0 +1,138 @@
+<!-- base/conversation_interface.html -->
+
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block title %}
+    - Conversation Interface Template
+{% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+
+<!-- Flash message display -->
+{% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<div class="conversations">
+    <hr class="crimson mt-5 mb-3">
+    <button id="showPopupButton" type="button" class="btn mb-3 submit">Show Instructions</button>
+
+    <div id="popupContainer" class="popup-container conversations mt-3" style="display: none;">
+        <div class="popup-content">
+            <p>Welcome to the<br><span class="SìįSí">-¡!¡-SìįSí-¡!¡-</span><br>app</p>
+            <ol class="align-left">
+                <li>
+                    <span class="mediumslateblue">Click On Start Writing</span><br>(to write a text) or<br>
+                    <span class="mediumslateblue">Click on Speech Recognition</span><br>(to speech a text)
+                </li>
+                <li>
+                    <span class="mediumslateblue">Click On Get The Response</span><br>(to get SìįSí's answer)
+                </li>
+                <li>
+                    <span class="mediumslateblue">Click On PlayBack Audio</span><br>(to listen the playback)
+                </li>
+            </ol>
+            <span>Enjoy</span>
+            <br>
+            <button id="closePopupButton" type="button" class="btn mt-3 mb-3"><i
+                    class="fa-regular fa-circle-xmark fa-xl"></i></button>
+        </div>
+    </div>
+
+    <hr class="crimson mb-5">
+
+    <div id="content-container">
+        <form id="prompt-form" method="POST" action="{% url 'interface-answer' %}">
+            {% csrf_token %}
+            <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+
+            <hr class="gold mb-3">
+            <button id="start-button" type="button" class="btn mb-3">-¡!¡- Start Writing -¡!¡-</button>
+            <hr class="gold mb-3">
+
+            <button id="speechRecognitionButton" type="button" class="btn mb-3">-¡!¡- Speech Recognition -¡!¡-</button>
+            <hr class="gold mb-5">
+
+            <div id="textarea-container" style="display: none;" class="align-left m-5">
+                <label for="userInput" class="label_">Write Your Text, below:
+                    <br>
+                    (be Specific for a better result)
+                </label>
+                <textarea class="form-control mb-4" id="userInput" name="writing_text"
+                    placeholder="¡!¡ T😎 INTERACT, WRITE  HERE ¡!¡" oninput="capitalizeSentences(this)"></textarea>
+            </div>
+
+            <div id="loading-indicator" style="display:none;" class="text-center mb-1">
+                <p>Loading...</p>
+                <img class="loading" src="https://media1.giphy.com/media/VseXvvxwowwCc/200w.webp" alt="Loading">
+            </div>
+            <div id="loading-circle" class="load mb-3" style="display: none;"></div>
+
+            <hr class="green mb-3">
+            <button id="generateButton" class="mb-3 btn generate-text" type="submit">
+                Get The Response 🔥-¡!¡-
+                <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" class="crown img-fluid mx-auto" width="100"
+                    height="100">
+                -¡!¡-🔥
+            </button>
+            <div class="center">
+                <button id="interruptButton" type="button" class="btn mb-3" style="display:none;">
+                    Stop ·SìįSí·Dbt· Response
+                </button>
+            </div>
+        </form>
+
+        <hr class="green mb-3">
+        <div class="container">
+            <textarea id="generatedText" style="display: none;" 
+            class="form-control result scroll_conversations mb-3"></textarea>
+        </div>
+
+        <div style="display: none;" id="playbackButtonContainer">
+            <div class="row justify-content-center mb-3">
+                <div class="col-auto">
+                    <button id="playbackButton" type="button" class="btn btn-outline">
+                        -¡!¡- PlayBack Audio -¡!¡-
+                    </button>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <audio id="response-audio" controls class="btn btn-outline-info mb-3"
+                        style=" height: 31px;">
+                        <source src="" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+            <hr class="green">
+        </div>
+
+        <hr class="mediumslateblue mt-5 mb-3">
+
+        <a id="aiGeneratorBtn" type="button" class="btn mb-3" href="{% url 'drawing-generator' %}">Analize, Generate, Edit...,
+            Your Images</a>
+
+        <hr class="mediumslateblue">
+        <br>
+    </div>
+</div>
+{% endif %}
+
+<script src="{% static 'js/popup.js' %}" defer></script>
+<script src="{% static 'js/main.js' %}" defer></script>
+<script src="{% static 'js/rec-speech.js' %}" defer></script>
+<script src="{% static 'js/interface.js' %}" defer></script>
+
+{% endblock %}

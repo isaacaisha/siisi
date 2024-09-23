@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block title %}
+    {% if page != 'login' %}
+        - Register Template
+    {% else %}
+        - Login Template
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+{% if page == 'login' %}
+
+<div>
+    <h1>Login Form</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        
+        <label>Username:
+            <input type="text" name="username" placeholder="Enter Username" autocomplete="username">
+        </label>
+
+        <label>Password:
+            <input type="password" name="password" placeholder="Enter Password" autocomplete="current-password">
+        </label>
+        <input type="submit" value="Login">
+    </form>
+
+    <br><span>Haven't Signed Up Yet?</span><br>
+    <a href="{% url 'register' %}">Sign Up -¡!¡-</a>
+</div>
+
+{% else %}
+
+<div>
+    <h1>Register Form</h1>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Register">
+    </form>
+
+    <br><span>Already Signed Up?</span><br>
+    <a href="{% url 'login' %}">Login -¡!¡-</a>
+</div>
+{% endif %}
+<!--
+<div>
+    <a href="{{request.META.HTTP_REFERER}}">Go Back</a>
+</div>
+-->
+
+{% endblock %}
