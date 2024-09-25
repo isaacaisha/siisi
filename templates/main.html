@@ -86,7 +86,8 @@
           <p>{{user.email}}</p>
     
           {% block edit_profile_btn %}
-          <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+          <a href="{% url 'update-user' %}" 
+          class="btn btn--main btn--pill">Edit Profile</a>
           {% endblock %}
         </div>
       </div>
@@ -103,7 +104,7 @@
     {% endif %}
 
     <!-- Content -->
-    {% block content %}{% endblock %}
+    <div>{% block content %}{% endblock %}</div>
 
   </div>
 
@@ -119,7 +120,7 @@
         </a>
       </h6>
 
-      <div class="">
+      <div>
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center">
@@ -149,7 +150,7 @@
               </li>
             </ul>
 
-            <div class="mb-3">
+            <div class="center mb-3">
               <span class="copyright">
                 © DBT Copyright {{ date }}
               </span>

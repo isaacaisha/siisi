@@ -7,7 +7,13 @@
 {% block content %}
 
     <main class="profile-page layout layout--2">
-      <div class="container">
+      <div class="container-fluid">
+        <!-- Replace the h3 with the jumbotron -->
+        <div class="p-3 rounded-3 jumbotron bg-dark text-light my-4 flex-grow-1 ml-3">
+          <div class="py-1">
+            <h1 class="text-center">-¡!¡- Study Room -¡!¡-</h1>
+          </div>
+        </div>
         <!-- Room Start -->
         <div class="room">
           <div class="room__top p-2">
@@ -20,7 +26,6 @@
                   ></path>
                 </svg>
               </a>
-              <h3>Study Room</h3>
             </div>
 
             {% if room.host == request.user %}
@@ -151,7 +156,11 @@
           </div>
         </div>
         <!--  End -->
-      </div>
     </main>
+
+    <!--  Back to chat-forum btn -->
+    <div class="container center back-home mt-5 mb-5">
+      <a href="{% url 'chat-forum' %}" class="nav-link">-¡!¡- Chat Forum -¡!¡-</a>
+    </div>
     
 {% endblock %}

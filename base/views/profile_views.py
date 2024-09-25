@@ -6,24 +6,6 @@ from ..forms import UserForm
 from datetime import datetime
 
 
-@login_required(login_url='login')
-def updateUser(request):
-    user = request.user
-    form = UserForm(instance=user)
-
-    if request.method == 'POST':
-        form = UserForm(request.POST, request.FILES, instance=user)
-        if form.is_valid():
-            form.save()
-            return redirect('user-profile', pk=user.id)
-
-    context = {
-        'form': form,
-        'date': datetime.now().strftime("%a %d %B %Y"),
-    }
-    return render(request, 'base/update_user.html', context)
-
-
 def userProfile(request, pk):
     # Set hide_edit_user to True only if the user is not logged in
     hide_edit_user = request.user.is_authenticated
@@ -42,3 +24,21 @@ def userProfile(request, pk):
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
     return render(request, 'base/profile.html', context)
+
+
+@login_required(login_url='login')
+def updateUser(request):
+    user = request.user
+    form = UserForm(instance=user)
+
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect('user-profile', pk=user.id)
+
+    context = {
+        'form': form,
+        'date': datetime.now().strftime("%a %d %B %Y"),
+    }
+    return render(request, 'base/update_user.html', context)

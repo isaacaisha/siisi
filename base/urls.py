@@ -2,9 +2,11 @@ from django.urls import path
 from .views import (
     loginPage, logoutUser, registerPage,
     conversationInterface, interfaceAnswer, serveAudioFromDb, latestAudioUrl,
-    allConversations, likedConversations, getConversation, deleteConversation,
-    drawingGenerator, websiteReviewGenerator, likedReviews, extrasFeatures,
-    chatForum, updateUser, userProfile, room,
+    allConversations, updateLike, likedConversations,
+    ConversationById, ConversationSelected,deleteConversation,
+    conversationsDatabase, deleteData, chatForum, 
+    drawingGenerator, websiteReviewGenerator, likedReviews, extrasFeatures, 
+    updateUser, userProfile, room,
     createRoom, updateRoom, deleteRoom, deleteMessage,
     topicsPage, activityPage
 )
@@ -21,13 +23,18 @@ urlpatterns = [
     path('audio/<int:conversation_id>/', serveAudioFromDb, name='serve_audio_from_db'),
     path('latest-audio-url/', latestAudioUrl, name='latest_audio_url'),
     path('all-conversations/', allConversations, name='all-conversations'),
+    path('update-like/<int:conversation_id>/', updateLike, name='update-like'),
     path('liked-conversations/', likedConversations, name='liked-conversations'),
-    path('get-conversation/', getConversation, name='get-conversation'),
+    path('conversation-selected/<int:conversation_id>/', ConversationSelected, name='conversation_selected'),
+    path('conversation-by-id/', ConversationById, name='conversation-by-id'),
     path('delete-conversation/', deleteConversation, name='delete-conversation'),
+    path('databse-conversation/', conversationsDatabase, name='databse-conversation'),
+    path('delete-data/', deleteData, name='delete-data'),
+
+    path('chat-forum/', chatForum, name='chat-forum'),
     path('drawing-generator/', drawingGenerator, name='drawing-generator'),
     path('website-review-generator/', websiteReviewGenerator, name='website-review-generator'),
     path('liked-reviews/', likedReviews, name='liked-reviews'),
-    path('chat-forum/', chatForum, name='chat-forum'),
     path('extras-features/', extrasFeatures, name='extras-features'),
 
     path('room/<str:pk>/', room, name='room'),

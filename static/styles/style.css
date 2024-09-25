@@ -1,65 +1,67 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
+/*==============================
+=>  Color Variables
+================================*/
 :root {
-  --color-main: #71c6dd;
-  --color-main-light: #e1f6fb;
-  --color-dark: #3f4156;
-  --color-dark-medium: #51546e;
-  --color-dark-light: #696d97;
-  --color-light: #e5e5e5;
-  --color-gray: #8b8b8b;
-  --color-light-gray: #b2bdbd;
-  --color-bg: #2d2d39;
-  --color-success: #5dd693;
-  --color-error: #fc4b0b;
+    --color-main: #71c6dd;
+    --color-main-light: #e1f6fb;
+    --color-dark: #3f4156;
+    --color-dark-medium: #51546e;
+    --color-dark-light: #696d97;
+    --color-light: #e5e5e5;
+    --color-gray: #8b8b8b;
+    --color-light-gray: #b2bdbd;
+    --color-bg: #2d2d39;
+    --color-success: #5dd693;
+    --color-error: #fc4b0b;
 }
 
-/*========== base styles ==========*/
-
+/*==============================
+=>  Base Styles
+================================*/
 * {
-  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-rendering: optimizeLegibility;
-  /* color: inherit; */
-  font-size: inherit;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-size: inherit;
 }
 
 html {
-  font-size: 56.25%;
+    font-size: 63.25%;
 }
 
 @media only screen and (min-width: 1200px) {
-  html {
-    font-size: 62.5%;
-  }
+    html {
+        font-size: 62.5%;
+    }
 }
 
 @media only screen and (min-width: 2100px) {
-  html {
-    font-size: 75%;
-  }
+    html {
+        font-size: 75%;
+    }
 }
 
 body {
-  line-height: 1.6;
-  font-weight: 400;
-  font-size: 1.5rem;
-  color: var(--color-light-gray);
-  background-color: var(--color-bg);
-  min-height: 100vh;
+    line-height: 1.6;
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: var(--color-light-gray);
+    background-color: var(--color-bg);
+    min-height: 100vh;
 }
 
 img {
-  width: 100%;
+    width: 100%;
 }
 
 a {
-  display: inline-block;
-  color: var(--color-main);
-  text-decoration: none;
+    display: inline-block;
+    color: var(--color-main);
+    text-decoration: none;
 }
 
 /*========== components ==========*/
@@ -69,8 +71,39 @@ a {
   margin: auto;
 }
 
+/* Ensure that containers do not overflow */
+.container-fluid .conversation-container {
+  background-color: rgb(41, 41, 46) !important;
+  max-width: 100%; /* Prevent horizontal overflow */
+  overflow: hidden; /* Hide overflowing content */
+  word-break: break-word; /* Break long words to fit the container */
+  padding: 15px; /* Add padding inside the container */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.form-group {
+  width: 100%;
+  max-width: 500px; /* Optional: Set max-width to control the input size */
+  margin: 0 auto; /* Center the form group */
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; /* Make the input fields take full width */
+  text-align: center; /* Center the text inside input */
+  margin-bottom: 15px; /* Space between input fields */
+}
+
+button.submit {
+  width: auto; /* Adjust the button width */
+}
+
+/*============ pages title =================*/
+div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
+  background-color: rgb(81, 84, 110) !important;
+}
+
 .btn {
-  background-color: transparent;
+  background-color: rgb(41, 41, 46);
   border: none;
   display: inline-flex;
   align-items: center;
@@ -80,7 +113,7 @@ a {
   padding: 1rem 2rem;
   border-radius: 5px;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.15);
-  font-size: medium;
+  font-size: small;
   font-weight: 500;
 }
 
@@ -130,6 +163,19 @@ a {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+.back-home>a {
+  background-color: rgb(41, 41, 46);
+  border: 0.1rem solid #9A70F3;
+  border-radius: 19%;
+  color: #fff;
+  font-size: .9rem;
+  padding: .7rem;
+}
+
+.back-home>a:hover {
+    color: #fff;
 }
 
 .avatar {
@@ -506,6 +552,10 @@ a {
   color: var(--color-light);
   font-weight: 500;
   outline: none;
+}
+
+.form-control {
+    background-color: rgb(105, 109, 151) !important;
 }
 
 .form__group input:focus,
@@ -1165,20 +1215,12 @@ a {
   font-weight: 1.4rem;
 }
 
-
-
-
-
-
-/*
-body {
-  overflow-x: hidden; /* Prevent horizontal overflow /
-}*/
-
-/* title */
-#content>div.container-fluid>div>div>h1,
-#content>div>div.container-fluid>div>div>h1 {
-    background-color: rgb(45, 45, 57);
+/*==============================
+=>  Title Styles
+================================*/
+#content > div.container-fluid > div > div > h1,
+#content > div > div.container-fluid > div > div > h1 {
+    background-color: rgb(41, 41, 46);
     border-radius: 0.3rem;
     color: #ab51f5;
     font-family: 'Merriweather', sans-serif;
@@ -1190,8 +1232,10 @@ body {
     text-decoration: underline;
 }
 
-/* jumbotron */
-#content>div.container-fluid>div>div {
+/*==============================
+=>  Jumbotron Animation
+================================*/
+#content > div.container-fluid > div > div {
     animation: color-change 10s linear infinite;
 }
 
@@ -1199,32 +1243,40 @@ body {
     25% {
         background-color: #FC5378;
     }
-
     50% {
         background-color: #4044E6;
     }
-
     100% {
         background-color: #47FFAC;
     }
 }
 
-#content>nav {
+/*==============================
+=>  Navigation Styles
+================================*/
+#content > nav {
     margin-bottom: 0rem;
 }
 
-#content>nav>a {
+#content > nav > a {
     color: #9ED2C6;
     font-size: medium;
 }
 
-#content>nav>button {
-    background-color: rgb(0, 0, 0, 0.181) !important;
+#content > nav > button {
+    background-color: rgb(45, 45, 57) !important;
     color: #9ED2C6;
     border: 0.1rem solid #9ED2C6;
 }
 
+/*==============================
+=>  Navbar Styles
+================================*/
+#content > nav > button {
+    background-color: rgb(41, 41, 46) !important;
+}
 .navbar-toggler-icon {
+    background-color: rgb(41, 41, 46) !important;
     border: 0.09rem solid #9ED2C6;
     border-top-left-radius: 55%;
     border-bottom-right-radius: 55%;
@@ -1234,16 +1286,15 @@ body {
     border-radius: 0;
     border-bottom-left-radius: 55%;
     border-top-right-radius: 55%;
-    font-size: 1.5rem;
 }
 
-#navbarSupportedContent>ul>li>a {
+#navbarSupportedContent > ul > li > a {
     color: #9ED2C6;
     font-family: 'Merriweather', sans-serif;
     text-align: center;
 }
 
-#navbarSupportedContent>ul>li>a:hover {
+#navbarSupportedContent > ul > li > a:hover {
     color: #47FFAC;
 }
 
@@ -1252,27 +1303,30 @@ body {
 }
 
 .container {
-  padding: 0 15px; /* Add padding to container */
+    padding: 0 15px; /* Add padding to container */
 }
 
 .navbar-nav .nav-link {
-  font-size: 1.3rem; /* Adjust font size if needed */
+    font-size: 1.3rem; /* Adjust font size if needed */
 }
 
 .navbar-brand {
-  white-space: nowrap; /* Prevent brand name from wrapping */
+    white-space: nowrap; /* Prevent brand name from wrapping */
 }
 
 .navbar-toggler {
-  margin-right: auto; /* Center align the navbar toggler */
+    margin-right: auto; /* Center align the navbar toggler */
 }
 
+/*==============================
+=>  Popup Styles
+================================*/
 .popup-container {
     position: fixed;
     top: 67%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #171717 !important;
+    background-color: rgb(45, 45, 57) !important;
     padding: 19px;
     border: 1px solid #ccc;
     border-top-right-radius: 19%;
@@ -1298,10 +1352,21 @@ body {
     color: rgb(0, 255, 171);
 }
 
+/*==============================
+=>  Text Colors
+================================*/
 .SìįSí,
 .gold1 {
     color: gold;
 }
+
+.grey {
+  color: rgb(178, 189, 189) !important;
+}
+/* Btn back-home from conversation detailed 
+#content > div:nth-child(4) > main > div > div > button > a {
+  color: rgb(178, 189, 189) !important;
+}*/
 
 .green {
     color: rgb(52, 97, 52);
@@ -1325,7 +1390,14 @@ body {
 
 .purple {
     color: rgb(168 85 247 / var(--tw-text-opacity));
-    ;
+}
+
+/*==============================
+=>  Conversation Styles
+================================*/
+.conversations {
+    color: #70f8fd;
+    text-align: center;
 }
 
 .convers-id {
@@ -1336,7 +1408,8 @@ body {
     color: #70f8fd;
 }
 
-.llm-response h3, .no-overflow {
+.llm-response h3,
+.no-overflow {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1345,18 +1418,16 @@ body {
 }
 
 .user-message {
-    color: #4285F4;
-    /* A shade of blue */
+    color: #4285F4; /* A shade of blue */
 }
 
-.conversation_id, .created-at {
+.conversation_id,
+.created-at {
     color: #cefcfc;
 }
 
 .like-button {
     cursor: pointer;
-}
-.like-button {
     color: #70f8fd;
 }
 
@@ -1368,31 +1439,39 @@ body {
     color: #d0ebec;
 }
 
+/*==============================
+=>  Input Styles
+================================*/
 textarea#userInput {
     color: #72e9fc !important;
 }
 
-.history-title {
-    color: #17a2b8 !important;
-    margin-top: 0;
+#userInput,
+#historiesContainerJson > pre {
+    color: rgb(25, 135, 84) !important;
 }
 
-.underline {
-    color: gold;
-    text-decoration: underline;
+input {
+    color: #72e9fc !important;
+    background-color: rgb(105, 109, 151);
+    font-size: 5vw !important;
 }
 
-.conversations-details {
-    color: #AEFAFC;
-    font-family: 'Lora', 'Times New Roman', serif;
+textarea {
+    background-color: rgb(45, 45, 57) !important;
+    font-size: medium !important;
 }
 
-.conversations,
-.api {
-    color: #AEFAFC;
-    font-family: 'Lora', 'Times New Roman', serif;
-    margin-top: 0;
-    text-align: center;
+/*==============================
+=>  Container Styling for Histories
+================================*/
+#historiesContainer > pre,
+#historiesContainerJson > pre,
+#showBlogPostsButton > pre {
+    border: 0.1rem solid #AEFAFC !important;
+    background-color: rgb(45, 45, 57) !important;
+    font-size: 1.5rem;
+    padding: 1rem;
 }
 
 .scroll_conversations {
@@ -1414,35 +1493,14 @@ textarea#userInput {
     transform: translateX(-50%);
 }
 
-.align-left {
-    text-align: left;
-}
-
-#userInput,
-#generatedText,
-textarea,
-#historiesContainerJson>pre,
-#showBlogPostsButton>pre {
-    background-color: rgb(0, 0, 0, 0.181) !important;
-    font-size: larger;
-}
-
-input,
-#userInput,
-#historiesContainerJson>pre {
-    color: #9ED2C6 !important;
-}
-
-.crown,
-.micro {
+/*==============================
+=>  Custom UI Components
+================================*/
+.crown {
     border: 0.1rem solid #AEFAFC;
     border-radius: 2.3rem;
     padding: 0.3rem;
     width: 2.7rem;
-}
-
-.micro {
-    border: 0.1rem solid #000;
 }
 
 .loading {
@@ -1452,6 +1510,9 @@ input,
     width: 3.7rem;
 }
 
+/*==============================
+=>  Message Container Styles
+================================*/
 .message-container {
     border: 1px solid #ccc;
     padding: 10px;
@@ -1471,13 +1532,16 @@ input,
     color: #333;
 }
 
+/*==============================
+=>  Form and Textarea Styles
+================================*/
 #generateDraw,
 #userInput,
 #generatedText,
 #final-result-content.form-control.result,
 .textarea-memory,
-body>pre#themes,
-body>pre#messages {
+body > pre#themes,
+body > pre#messages {
     border: 0.1rem solid #1295FA;
     border-radius: 0.9rem;
     font-family: 'Montserrat', sans-serif;
@@ -1493,13 +1557,9 @@ textarea#message {
 }
 
 #generateDraw,
-#content>div.container.text-center>textarea, 
-#content>div.container.conversations>textarea {
+#content > div.container.text-center > textarea,
+#content > div.container.conversations > textarea {
     color: #70f8fd !important;
-}
-
-#content>div.container.text-center>div.row>div>form>div>label {
-    display: none;
 }
 
 .textarea-memory {
@@ -1509,6 +1569,9 @@ textarea#message {
     padding: 0.9rem;
 }
 
+/*==============================
+=>  Dividers and Placeholders
+================================*/
 .divider {
     margin: 10px 0;
     border-top: 1px solid #ccc;
@@ -1521,6 +1584,9 @@ textarea#message {
     color: #999;
 }
 
+/*==============================
+=>  Additional Custom Styling
+================================*/
 textarea#generatedText {
     color: #AEFAFC;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -1535,11 +1601,17 @@ textarea#generatedText {
     padding: 0.1rem;
 }
 
+.align-left {
+  text-align: left !important;
+}
+
 #start-button,
 #speechRecognitionButton,
+#interruptButton,
+#aiGeneratorBtn,
 #generationType,
 #analyzeImageUploadType {
-    background-color: rgb(0, 0, 0, 0.181) !important;
+    background-color: rgb(41, 41, 46) !important;
     border: 0.1rem solid #AEFAFC;
     color: #30ABB7;
     font-family: 'Cardo';
@@ -1547,6 +1619,8 @@ textarea#generatedText {
 
 #start-button:hover,
 #speechRecognitionButton:hover,
+#interruptButton:hover,
+#aiGeneratorBtn:hover,
 #generationType:hover,
 #analyzeImageUploadType:hover {
     border: 0.1rem solid #73DD7E;
@@ -1559,8 +1633,7 @@ textarea#generatedText {
 #generateBlogButton:hover,
 #generateDrawingButton,
 #analyzeButton {
-    background-color: rgb(0, 0, 0, 0.181) !important;
-    /*background-color: #171717;*/
+    background-color: rgb(41, 41, 46) !important;
     border: 0.1rem solid #AEFAFC;
     color: #d08aee;
 }
@@ -1574,107 +1647,22 @@ textarea#generatedText {
     color: #1295FA;
 }
 
-#final-result-content,
-#resultMemo>h3 {
-    color: #1295FA;
-}
-
-textarea#writing_text.form-control {
-    min-height: 55px;
-    font-family: 'Merriweather', sans-serif;
-    height: 55px;
-}
-
-#showResultButton {
-    font-size: 1.09rem;
-}
-
-#content>div.container.text-center>ul, 
-#content>div.container.conversations>ul:nth-child(9),
-#content>div.container.conversations>ul:nth-child(13) {
-    padding: 0;
-}
-
-#saveImage>a,
-.back-home>a {
-    border: 0.1rem solid #9A70F3;
-    border-radius: 19%;
-    color: #fff;
-    font-size: .9rem;
-    padding: .7rem;
-}
-
-.back-home>a:hover {
-    color: #fff;
-}
-
-button.btn.back-home.mb-3:hover {
-    border: none;
-}
-
-.error {
-    color: crimson;
-    background-color: #fff;
-    font-family: 'Cardo';
-    margin: 1rem 1rem 0;
-    padding: 0.1rem;
-    text-align: center;
-    white-space: pre-line;
-}
-
-hr.mb-3,
-body hr {
-    border: 0.1rem solid;
-    border-radius: 0.5rem;
-    margin: 0 3rem;
-}
-
-#footer {
-    margin-bottom: 1.09rem;
-    margin-top: 1.09rem;
-    text-align: center;
-}
-
-
-.copyright {
-    border: 0.1rem solid #ccc;
-    border-radius: 0.5rem;
-    color: #a8dbe9;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 1.3rem;
-    padding: 0.5rem;
-}
-
-#aiGeneratorBtn, #aiGeneratorBtn1>a, #chatSystem>a, #start-button,
-#interruptButton, #speechRecognitionButton {
-    background-color: rgb(0, 0, 0, 0.181) !important;
-    border: 0.1rem solid #9126E8;
-    border-radius: 0.5rem;
-    color: #00FFAB;
-    padding: 1rem;
-}
-
-#interruptButton {
-    color: indianred;
-}
-
-#interruptButton:hover {
-    color: rgb(70, 183, 128);
-}
-
+/*==============================
+=>  Centered Layout
+================================*/
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* YOUTUBE BLOG GENERATOR SECTION */
-
+/*==============================
+=>  Spinner Animation for Loader
+================================*/
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     }
-
     to {
         transform: rotate(360deg);
     }
@@ -1691,62 +1679,34 @@ body hr {
     animation: rotate 1s linear infinite;
 }
 
-.container-custom {
-    max-width: 800px;
-}
-
-.blog_details {
-    border: 0.1rem solid #343a40;
-    border-radius: 0.9rem;
-    font-family: 'Montserrat', sans-serif;
-    padding: 0.3rem;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.custom-input-group:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
-}
-
-/* Styles for the screenshot section */
+/*==============================
+=>  Screenshot Section
+================================*/
 #screenshotResult {
     text-align: center;
-    /* Center-aligns the content within the div */
 }
 
 #screenshotImage {
     max-width: 100%;
-    /* Ensures the image doesn't overflow the container */
     max-height: 991px;
-    /* Sets a maximum height to keep the image within a reasonable size */
     height: auto;
-    /* Maintains the aspect ratio */
     display: inline-block;
-    /* Makes the image behave like a block element while remaining inline */
 }
 
-/* Ensure the image scales properly on smaller screens */
 @media (max-width: 768px) {
     #screenshotImage {
         max-height: 991px;
-        /* Adjust the max height for smaller screens */
     }
 }
 
-.btn-custom {
-    background-color: #343a40;
-    color: #17a2b8;
-}
-
-.main {
-    background-color: #171717;
-    color: #f8f9fa;
-}
-
+/*==============================
+=>  Footer Styles
+================================*/
 .footer {
     background-color: #343a40;
     color: #f8f9fa;
+    text-align: center;
+    padding: 2rem 0;
 }
 
 .footer a {
@@ -1761,8 +1721,19 @@ body hr {
     font-size: 1.09rem;
 }
 
-/* WEBSITE-REVIEW SECTION */
+.copyright {
+    background-color: rgb(41, 41, 46);
+    border: 0.1rem solid #ccc;
+    border-radius: 0.5rem;
+    color: #b55fd9;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
 
+/*==============================
+=>  Loader for Website Review Section
+================================*/
 .loader {
     display: none;
     border: 5px solid #f3f3f3;
@@ -1781,7 +1752,6 @@ body hr {
     0% {
         transform: rotate(0deg);
     }
-
     100% {
         transform: rotate(360deg);
     }
@@ -1795,12 +1765,12 @@ body hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 5px rgb(45, 45, 57);
     cursor: pointer;
     margin: 0 20px; /* Add margin to separate buttons */
 }
 
-svg {
+.svg {
     width: 60px;
     height: 60px;
 }

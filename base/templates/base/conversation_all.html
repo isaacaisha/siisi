@@ -1,0 +1,165 @@
+{% extends 'main.html' %}
+
+{% load custom_filters %} <!-- Load the custom filter -->
+
+{% load static %}
+
+{% block title %}
+- All Your Conversations Template
+{% endblock %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
+{% endblock %}
+
+{% block content %}
+<main class="">
+  <div class="container-fluid">
+    <div class="p-3 rounded-3 jumbotron bg-dark text-light my-4">
+      <div class="py-1">
+        <h1 class="text-center">-¡!¡- All Your Conversations -¡!¡-</h1>
+      </div>
+    </div>
+
+    <div>
+      <hr class="green mb-3">
+      <h3 class="conversations mb-3">Conversations Datas</h3>
+      <hr class="green mb-3">
+
+      {% if search_message %}
+      <div class="alert alert-danger">{{ search_message }}</div>
+      <div class="center mb-5">
+        <a href="javascript:history.back();" class="btn btn-outline-info">Click to Go Back</a>
+      </div>
+      {% endif %}
+
+      {% if conversations %}
+      <div class="text-center btn-outline-info scroll-down" onclick="scrollDown()" id="scrollDownButton">
+          ⇩
+      </div>
+      <br>
+
+      <!-- Form for Filtering Conversations -->
+      <form action="{% url 'all-conversations' %}" method="GET">
+        <div class="container form-group text-left">
+          <label for="limit" class="form-label">Number of conversations to retrieve:</label>
+          <input type="number" id="limit" name="limit" min="1" max="9991" 
+          class="form-control form-control-sm mb-3">
+
+          <label for="offset" class="form-label">Number of conversations to skip:</label>
+          <input type="number" id="offset" name="offset" min="0" class="form-control form-control-sm mb-3">
+
+          <label for="search" class="form-label">Word to search in conversations:</label>
+          <input type="text" id="search" name="search" class="form-control form-control-sm mb-4">
+
+          <div class="text-center">
+            <button class="btn btn-outline-info mb-5" type="submit">Look for</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Display Conversation Information -->
+      <div class="conversations mb-3">
+        {% if total_conversations %}
+        <h4>Total of <span class="text-success">{{ total_conversations }}</span> Conversations</h4>
+        {% endif %}
+        {% if limit %}
+        <h4><span class="text-success">{{ limit }}</span> Conversations Retrieved</h4>
+        {% endif %}
+        {% if offset %}
+        <h4><span class="text-success">{{ offset }}</span> Conversations Skipped</h4>
+        {% endif %}
+        {% if search %}
+        <h4>Search results for "<span class="text-success">{{ search }}</span>" in conversations</h4>
+        {% endif %}
+      </div>
+
+      {% for conversation in conversations %}
+      <div class="container-fluid conversation-container p-3 border rounded shadow-sm mb-5">
+        <div class="conversation-header d-flex justify-content-between">
+          <div>
+            <strong>Conversation ID:</strong> {{ conversation.id }}
+          </div>
+        </div>
+
+        <div class="conversation-body mb-2">
+          <div class="user-message">
+            <strong>{{ conversation.user_name }}:</strong>
+            <p>{{ conversation.user_message|safe }}</p>
+          </div>
+          <div class="llm-response">
+            <strong>·SìįSí·Dbt·:</strong>
+            <p style="white-space: pre-wrap;">{{ conversation.llm_response|safe }}</p>
+          </div>
+        </div>
+
+        <div class="created-at mb-3">
+          <strong>Created At:</strong> {{ conversation.created_at }}
+        </div>
+
+        <div class="text-center">
+          <audio id="response-audio-{{ conversation.id }}" controls class="w-100"
+            style="max-width: 271px; height: 37px;">
+            <source src="{% url 'serve_audio_from_db' conversation.id %}" type="audio/mp3">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+
+        <div class="col-md-12 text-center">
+          <div class="like-button" data-conversation-id="{{ conversation.id }}" {% if conversation.liked %} style="color: pink;"
+            {% else %} style="color: lightcyan;" {% endif %}>
+            <i class="fa fa-heart fa-2x"></i>
+            <hr class="green mb-3" style="margin: 0 45%;">
+        
+            <!-- This div is hidden by default and only shown when the user clicks the like button -->
+            <div id="likeMessage-{{ conversation.id }}" class="text-center" style="display: none;">
+              <!-- The content here will be updated dynamically by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="center">
+        <button class="btn grey mb-5" onclick="toggleHistories()">
+          Show Conversations
+        </button>
+      </div>
+
+      <div id="historiesContainer" class="text-left mb-3" style="display: none;">
+        {% for conversation in conversations %}
+        <pre>
+<span class="conversation_id">- Conversation ID: {{ conversation.id }}</span><br>
+<span class="user-message">- {{ conversation.user_name }}: {{ conversation.user_message|safe }}</span><br>
+<span class="llm-response">·SìįSí·Dbt·: {{ conversation.llm_response|safe }}</span><br>
+<span class="created-at">- Created At: {{ conversation.created_at }}</span>
+        </pre>
+        {% endfor %}
+      </div>
+
+      <div class="text-center mb-5">
+        <button class="btn grey mb-3" onclick="toggleHistoriesJson()">
+        Show Conversations JSON
+      </button>
+      </div>
+
+      <div id="historiesContainerJson" class="text-left mb-3" style="display: none;">
+        {% for conversation in conversations %}
+        <pre>
+{{ conversation|pretty_json:4|safe }}
+        </pre>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <!--  Back to home btn -->
+  <div class="center back-home mt-5 mb-5">
+    <a href="{% url 'conversation-interface' %}" class="nav-link grey">-¡!¡- Back Home -¡!¡-</a>
+  </div>
+</main>
+
+<script src="{% static 'js/like-unlike-convers.js' %}" defer></script>
+<script src="{% static 'js/toggle-histories.js' %}" defer></script>
+
+{% endblock %}
