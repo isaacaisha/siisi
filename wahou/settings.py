@@ -11,25 +11,51 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Load environment variables from .env file
+load_dotenv()
+
+# Define the BASE_DIR
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9*o2dmef=6n^&if3mjv#7q2r)3g_j+w#w_*vh5kb4tqaky(avu'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Credentials for Openai
 OPENAI_API_KEY = api_key=os.getenv("OPENAI_API_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*']
+
+# Login URL for authentication redirects
+LOGIN_URL = '/login/'
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# Directory for additional static files not in app directories
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # This is for static files you want to use in development.
+]
+
+# This is the directory where Django will collect static files during deployment.
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Create a 'staticfiles' directory in your project root for collected files.
+
+# Media files (Uploaded by users)
+MEDIA_URL = '/images/'
+
+# This is where uploaded media files will be stored.
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 
 # Application definition
@@ -92,6 +118,16 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': os.getenv('DB_NAME'),
+#        'USER': os.getenv('DB_USER'),
+#        'PASSWORD': os.getenv('DB_PASSWORD'),
+#        'HOST': os.getenv('DB_HOST'),
+#        'PORT': os.getenv('DB_PORT', '5432'),
+#    }
+#}
 
 
 # Password validation
@@ -128,22 +164,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-LOGIN_URL = '/login/'
-
-STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
-
-MEDIA_ROOT =BASE_DIR / 'static/images'
-
-# STATIC_ROOT = 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGIN = True
+# Set secure headers (Optional but recommended for production)
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+
+
+# Allow all origins to access the API
+# CORS_ALLOW_ALL_ORIGINS = True  # Not recommended for production
+
+# Alternatively, you can specify allowed origins like this:
+# CORS_ALLOWED_ORIGINS = [
+#     'https://example.com',
+#     'https://sub.example.com',
+# ]
+
+# Other CORS settings you might use
+CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication

@@ -1,5 +1,11 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon7.ico' %}">
+{% endblock %}
+
 {% block title %}
 {% if page != 'login' %}
 - Register Template

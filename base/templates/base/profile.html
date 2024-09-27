@@ -1,4 +1,8 @@
-{% extends 'main.html' %}
+{% extends 'main.html' %}{% load static %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
+{% endblock %}
 
 {% block title %}
     - Profile Template
@@ -31,7 +35,7 @@
                   </path>
                 </svg>
               </a>
-              <h3>GO BACK</h3>
+              <h3>PROFILE</h3>
             </div>
           </div>
 
@@ -59,7 +63,7 @@
 
   <!--  Back to chat-forum btn -->
   <div class="center back-home mt-5 mb-5">
-    <a href="{% url 'chat-forum' %}" class="nav-link">-¡!¡- Chat Forum -¡!¡-</a>
+    <a href="{% url 'chat-forum' %}" class="grey">-¡!¡- Chat Forum -¡!¡-</a>
   </div>
 </main>
   

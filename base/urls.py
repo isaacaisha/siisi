@@ -18,7 +18,7 @@ urlpatterns = [
     path('logout/', logoutUser, name='logout'),
     path('register/', registerPage, name='register'),
 
-    path('', conversationInterface, name='conversation-interface'),
+    path('conversation-interface', conversationInterface, name='conversation-interface'),
     path('interface-answer/', interfaceAnswer, name='interface-answer'),
     path('audio/<int:conversation_id>/', serveAudioFromDb, name='serve_audio_from_db'),
     path('latest-audio-url/', latestAudioUrl, name='latest_audio_url'),
@@ -31,7 +31,7 @@ urlpatterns = [
     path('databse-conversation/', conversationsDatabase, name='databse-conversation'),
     path('delete-data/', deleteData, name='delete-data'),
 
-    path('chat-forum/', chatForum, name='chat-forum'),
+    path('', chatForum, name='chat-forum'),
     path('drawing-generator/', drawingGenerator, name='drawing-generator'),
     path('website-review-generator/', websiteReviewGenerator, name='website-review-generator'),
     path('liked-reviews/', likedReviews, name='liked-reviews'),

@@ -1,5 +1,11 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
+{% block favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
+{% endblock %}
+
 {% block title %}
     - Delete Template
 {% endblock %}
@@ -20,7 +26,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <h3>Back</h3>
+                        <h3>DELETE</h3>
                     </div>
                 </div>
                 <div class="layout__body">

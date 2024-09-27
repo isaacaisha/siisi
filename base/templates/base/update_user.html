@@ -1,5 +1,11 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
+{% block favicon %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
+{% endblock %}
+
 {% block title %}
     - Update User Template
 {% endblock %}
@@ -22,7 +28,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <h3>GO BACK</h3>
+                        <h3>UPDATE PROFILE</h3>
                     </div>
                 </div>
                 <div class="layout__body">
