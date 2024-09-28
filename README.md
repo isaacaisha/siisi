@@ -1,1 +1,1 @@
-# SiisiAI
+# ·SìįSí·Dbt· is your personal AI assistant, designed to simplify your life and boost your productivity. With powerful AI technology at your fingertips, ·SìįSí·Dbt· helps you streamline tasks, answer questions, and stay organized effortlessly. Join us and experience the future of productivity today!
