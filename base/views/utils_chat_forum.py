@@ -110,7 +110,7 @@ def deleteMessage(request, pk):
     if request.method == 'POST':
         # Delete the message
         message.delete()
-        return redirect('conversation-interface')
+        return redirect('chat-forum')
 
     context = {
         'obj':room,

@@ -184,4 +184,4 @@ google-chrome-stable_current_amd64.deb
 dump.rdb
 # Ignore the static images and media directories
 #/static/images/
-/static/media/
+#/static/media/

@@ -37,23 +37,6 @@ ALLOWED_HOSTS = ['*']
 # Login URL for authentication redirects
 LOGIN_URL = '/login/'
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
-
-# Directory for additional static files not in app directories
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # This is for static files you want to use in development.
-]
-
-# This is the directory where Django will collect static files during deployment.
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Create a 'staticfiles' directory in your project root for collected files.
-
-# Media files (Uploaded by users)
-MEDIA_URL = '/images/'
-
-# This is where uploaded media files will be stored.
-MEDIA_ROOT = BASE_DIR / 'static/images'
-
 
 # Application definition
 
@@ -83,15 +66,16 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'wahou.urls'
+ROOT_URLCONF = 'siisi.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates'
+            os.path.join(BASE_DIR, 'templates'),  # Main templates directory
+            os.path.join(BASE_DIR, 'base', 'templates'),  # Base app templates directory
         ],
-        'APP_DIRS': True,
+        'APP_DIRS': True,  # Enable app directories for app-specific templates
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -103,7 +87,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'wahou.wsgi.application'
+WSGI_APPLICATION = 'siisi.wsgi.application'
 
 
 # Database
@@ -160,6 +144,29 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# URL to access media files (user uploads)
+#MEDIA_URL = '/media/'
+
+# This is the directory where Django will collect static files during deployment.
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Create a 'staticfiles' directory in your project root for collected files.
+
+# Media files (Uploaded by users)
+MEDIA_URL = '/images/'
+
+# Directory where user-uploaded media files will be stored
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# This is where uploaded media files will be stored.
+MEDIA_ROOT = BASE_DIR / 'static/images'
+
+# Directory for additional static files not in app directories
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # This is for static files you want to use in development.
+]
 
 
 # Default primary key field type
