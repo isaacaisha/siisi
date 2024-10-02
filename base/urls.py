@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (
-    loginPage, logoutUser, registerPage,
+    loginPage, logoutUser, logoutUserToChat, registerPage,
     conversationInterface, interfaceAnswer, serveAudioFromDb, latestAudioUrl,
     allConversations, updateLike, likedConversations,
     ConversationById, ConversationSelected,deleteConversation,
@@ -16,6 +16,7 @@ from .views import (
 urlpatterns = [
     path('login/', loginPage, name='login'),
     path('logout/', logoutUser, name='logout'),
+    path('logout-to-chat/', logoutUserToChat, name='logout-to-chat'),
     path('register/', registerPage, name='register'),
 
     path('conversation-interface', conversationInterface, name='conversation-interface'),

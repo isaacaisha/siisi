@@ -45,6 +45,10 @@ def logoutUser(request):
     logout(request)
     return redirect('login')
 
+def logoutUserToChat(request):
+    logout(request)
+    return redirect('chat-forum')
+
 
 def registerPage(request):
     page = 'register'

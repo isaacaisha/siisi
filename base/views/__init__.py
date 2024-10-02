@@ -1,4 +1,4 @@
-from .auth_views import loginPage, logoutUser, registerPage
+from .auth_views import loginPage, logoutUser, logoutUserToChat, registerPage
 
 from .chat_gpt_views import conversationInterface, interfaceAnswer, serveAudioFromDb, latestAudioUrl
 from .utils_chat_gpt import generate_conversation_context, handle_llm_response, adjust_conversation_context, get_llm_response, extract_assistant_reply, clean_assistant_reply, handle_language_support, generate_audio_data, find_most_relevant_conversation, save_to_database

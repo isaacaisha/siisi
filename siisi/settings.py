@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+import environ
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -25,6 +26,24 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
+
+
+# Set secure headers (Optional but recommended for production)
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+
+
+# Allow all origins to access the API
+# CORS_ALLOW_ALL_ORIGINS = True  # Not recommended for production
+
+# Alternatively, you can specify allowed origins like this:
+# CORS_ALLOWED_ORIGINS = [
+#     'https://example.com',
+#     'https://sub.example.com',
+# ]
+
+# Other CORS settings you might use
+CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication
 
 # Credentials for Openai
 OPENAI_API_KEY = api_key=os.getenv("OPENAI_API_KEY")
@@ -58,6 +77,7 @@ AUTH_USER_MODEL = 'base.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -71,17 +91,20 @@ ROOT_URLCONF = 'siisi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'templates'),  # Main templates directory
-            os.path.join(BASE_DIR, 'base', 'templates'),  # Base app templates directory
-        ],
-        'APP_DIRS': True,  # Enable app directories for app-specific templates
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        # Remove this if you are specifying custom loaders
+        # 'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+            ],
+            # Ensure this section is properly configured
+            'loaders': [
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
             ],
         },
     },
@@ -93,11 +116,19 @@ WSGI_APPLICATION = 'siisi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+# Initialize environment variables
+env = environ.Env()
+environ.Env.read_env()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': env.db('DATABASE_URL'),
 }
 #DATABASES = {
 #    'default': {
@@ -152,7 +183,19 @@ STATIC_URL = '/static/'
 #MEDIA_URL = '/media/'
 
 # This is the directory where Django will collect static files during deployment.
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # Create a 'staticfiles' directory in your project root for collected files.
+#STATIC_ROOT = BASE_DIR / 'staticfiles'  # Create a 'staticfiles' directory in your project root for collected files.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Use whitenoise to serve static files in production
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# Directory for additional static files not in app directories
+#STATICFILES_DIRS = [
+#    BASE_DIR / 'static',  # This is for static files you want to use in development.
+#]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Ensure this is correct for development
+]
 
 # Media files (Uploaded by users)
 MEDIA_URL = '/images/'
@@ -163,30 +206,8 @@ MEDIA_URL = '/images/'
 # This is where uploaded media files will be stored.
 MEDIA_ROOT = BASE_DIR / 'static/images'
 
-# Directory for additional static files not in app directories
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # This is for static files you want to use in development.
-]
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Set secure headers (Optional but recommended for production)
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-
-
-# Allow all origins to access the API
-# CORS_ALLOW_ALL_ORIGINS = True  # Not recommended for production
-
-# Alternatively, you can specify allowed origins like this:
-# CORS_ALLOWED_ORIGINS = [
-#     'https://example.com',
-#     'https://sub.example.com',
-# ]
-
-# Other CORS settings you might use
-CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication

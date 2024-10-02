@@ -1,0 +1,51 @@
+# docker-compose-dev.yml
+
+services:
+  siisi:
+    build: .
+    depends_on:
+      - postgres
+    ports: 
+      - "8000:8000"
+    volumes:
+      - .:/app # :ro -> extra security (for read-only)
+      - ./static:/app/static  # Mount static directory for development files
+      - ./staticfiles:/app/staticfiles  # Mounts staticfiles folder from host to container
+    #command: gunicorn -w 4 -k uvicorn.workers.UvicornWorker siisi.asgi:application --bind 0.0.0.0:8000
+    env_file:
+      - ./.env
+    # To use pgAdmin
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      #- ASSEMBLYAI_API_KEY=${ASSEMBLYAI_API_KEY}
+      - CHROME_BINARY_PATH=${CHROME_BINARY_PATH}
+      #- CHROMEDRIVER_PATH=${CHROMEDRIVER_PATH}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+      - GOOGLE_CLOUD_API_KEY=${GOOGLE_CLOUD_API_KEY}
+      - VOICEFLOW_AUTHORIZATION=${VOICEFLOW_AUTHORIZATION}
+      - DATABASE_URL=postgresql://postgres:Toure7Medina@postgres:5432/siisi
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=siisi
+      - DB_USER=postgres
+      - DB_PASSWORD=Toure7Medina
+    networks:
+      - django_network
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=siisi
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Toure7Medina
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+    networks:
+      - django_network
+
+networks:
+  django_network:
+
+volumes:
+  postgres-db:
+  
