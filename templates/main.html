@@ -67,10 +67,12 @@
           </h1>
         </div>
       </div>
-      <p class="text-center"><img src="https://media.giphy.com/media/QJfCtrknxjcGPnRfMl/giphy.gif" style="width:19%;"></p>
+    </div>
     {% endblock %}
 
     {% include 'navbar.html' %}
+
+    <p class="text-center"><img src="https://media.giphy.com/media/QJfCtrknxjcGPnRfMl/giphy.gif" style="width:19%;"></p>
 
     <!-- Room List Start -->
     {% if not hide_edit_user and request.user == user %}

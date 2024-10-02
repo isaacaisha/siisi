@@ -28,6 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://siisi.copromanager.pro',
+    'https://www.siisi.copromanager.pro'
+]
+
 # Set secure headers (Optional but recommended for production)
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
@@ -51,7 +56,11 @@ OPENAI_API_KEY = api_key=os.getenv("OPENAI_API_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'siisi.copromanager.pro',
+    'www.siisi.copromanager.pro',
+    '0.0.0.0', '192.168.86.182'
+]
 
 # Login URL for authentication redirects
 LOGIN_URL = '/login/'
