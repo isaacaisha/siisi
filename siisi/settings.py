@@ -59,7 +59,7 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 ALLOWED_HOSTS = [
     'siisi.copromanager.pro',
     'www.siisi.copromanager.pro',
-    '0.0.0.0', '192.168.86.182'
+    '142.93.235.205', '0.0.0.0', '192.168.86.182'
 ]
 
 # Login URL for authentication redirects
