@@ -12,13 +12,13 @@
   <meta property="og:title" content="·SìįSí·Dbt· - AI Personal Assistant">
   <meta property="og:description"
     content="·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase productivity, automate tasks, and receive personalized recommendations.">
-  <meta property="og:image" content="{% static 'images/logo_ai.jpg' %}">
-  <meta property="og:url" content="https://siisi.api.copromanager.pro/docs">
+  <meta property="og:image" content="https://siisi.copromanager.pro/static/images/logo_ai.jpg">
+  <meta property="og:url" content="https://siisi.copromanager.pro">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="·SìįSí·Dbt· - AI Personal Assistant">
   <meta name="twitter:description"
     content="·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase productivity, automate tasks, and receive personalized recommendations.">
-  <meta name="twitter:image" content="{% static 'images/logo3.jpg' %}">
+  <meta name="twitter:image" content="https://siisi.copromanager.pro/static/images/logo3.jpg">
   <meta name="keywords"
     content="AI assistant, ChatGPT, productivity, automation, personalized recommendations, ·SìįSí·Dbt·">
   <meta name="author" content="Developer">
@@ -35,6 +35,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
       integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
   </noscript>
+  
+  <!-- reCAPTCHA_v3 -->
+  <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcFMHoqAAAAACnmb1qlUcDuLlBrOCNWBcWtQYg9"></script>
 
   <!-- Font Awesome Kit -->
   <script src="https://kit.fontawesome.com/79e7395fe9.js" crossorigin="anonymous" defer></script>
@@ -70,12 +73,22 @@
     </div>
     {% endblock %}
 
+    <div class="togglebutton">
+      <label>
+        <input type="checkbox" id="theme-toggle">
+        <span id="darkMode" class="toggle"></span>
+      </label>
+      <span class="dark-mode-text">Dark Mode</span>
+    </div>
+
     {% include 'navbar.html' %}
 
     <p class="text-center mb-5"><img src="https://media.giphy.com/media/QJfCtrknxjcGPnRfMl/giphy.gif" style="width:19%;"></p>
 
     <!-- Room List Start -->
-    {% if not hide_edit_user and request.user == user %}
+    <!-- { if not hide_edit_user and request.user == user } -->
+    {% block profile__avatar %}
+    {% if user.is_authenticated %}
     <div class="roomList">
       <div class="profile">
         <div class="profile__avatar">
@@ -94,13 +107,24 @@
         </div>
       </div>
     </div>
+    {% else %}
+    <div class="roomList">
+      <div class="profile">
+        <div class="profile__avatar">
+          <div class="avatar avatar--large active">
+            <img src="{% static 'images/avatar.svg' %}" />
+          </div>
+        </div>
+      </div>
+    </div>
     {% endif %}
+    {% endblock %}
     <!-- Room List End -->
 
     {% if messages %}
     <ul class="messages">
       {% for message in messages %}
-      <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
     {% endif %}
@@ -169,8 +193,18 @@
       {% endif %}
     </footer>
     {% endblock %}
-
+    
+    <!-- reCAPTCHA_v3 grecaptcha.execute para todas las acciones que quieras proteger -->
+    <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute('6LcFMHoqAAAAACnmb1qlUcDuLlBrOCNWBcWtQYg9', { action: 'LOGIN' });
+        });
+      }
+    </script>
     <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'js/dark-mode.js' %}"></script>
     <script src="{% static 'js/adjust-textarea.js' %}" defer></script>
 
     <!-- If we use Bootstrap components that require Javascript add the following file -->

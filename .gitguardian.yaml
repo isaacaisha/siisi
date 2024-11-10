@@ -1,0 +1,13 @@
+secret:
+  ignored_matches:
+  - match: fa84c4e632c67054db91004622d47aad1c87f7ef6fa3633f41aa88ab3a26a678
+    name: Generic High Entropy Secret - .env:l.11
+  - match: b9c4aad051f57d364d103c4ea0d2398c649250170c8ffce3889d420b7037c9c2
+    name: Generic High Entropy Secret - .env:l.12
+  - match: f8a2d3eb50b6ea3971995306e231853abf2ab75b0c54438e9d38162c79bcb126
+    name: Generic High Entropy Secret - .env:l.28
+  - match: eee59f95f384e9f374b981d9f8691daad93646495395c58326e425852aaac51a
+    name: Google API Key - .env:l.31
+  - match: b853c4e9bd14031e61f4c567738ce9a61a24f6ca6990db4b4391f519246be33f
+    name: OpenAI API Key - .env:l.34
+version: 2

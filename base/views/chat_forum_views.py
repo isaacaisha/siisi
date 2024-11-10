@@ -11,9 +11,6 @@ from datetime import datetime
 
 
 def chatForum(request):
-    # Set hide_edit_user to True only if the user is not logged in
-    hide_edit_user = not request.user.is_authenticated
-    
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
     rooms = Room.objects.filter(
@@ -31,7 +28,6 @@ def chatForum(request):
         'topics': topics,
         'room_count': room_count,
         'room_messages': room_messages,
-        'hide_edit_user': hide_edit_user,
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
     return render(request, 'base/chat_forum.html', context)
@@ -39,9 +35,6 @@ def chatForum(request):
 
 @login_required
 def room(request, pk):
-    # Set hide_edit_user to True only if the user is not logged in
-    hide_edit_user = not request.user.is_authenticated
-
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all()
     participants = room.participants.all()
@@ -59,7 +52,6 @@ def room(request, pk):
         'room': room,
         'room_messages': room_messages,
         'participants': participants,
-        'hide_edit_user': hide_edit_user,
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
 

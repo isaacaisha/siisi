@@ -19,3 +19,11 @@ def pretty_json(value, indent=4):
     except (ValueError, TypeError):
         # If the value isn't a valid JSON string, return it as is
         return value
+
+@register.filter(name='add_class')
+def add_class(field, css):
+    """
+    A custom filter to add a CSS class to form fields.
+    Usage: {{ form.field|add_class:"form-control" }}
+    """
+    return field.as_widget(attrs={"class": css})

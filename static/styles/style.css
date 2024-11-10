@@ -1788,3 +1788,76 @@ textarea#generatedText {
     height: auto;
     width: auto;
 }
+
+/*==============================
+=>  Dark-Mode Section
+================================*/
+body.dark-mode {
+  background-color: #111;
+  color: #999 !important; /* Soft dark gray */
+}
+
+.togglebutton {
+  display: flex;
+  margin: 20px;
+}
+
+.togglebutton label {
+  position: relative;
+  display: inline-block;
+  width: 37px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.togglebutton input {
+  display: none; /* Hide the default checkbox */
+}
+
+.togglebutton .toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: background-color 0.4s;
+}
+
+.togglebutton .toggle::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* Dark Mode Styling */
+.togglebutton input:checked + .toggle {
+  background-color: #4d4d4d;
+}
+
+.togglebutton input:checked + .toggle::before {
+  transform: translateX(19px);
+}
+
+/* Dark Mode Text */
+.togglebutton .dark-mode-text {
+  margin-left: 10px;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+
+/*==============================
+=>  element that contains all the emails within the .roomListRoom__author class
+================================*/
+div.activities__boxHeader.roomListRoom__header > a > p {
+  white-space: normal !important; /* Allows text to wrap */
+    overflow-wrap: break-word !important; /* Wraps long words to prevent overflow */
+    word-break: break-word !important; /* Forces line breaks within long words if needed */
+}

@@ -1,4 +1,6 @@
-{% extends 'main.html' %}{% load static %}
+{% extends 'main.html' %}
+
+{% load static %}
 
 {% block favicon %}
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
@@ -19,11 +21,11 @@
     <!-- Room List Start -->
     <div class="roomList">
         <div class="profile">
-          <div class="profile__avatar">
+          <!--<div class="profile__avatar">
             <div class="avatar avatar--large active">
               <img src="{{user.avatar.url}}" />
             </div>
-          </div>
+          </div>-->
 
           <div class="layout__boxHeader mt-5 mb-5">
             <div class="layout__boxTitle">

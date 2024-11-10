@@ -20,9 +20,6 @@ services:
       - DB_NAME=${DB_NAME}
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
-    volumes:
-      - ./static:/app/static  # Mount static directory for development files
-      - ./staticfiles:/app/staticfiles
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8000 || exit 1"]
       interval: 30s
