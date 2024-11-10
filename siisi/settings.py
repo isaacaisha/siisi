@@ -12,12 +12,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 import environ
-from dotenv import load_dotenv
+from decouple import config
 from pathlib import Path
 
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Initialize environment variables
 env = environ.Env()
@@ -30,18 +27,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = config('SECRET_KEY')
 
 
 ## To Reset Password For Developement
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # To Reset Password For Production 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = os.getenv('EMAIL_HOST')
-EMAIL_PORT = os.getenv('EMAIL_PORT', int)
-EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', bool)
-EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 #DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
 
 
@@ -62,9 +59,9 @@ SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 X_FRAME_OPTIONS = 'DENY'
 
-SESSION_COOKIE_SECURE = not os.getenv('DEBUG', default=True)
-CSRF_COOKIE_SECURE = not os.getenv('DEBUG', default=True)
-SECURE_SSL_REDIRECT = not os.getenv('DEBUG', default=True)
+SESSION_COOKIE_SECURE = not config('DEBUG', default=True, cast=bool)
+CSRF_COOKIE_SECURE = not config('DEBUG', default=True, cast=bool)
+SECURE_SSL_REDIRECT = not config('DEBUG', default=True, cast=bool)
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 900  # 15 minutes
 
@@ -82,21 +79,22 @@ SESSION_COOKIE_AGE = 900  # 15 minutes
 CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication
 
 # Credentials for Openai
-OPENAI_API_KEY = api_key=os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = api_key=config("OPENAI_API_KEY")
 
 # reCAPTCHA settings for v2 and v3
-RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY')
+RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
 
 RECAPTCHA_REQUIRED_SCORE = 0.85  # For reCAPTCHA v3
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+DEBUG = config('DEBUG', default=True, cast=bool)
 
 ALLOWED_HOSTS = [
     'siisi.copromanager.pro',
     'www.siisi.copromanager.pro',
-    '142.93.235.205', '0.0.0.0', '192.168.31.182'
+    '142.93.235.205', '0.0.0.0', '192.168.31.182',
+    '127.0.0.1', config('SERVER', default='127.0.0.1')
 ]
 
 # Login URL for authentication redirects
