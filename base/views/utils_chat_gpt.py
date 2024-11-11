@@ -10,11 +10,20 @@ from django.http import JsonResponse
 from django.conf import settings
 from django.utils import timezone
 
+# Models from the same Django app
 from ..models import Conversation, User
+
+# Langchain and OpenAI integrations
 from langchain.chains import ConversationChain
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+
+# Memory handling for conversations
 from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
+
+# Language detection
 from langdetect import detect
+
+# Text-to-Speech (TTS) handling
 from gtts import gTTS
 from gtts.lang import tts_langs
 

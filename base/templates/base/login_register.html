@@ -30,7 +30,7 @@
       <div class="layout__body">
         <h2 class="auth__tagline">-¡!¡- SìįSí Chacal -¡!¡-</h2>
 
-        <form role="form" class="form" method="POST" action="">
+        <form class="form" method="POST" action="">
           {% csrf_token %}
 
           <div class="form__group">
@@ -89,6 +89,11 @@
 
         <form class="form" method="POST" action="">
           {% csrf_token %}
+          
+          <div class="form__group" style="position: relative;">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}
+          </div>
           
           <div class="form__group" style="position: relative;">
             <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>

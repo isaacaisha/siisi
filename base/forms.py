@@ -49,19 +49,19 @@ class DatabaseForm(forms.Form):
 
 
 class MyUserCreationForm(UserCreationForm):
-
     captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
     
     class Meta:
         model = User
-        fields =  ['name', 'username', 'email', 'password1', 'password2']
+        fields =  ['name', 'username', 'email', 'password1', 'password2', 'captcha']
         exclude = ['host', 'participants']
 
 
-class LoginForm(AuthenticationForm):
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}))
-
+class LoginForm(forms.Form):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'e.g. siisiAi@gmail.com'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': '••••••••'}))
+    
+    # Use reCAPTCHA v2 for login
     captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
 

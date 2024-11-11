@@ -10,22 +10,26 @@ from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
 from django.shortcuts import render, redirect
 
+
 def registerPage(request):
     page = 'register'
-    form = MyUserCreationForm()
+    form = MyUserCreationForm(request.POST or None)
     hide_navbar = True
     hide_edit_user = True
 
     if request.method == 'POST':
-        form = MyUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.username = user.username.lower()
-            user.save()
-            login(request, user)
-            return redirect('conversation-interface')
+            try:
+                user = form.save(commit=False)
+                user.username = user.username.lower()
+                user.save()
+                messages.success(request, 'Registration successful! Please log in.')
+                return redirect('login')
+            except Exception as e:
+                messages.error(request, f'Sorry, an error occurred: {e}')
         else:
-            messages.error(request, f'Sorry, something went wrong during registration 😝')
+            error_messages = form.errors.as_text()
+            messages.error(request, f'Sorry, something went wrong during registration 😝. Details: {error_messages}')
 
     context = {
         'page': page,
@@ -33,7 +37,7 @@ def registerPage(request):
         'hide_navbar': hide_navbar,
         'hide_edit_user': hide_edit_user,
         'date': timezone.now().strftime("%a %d %B %Y"),
-        }
+    }
     return render(request, 'base/login_register.html', context)
     
     
@@ -44,21 +48,18 @@ def loginPage(request):
     hide_edit_user = True
 
     if request.method == 'POST':
-        email = request.POST.get('email').lower()
-        password = request.POST.get('password')
+        if form.is_valid():
+            email = request.POST.get('email').lower()
+            password = request.POST.get('password')
+            user = authenticate(request, email=email, password=password)
 
-        try:
-            user = User.objects.get(email=email)
-        except:
-            messages.error(request, f'User email: {email} doesn\'t exit 😝')
-
-        user = authenticate(request, email=email, password=password)
-
-        if user is not None:
-            login(request, user)
-            return redirect('conversation-interface')
+            if user:
+                login(request, user)
+                return redirect('conversation-interface')
+            else:
+                messages.error(request, f'User email: {email} or Password  doesn\'t exit 😝')
         else:
-            messages.error(request, f'User email: {email} or Password  doesn\'t exit 😝')
+            messages.error(request, "Invalid reCAPTCHA. Please try again 😝.")
 
     context = {
         'page': page,
@@ -118,6 +119,11 @@ def password_reset_confirm(request, uidb64, token):
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = 'base/password_reset_complete.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['date'] = timezone.now().strftime("%a %d %B %Y")
+        return context
 
 def password_reset_complete(request):
     view = CustomPasswordResetCompleteView.as_view()

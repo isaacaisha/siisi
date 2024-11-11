@@ -6,15 +6,31 @@ from django.shortcuts import render, get_object_or_404
 from django.http import FileResponse, JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+
+# Models from the same Django app
 from ..models import Conversation
 from ..forms import TextAreaForm, TextAreaDrawingIndex
-from .utils_chat_gpt import find_most_relevant_conversation, generate_conversation_context, handle_llm_response, save_to_database
+
+# Import helper functions from utils_chat_gpt
+from .utils_chat_gpt import (
+    find_most_relevant_conversation,
+    generate_conversation_context,
+    handle_llm_response,
+    save_to_database
+)
+
+# Langchain and OpenAI integration
 from langchain.chains import ConversationChain
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
-from langdetect import detect
-from datetime import datetime
 
+# Conversation memory
+from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
+
+# Language detection
+from langdetect import detect
+
+# Date and time handling
+from datetime import datetime
 
 
 openai = OpenAIEmbeddings(api_key=os.getenv("OPENAI_API_KEY"))
