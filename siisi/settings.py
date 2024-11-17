@@ -14,6 +14,7 @@ import os
 import environ
 from decouple import config
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 
 # Initialize environment variables
@@ -29,17 +30,55 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = config('DEBUG', default=True, cast=bool)
 
-## To Reset Password For Developement
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# To Reset Password For Production 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast=int)
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-#DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+# Use production email settings only if DEBUG is False
+if not DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = config('EMAIL_HOST')
+    EMAIL_PORT = config('EMAIL_PORT', cast=int)
+    EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Ensuring security settings are enforced only in production
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+else:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False
+
+
+ALLOWED_HOSTS = [
+    'siisi.copromanager.pro',
+    'www.siisi.copromanager.pro',
+    '142.93.235.205', '0.0.0.0', '192.168.159.182',
+    '127.0.0.1', config('SERVER', default='127.0.0.1')
+]
+
+# Login URL for authentication redirects
+#LOGIN_URL = '/login/'
+LOGIN_URL = 'two_factor:login'
+LOGIN_REDIRECT_URL = 'conversation-interface'  # Redirect to your desired page after login
+
+# this one is optional
+#LOGIN_REDIRECT_URL = 'two_factor:profile'
+
+# Optional: Customize 2FA settings
+TWO_FACTOR_PATCH_ADMIN = True  # Apply 2FA to Django admin
+TWO_FACTOR_LOGIN_TEMPLATE = 'two_factor/login_register.html'
+TWO_FACTOR_QR_FACTORY = 'qrcode.image.pil.PilImage'  # Generates QR codes for authenticator apps
+
+# Optional: Control when users should be redirected to setup
+TWO_FACTOR_AUTO_SETUP = False  # If False, users must manually complete the setup
+
+#OTP_EMAIL_SENDER = config("EMAIL_HOST_USER")
 
 
 # To route traffic through OWASP ZAP for testing
@@ -87,19 +126,6 @@ RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
 
 RECAPTCHA_REQUIRED_SCORE = 0.85  # For reCAPTCHA v3
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool)
-
-ALLOWED_HOSTS = [
-    'siisi.copromanager.pro',
-    'www.siisi.copromanager.pro',
-    '142.93.235.205', '0.0.0.0', '192.168.31.182',
-    '127.0.0.1', config('SERVER', default='127.0.0.1')
-]
-
-# Login URL for authentication redirects
-LOGIN_URL = '/login/'
-
 
 # Application definition
 
@@ -114,22 +140,37 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
 
     'django_recaptcha',
+    # 2AF Authentication
+    'two_factor_auth',
+    'django_otp',
+    'django_otp.plugins.otp_static',
+    'django_otp.plugins.otp_totp',
+    'django_otp.plugins.otp_email',  # <- if you want email capability.
+    #'otp_yubikey',
+    'two_factor',
+    'two_factor.plugins.phonenumber',  # <- if you want phone number capability.
+    'two_factor.plugins.email',  # <- if you want email capability.
+    #'two_factor.plugins.yubikey',  # <- for yubikey capability.
 
     #'rest_framework',
     #'corsheaders',
 ]
 
-AUTH_USER_MODEL = 'base.User'
+AUTH_USER_MODEL = 'two_factor_auth.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    #that detects the user's preferred language from their browser settings or session and applies it
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 2AF Authentication
+    'django_otp.middleware.OTPMiddleware',
 ]
 
 ROOT_URLCONF = 'siisi.urls'
@@ -196,13 +237,25 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGES = [
+    ('en', _('English')),
+    ('fr', _('French')),
+    ('es', _('Spanish')),  # Add other languages as needed
+]
+
+#LANGUAGE_CODE = 'en-us'  # Default language
+LANGUAGE_CODE = 'fr'  # Default language
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_TZ = True
+
+# Set the directory for translation files
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -222,18 +275,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Directory for additional static files not in app directories
-#STATICFILES_DIRS = [
-#    BASE_DIR / 'static',  # This is for static files you want to use in development.
-#]
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Ensure this is correct for development
+    os.path.join(BASE_DIR, 'static'),  # This is for static files you want to use in development.
 ]
 
 # Media files (Uploaded by users)
 MEDIA_URL = '/images/'
-
-# Directory where user-uploaded media files will be stored
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # This is where uploaded media files will be stored.
 MEDIA_ROOT = BASE_DIR / 'static/images'

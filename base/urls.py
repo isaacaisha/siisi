@@ -1,7 +1,5 @@
 from django.urls import path
 from .views import (
-    loginPage, logoutUser, logoutUserToChat, registerPage,
-    password_reset_request, password_reset_done, password_reset_confirm, password_reset_complete,
     conversationInterface, interfaceAnswer, serveAudioFromDb, latestAudioUrl,
     allConversations, updateLike, likedConversations,
     ConversationById, ConversationSelected,deleteConversation,
@@ -15,17 +13,6 @@ from .views import (
 # Create your urls here.
 
 urlpatterns = [
-    path('login/', loginPage, name='login'),
-    path('logout/', logoutUser, name='logout'),
-    path('logout-to-chat/', logoutUserToChat, name='logout-to-chat'),
-    path('register/', registerPage, name='register'),
-    
-    # Password Reset URLs
-    path('password_reset/', password_reset_request, name='password_reset'),
-    path('password_reset/done/', password_reset_done, name='password_reset_done'),
-    path('reset/<uidb64>/<token>/', password_reset_confirm, name='password_reset_confirm'),
-    path('reset/done/', password_reset_complete, name='password_reset_complete'),
-
     path('conversation-interface', conversationInterface, name='conversation-interface'),
     path('interface-answer/', interfaceAnswer, name='interface-answer'),
     path('audio/<int:conversation_id>/', serveAudioFromDb, name='serve_audio_from_db'),
@@ -39,7 +26,7 @@ urlpatterns = [
     path('databse-conversation/', conversationsDatabase, name='databse-conversation'),
     path('delete-data/', deleteData, name='delete-data'),
 
-    path('', chatForum, name='chat-forum'),
+    path('chat-forum', chatForum, name='chat-forum'),
     path('drawing-generator/', drawingGenerator, name='drawing-generator'),
     path('website-review-generator/', websiteReviewGenerator, name='website-review-generator'),
     path('liked-reviews/', likedReviews, name='liked-reviews'),

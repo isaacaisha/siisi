@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,  include
+from two_factor.urls import urlpatterns as tf_urls
+
 from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include(tf_urls)),  # Include 2FA URLs
+    path('', include('two_factor_auth.urls')),
     path('', include('base.urls')),
     #path('api', include('base.api.urls')),
 ]

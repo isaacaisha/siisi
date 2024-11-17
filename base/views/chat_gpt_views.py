@@ -7,6 +7,9 @@ from django.http import FileResponse, JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 
+# 2 Factor Authentication integration
+from django_otp.decorators import otp_required
+
 # Models from the same Django app
 from ..models import Conversation
 from ..forms import TextAreaForm, TextAreaDrawingIndex
@@ -40,7 +43,9 @@ conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 memory_summary = ConversationSummaryBufferMemory(llm=llm, max_token_limit=3)
 
 
+# View for the VIP page, requiring 2FA status
 @login_required
+@otp_required
 def conversationInterface(request):
     writing_text_form = TextAreaForm()
     drawing_form = TextAreaDrawingIndex()
@@ -66,7 +71,6 @@ def conversationInterface(request):
     return render(request, 'base/conversation_interface.html', context)
 
 
-@login_required
 def interfaceAnswer(request):
     if request.method == 'POST':
         # Get the user's input from the POST request
@@ -141,7 +145,6 @@ def interfaceAnswer(request):
         return JsonResponse({"error": "Invalid request method"}, status=400)
 
 
-@login_required
 def serveAudioFromDb(request, conversation_id):
     """Serve audio file from a specific conversation"""
     conversation = get_object_or_404(Conversation, id=conversation_id)
@@ -156,7 +159,6 @@ def serveAudioFromDb(request, conversation_id):
         return HttpResponse("Audio not found", status=404)
 
 
-@login_required
 def latestAudioUrl(request):
     """Provide the URL for the latest audio in user's conversation"""
     latest_conversation = Conversation.objects.filter(owner=request.user).order_by('-created_at').first()

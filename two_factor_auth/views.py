@@ -1,14 +1,20 @@
+from two_factor.views import LoginView
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse_lazy
-from ..forms import MyUserCreationForm, LoginForm, CustomPasswordResetConfirmForm
-from ..models import User
-from django.utils import timezone
+
+from .forms import MyUserCreationForm, LoginForm, CustomPasswordResetConfirmForm
 
 from django.contrib.auth.forms import PasswordResetForm
 from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCompleteView
-from django.shortcuts import render, redirect
+
+from django.utils import timezone
+
+
+class CustomLoginView(LoginView):
+    template_name = 'custom_login.html'
 
 
 def registerPage(request):
@@ -23,8 +29,9 @@ def registerPage(request):
                 user = form.save(commit=False)
                 user.username = user.username.lower()
                 user.save()
-                messages.success(request, 'Registration successful! Please log in.')
-                return redirect('login')
+                messages.success(request, 'Registration successful! Please finish the setup.')
+                # Redirect to two_factor setup
+                return redirect('two_factor:setup')
             except Exception as e:
                 messages.error(request, f'Sorry, an error occurred: {e}')
         else:
@@ -38,7 +45,7 @@ def registerPage(request):
         'hide_edit_user': hide_edit_user,
         'date': timezone.now().strftime("%a %d %B %Y"),
     }
-    return render(request, 'base/login_register.html', context)
+    return render(request, 'two_factor_auth/login_register.html', context)
     
     
 def loginPage(request):
@@ -55,7 +62,8 @@ def loginPage(request):
 
             if user:
                 login(request, user)
-                return redirect('conversation-interface')
+                # Redirect to two_factor login
+                return redirect('two_factor:login')
             else:
                 messages.error(request, f'User email: {email} or Password  doesn\'t exit 😝')
         else:
@@ -68,7 +76,7 @@ def loginPage(request):
         'hide_edit_user': hide_edit_user,
         'date': timezone.now().strftime("%a %d %B %Y"),
         }
-    return render(request, 'base/login_register.html', context)
+    return render(request, 'two_factor_auth/login_register.html', context)
 
 
 def logoutUser(request):
@@ -96,14 +104,14 @@ def password_reset_request(request):
         'form': form,
         'date': timezone.now().strftime("%a %d %B %Y")
     }
-    return render(request, 'base/password_reset_request.html', context)
+    return render(request, 'two_factor_auth/password_reset_request.html', context)
 
 def password_reset_done(request):
-    return render(request, 'base/password_reset_done.html')
+    return render(request, 'two_factor_auth/password_reset_done.html')
 
 
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = 'base/password_reset_confirm.html'
+    template_name = 'two_factor_auth/password_reset_confirm.html'
     form_class = CustomPasswordResetConfirmForm
     success_url = reverse_lazy('password_reset_complete')
 
@@ -118,7 +126,7 @@ def password_reset_confirm(request, uidb64, token):
 
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = 'base/password_reset_complete.html'
+    template_name = 'two_factor_auth/password_reset_complete.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

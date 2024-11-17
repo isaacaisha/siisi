@@ -1454,7 +1454,7 @@ textarea#userInput {
 input {
     color: #72e9fc !important;
     background-color: rgb(105, 109, 151);
-    font-size: 5vw !important;
+    font-size: 4.5vw !important;
 }
 
 textarea {
@@ -1860,4 +1860,58 @@ div.activities__boxHeader.roomListRoom__header > a > p {
   white-space: normal !important; /* Allows text to wrap */
     overflow-wrap: break-word !important; /* Wraps long words to prevent overflow */
     word-break: break-word !important; /* Forces line breaks within long words if needed */
+}
+
+/*==============================
+=>  2AF Authentication Section
+================================*/
+/* Custom CSS for QR Code Size */
+.qr-code-img > img {  
+    width: 100px !important;
+    height: 100px !important;
+}
+
+#id_auth-username, #id_auth-password,
+#id_token-otp_token, #id_generator-token, #id_validation-token {
+  background-color: #fff;
+  color: #333 !important;
+  margin-bottom: 1rem !important;
+}
+
+#id_method-method > div {
+  margin: 1rem;
+  text-align: left !important;
+}
+
+#id_generator-token {
+  width: max-content; /* Ensures the width is based on the content */
+  font-size: 1.5em; /* Increases the font size */
+  padding: 10px; /* Adds extra space inside the element */
+  margin: 10px; /* Adds space around the element */
+  border: 1px solid #ccc; /* Optional: to make the size more noticeable */
+  display: inline-block; /* Ensures it respects the max-content width */
+}
+
+/* footer btn */
+#content > div > form > table {
+  margin-bottom: 5rem !important;
+}
+
+label {
+    padding-right: 10px;
+    text-align: left;
+}
+
+.replay-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.replay-btn:hover {
+  background-color: #45a049;
 }

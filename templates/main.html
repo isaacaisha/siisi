@@ -81,9 +81,13 @@
       <span class="dark-mode-text">Dark Mode</span>
     </div>
 
+    {% block navbar %}
     {% include 'navbar.html' %}
+    {% endblock %}
 
+    {% block work_in_progress %}
     <p class="text-center mb-5"><img src="https://media.giphy.com/media/QJfCtrknxjcGPnRfMl/giphy.gif" style="width:19%;"></p>
+    {% endblock %}
 
     <!-- Room List Start -->
     <!-- { if not hide_edit_user and request.user == user } -->
