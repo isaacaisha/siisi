@@ -97,27 +97,21 @@
       <div class="profile">
         <div class="profile__avatar">
           <div class="avatar avatar--large active">
-            <img src="{{user.avatar.url}}" />
+            {% if user.is_authenticated and user.avatar %}
+            <img src="{{ user.avatar.url }}" alt="{{ user.username }}'s Avatar" />
+            {% else %}
+            <img src="{% static 'images/avatar.svg' %}" alt="Default Avatar" />
+            {% endif %}
           </div>
         </div>
         <div class="profile__info">
-          <h3>{{user.username}} 🚀</h3>
-          <p>{{user.email}}</p>
-    
+          {% if user.is_authenticated %}
+          <h3>{{ user.username }} 🚀</h3>
+          <p>{{ user.email }}</p>
           {% block edit_profile_btn %}
-          <a href="{% url 'update-user' %}" 
-          class="btn btn--main btn--pill">Edit Profile</a>
+          <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
           {% endblock %}
-        </div>
-      </div>
-    </div>
-    {% else %}
-    <div class="roomList">
-      <div class="profile">
-        <div class="profile__avatar">
-          <div class="avatar avatar--large active">
-            <img src="{% static 'images/avatar.svg' %}" />
-          </div>
+          {% endif %}
         </div>
       </div>
     </div>

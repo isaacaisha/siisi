@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(tf_urls)),  # Include 2FA URLs
     path('', include('two_factor_auth.urls')),
+    path('', include('chatgpt.urls')),
     path('', include('base.urls')),
     #path('api', include('base.api.urls')),
 ]

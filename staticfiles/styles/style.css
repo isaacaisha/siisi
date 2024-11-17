@@ -1444,6 +1444,7 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
 ================================*/
 textarea#userInput {
     color: #72e9fc !important;
+    font-size: smaller !important;
 }
 
 #userInput,
@@ -1454,7 +1455,7 @@ textarea#userInput {
 input {
     color: #72e9fc !important;
     background-color: rgb(105, 109, 151);
-    font-size: 5vw !important;
+    font-size: 6vw !important;
 }
 
 textarea {
@@ -1787,4 +1788,138 @@ textarea#generatedText {
     max-width: 100%;
     height: auto;
     width: auto;
+}
+
+/*==============================
+=>  Dark-Mode Section
+================================*/
+body.dark-mode {
+  background-color: #111;
+  color: #999 !important; /* Soft dark gray */
+}
+
+.togglebutton {
+  display: flex;
+  margin: 20px;
+}
+
+.togglebutton label {
+  position: relative;
+  display: inline-block;
+  width: 37px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.togglebutton input {
+  display: none; /* Hide the default checkbox */
+}
+
+.togglebutton .toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: background-color 0.4s;
+}
+
+.togglebutton .toggle::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* Dark Mode Styling */
+.togglebutton input:checked + .toggle {
+  background-color: #4d4d4d;
+}
+
+.togglebutton input:checked + .toggle::before {
+  transform: translateX(19px);
+}
+
+/* Dark Mode Text */
+.togglebutton .dark-mode-text {
+  margin-left: 10px;
+  color: #4d4d4d;
+  font-weight: bold;
+}
+
+/*==============================
+=>  element that contains all the emails within the .roomListRoom__author class
+================================*/
+div.activities__boxHeader.roomListRoom__header > a > p {
+  white-space: normal !important; /* Allows text to wrap */
+    overflow-wrap: break-word !important; /* Wraps long words to prevent overflow */
+    word-break: break-word !important; /* Forces line breaks within long words if needed */
+}
+
+/*==============================
+=>  2AF Authentication Section
+================================*/
+/* Custom CSS for QR Code Size */
+.qr-code-img > img {  
+    width: 100px !important;
+    height: 100px !important;
+}
+
+#content td {
+  white-space: nowrap; /* Prevent text from wrapping if necessary */
+  overflow: hidden; /* Hide overflow if it exists */
+}
+
+#chat-input, #id_auth-username, #id_auth-password,
+#id_token-otp_token, #id_generator-token, #id_validation-token {
+  background-color: #fff;
+  color: #333 !important;
+  margin-bottom: 1rem !important;
+  table-layout: fixed; /* Ensures table cells don't stretch unnaturally */
+  width: 100%; /* Optional: Make the table responsive */
+}
+
+#id_method-method > div {
+  margin: 1rem;
+  text-align: left !important;
+}
+
+#id_generator-token {
+  width: max-content; /* Ensures the width is based on the content */
+  font-size: 1.5em; /* Increases the font size */
+  padding: 10px; /* Adds extra space inside the element */
+  margin: 10px; /* Adds space around the element */
+  border: 1px solid #ccc; /* Optional: to make the size more noticeable */
+  display: inline-block; /* Ensures it respects the max-content width */
+}
+
+/* footer btn */
+#content > div > form > table {
+  margin-bottom: 5rem !important;
+}
+
+label {
+    padding-right: 15px;
+    text-align: left;
+}
+
+.replay-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.replay-btn:hover {
+  background-color: #45a049;
 }

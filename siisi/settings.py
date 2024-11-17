@@ -137,8 +137,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'base.apps.BaseConfig',
-
     'django_recaptcha',
     # 2AF Authentication
     'two_factor_auth',
@@ -151,6 +149,9 @@ INSTALLED_APPS = [
     'two_factor.plugins.phonenumber',  # <- if you want phone number capability.
     'two_factor.plugins.email',  # <- if you want email capability.
     #'two_factor.plugins.yubikey',  # <- for yubikey capability.
+
+    'chatgpt.apps.ChatgptConfig',
+    'base.apps.BaseConfig',
 
     #'rest_framework',
     #'corsheaders',
@@ -280,11 +281,11 @@ STATICFILES_DIRS = [
 ]
 
 # Media files (Uploaded by users)
-MEDIA_URL = '/images/'
+MEDIA_URL = '/media/'
 
 # This is where uploaded media files will be stored.
 MEDIA_ROOT = BASE_DIR / 'static/images'
-
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

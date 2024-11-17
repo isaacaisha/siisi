@@ -81,11 +81,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
-
-def logoutUserToChat(request):
-    logout(request)
-    return redirect('chat-forum')
+    return redirect('index')
 
 
 def password_reset_request(request):

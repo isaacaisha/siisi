@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (
-    loginPage, logoutUser, logoutUserToChat, registerPage,
+    registerPage, loginPage, logoutUser,
     password_reset_request, password_reset_done,
     password_reset_confirm, password_reset_complete,
 )
@@ -8,9 +8,8 @@ from .views import (
 
 urlpatterns = [
     # 2FA Authentications URLs
-    path('', loginPage, name='login'),
+    path('login', loginPage, name='login'),
     path('logout/', logoutUser, name='logout'),
-    path('logout-to-chat/', logoutUserToChat, name='logout-to-chat'),
     path('register/', registerPage, name='register'),
     
     # Password Reset URLs
