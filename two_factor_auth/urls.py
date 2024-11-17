@@ -8,7 +8,7 @@ from .views import (
 
 urlpatterns = [
     # 2FA Authentications URLs
-    path('login', loginPage, name='login'),
+    path('login/', loginPage, name='login'),
     path('logout/', logoutUser, name='logout'),
     path('register/', registerPage, name='register'),
     

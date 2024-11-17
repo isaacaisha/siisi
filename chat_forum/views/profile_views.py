@@ -23,7 +23,7 @@ def userProfile(request, pk):
         'hide_edit_user': hide_edit_user,
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
-    return render(request, 'base/profile.html', context)
+    return render(request, 'chat_forum/profile.html', context)
 
 
 @login_required(login_url='login')
@@ -41,4 +41,4 @@ def updateUser(request):
         'form': form,
         'date': datetime.now().strftime("%a %d %B %Y"),
     }
-    return render(request, 'base/update_user.html', context)
+    return render(request, 'chat_forum/update_user.html', context)

@@ -1,5 +1,3 @@
-from django.forms import ModelForm
-from .models import Room, User
 from django import forms
 
 # Create your forms here.
@@ -40,16 +38,4 @@ class DatabaseForm(forms.Form):
         'class': 'form-control',
         'placeholder': 'Enter Data ID to delete'
     }))
-
-
-class RoomForm(ModelForm):
-    class Meta:
-        model = Room
-        fields =  '__all__'
-        exclude = ['host', 'participants']
-
-
-class UserForm(ModelForm):
-    class Meta:
-        model = User
-        fields = ['avatar', 'name', 'username', 'email', 'bio']
+    

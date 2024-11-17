@@ -10,7 +10,8 @@ from typing import Optional
 from datetime import datetime
 
 from ..forms import ConversationIdForm, DeleteForm, DatabaseForm
-from ..models import Conversation, User, Message, BlogPost, WebsiteReview, DrawingDatabase #Theme
+from ..models import Conversation, User, BlogPost, WebsiteReview, DrawingDatabase #Theme
+from chat_forum.models import Message
 
 
 # Define the table mapping

@@ -2,10 +2,12 @@
 {% load i18n %}
 {% load static %}
 
+{% block navbar %}{% endblock %}
 {% block work_in_progress %}{% endblock %}
+{% block profile__avatar %}{% endblock %}
 
 {% block favicon %}
-<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon1.ico' %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
 {% endblock %}
 
 {% block title %}Home{% endblock %}
@@ -14,7 +16,7 @@
 <div class="chat-container">
     <!-- Header Section -->
     <header class="bg-secondary text-white p-4 text-center mt-5">
-        <h1>Chat AI</h1>
+        <h1>{% blocktrans trimmed %}Chat AI{% endblocktrans %}</h1>
     </header>
     
     <!-- Main Chat Section -->
@@ -32,7 +34,9 @@
                     <input id="chat-input" type="text" class="border border-primary bg-white text-dark" 
                            placeholder="Type your message here...">
                     <br>
-                    <button type="submit" class="btn bg-secondary text-white p-4">Send</button>
+                    <button type="submit" class="btn bg-secondary text-white p-4">
+                        {% blocktrans trimmed %}Send{% endblocktrans %}
+                    </button>
                 </div>
             </form>
         </div>
@@ -41,7 +45,7 @@
         <div class="container mt-5">
             <div class="layout__boxHeader justify-content-center">
                 <div class="layout__boxTitle">
-                    <h3>-¡!¡- VIP Login -¡!¡-</h3>
+                    <h3>-{% blocktrans trimmed %}¡!¡- VIP Login -¡!¡-{% endblocktrans %}</h3>
                 </div>
             </div>
             <div class="layout__body">
@@ -50,11 +54,17 @@
                     <div class="col-md-4">
                         <div class="card shadow-sm border-success">
                             <div class="card-body text-center">
-                                <h5 class="card-title text-success">Login to VIP Dashboard</h5>
-                                <p class="card-text">Access your account and manage your VIP profile.</p>
+                                <h5 class="card-title text-success">
+                                    {% blocktrans trimmed %}Login to VIP Dashboard{% endblocktrans %}
+                                </h5>
+                                <p class="card-text">
+                                    {% blocktrans trimmed %}
+                                        Access your account and manage your VIP profile.
+                                    {% endblocktrans %}
+                                </p>
                                 <a href="{% url 'login' %}" 
                                 class="btn btn-success bg-success justify-content-center w-100">
-                                    Login
+                                    {% blocktrans trimmed %}Login{% endblocktrans %}
                                 </a>
                             </div>
                         </div>
@@ -63,8 +73,10 @@
 
                 <!-- Sign Up Action -->
                 <div class="auth__action text-center mt-3">
-                    <p>Haven't signed up yet?</p>
-                    <a href="{% url 'register' %}" class="btn btn--link">Sign Up</a>
+                    <p>{% blocktrans trimmed %}Haven't signed up yet?{% endblocktrans %}</p>
+                    <a href="{% url 'register' %}" class="btn btn--link">
+                        {% blocktrans trimmed %}Sign Up{% endblocktrans %}
+                    </a>
                 </div>
             </div>
         </div>
@@ -72,7 +84,7 @@
         <!-- Footer Section -->
         <div class="text-center mb-3">
             <span class="copyright">
-                © DBT Copyright {{ date }}
+                {% blocktrans trimmed %}© DBT Copyright {{ date }}{% endblocktrans %}
             </span>
         </div>
     </main>

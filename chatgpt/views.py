@@ -10,7 +10,6 @@ from .models import ChatData
 from gtts import gTTS
 from django.utils import timezone
 
-
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 

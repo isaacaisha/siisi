@@ -14,6 +14,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.i18n import i18n_patterns
+from django.views.i18n import set_language
+
 from django.contrib import admin
 from django.urls import path,  include
 from two_factor.urls import urlpatterns as tf_urls
@@ -22,13 +25,18 @@ from django.conf import settings
 from django.conf.urls.static import static 
 
 urlpatterns = [
+    path('i18n/setlang/', set_language, name='set_language'),  # Language switching route
+]
+
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include(tf_urls)),  # Include 2FA URLs
     path('', include('two_factor_auth.urls')),
     path('', include('chatgpt.urls')),
     path('', include('base.urls')),
+    path('', include('chat_forum.urls')), 
     #path('api', include('base.api.urls')),
-]
+)
 
 # Serve media files during development
 if settings.DEBUG:

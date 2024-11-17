@@ -30,7 +30,7 @@ def chatForum(request):
         'room_messages': room_messages,
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
-    return render(request, 'base/chat_forum.html', context)
+    return render(request, 'chat_forum/chat_forum.html', context)
 
 
 @login_required
@@ -70,4 +70,4 @@ def room(request, pk):
             }
         # Print the captured data
         print(f"Room data: {json.dumps(room_data, indent=4)}")
-    return render(request, 'base/room.html', context)
+    return render(request, 'chat_forum/room.html', context)

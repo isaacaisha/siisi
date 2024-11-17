@@ -44,7 +44,7 @@ memory_summary = ConversationSummaryBufferMemory(llm=llm, max_token_limit=3)
 
 
 # View for the VIP page, requiring 2FA status
-@login_required
+@login_required(login_url='index')
 @otp_required
 def conversationInterface(request):
     writing_text_form = TextAreaForm()

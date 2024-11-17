@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from base.views.chat_forum_views import room
+from chat_forum.views.chat_forum_views import room
 
 from ..models import Room, Topic, Message
 from ..forms import RoomForm
@@ -36,7 +36,7 @@ def createRoom(request):
         'topics': topics,
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
-    return render(request, 'base/room_form.html', context)
+    return render(request, 'chat_forum/room_form.html', context)
 
 
 @login_required(login_url='/login')
@@ -63,7 +63,7 @@ def updateRoom(request, pk):
         'topics': topics,
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
-    return render(request, 'base/room_form.html', context)
+    return render(request, 'chat_forum/room_form.html', context)
 
 
 @login_required(login_url='/login')
@@ -97,7 +97,7 @@ def deleteRoom(request, pk):
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
 
-    return render(request, 'base/delete.html', context)
+    return render(request, 'chat_forum/delete.html', context)
 
 
 @login_required(login_url='/login')
@@ -118,7 +118,7 @@ def deleteMessage(request, pk):
         'date': datetime.now().strftime("%a %d %B %Y"),
         }
 
-    return render(request, 'base/delete.html', context)
+    return render(request, 'chat_forum/delete.html', context)
 
 
 def topicsPage(request):
@@ -131,7 +131,7 @@ def topicsPage(request):
         'date': datetime.now().strftime("%a %d %B %Y"),
     }
 
-    return render(request, 'base/topics.html', context)
+    return render(request, 'chat_forum/topics.html', context)
 
 
 def activityPage(request):
@@ -146,4 +146,4 @@ def activityPage(request):
         'date': datetime.now().strftime("%a %d %B %Y"),
     }
 
-    return render(request, 'base/activity.html', context)
+    return render(request, 'chat_forum/activity.html', context)
