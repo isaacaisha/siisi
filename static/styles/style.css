@@ -485,7 +485,8 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
 .layout__boxHeader {
   display: flex;
   padding: 1.5rem;
-  background-color: var(--color-dark-light);
+  /*background-color: var(--color-dark-light);*/
+  background-color: #6c757d;
 }
 
 .layout__boxTitle {
@@ -1323,6 +1324,10 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
     border: 0.1rem solid #9ED2C6;
 }
 
+#navbarSupportedContent > ul > li > a > i {
+  color: rgb(171, 81, 245);
+}
+
 /*==============================
 =>  Navbar Styles
 ================================*/
@@ -1417,10 +1422,6 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
 .grey {
   color: rgb(178, 189, 189) !important;
 }
-/* Btn back-home from conversation detailed 
-#content > div:nth-child(4) > main > div > div > button > a {
-  color: rgb(178, 189, 189) !important;
-}*/
 
 .green {
     color: rgb(52, 97, 52);

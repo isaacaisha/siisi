@@ -33,28 +33,6 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-# Use production email settings only if DEBUG is False
-if not DEBUG:
-    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-    EMAIL_HOST = config('EMAIL_HOST')
-    EMAIL_PORT = config('EMAIL_PORT', cast=int)
-    EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
-    EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
-# Ensuring security settings are enforced only in production
-if not DEBUG:
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_SSL_REDIRECT = True
-else:
-    SESSION_COOKIE_SECURE = False
-    CSRF_COOKIE_SECURE = False
-    SECURE_SSL_REDIRECT = False
-
-
 ALLOWED_HOSTS = [
     'siisi.copromanager.pro',
     'www.siisi.copromanager.pro',
@@ -62,48 +40,18 @@ ALLOWED_HOSTS = [
     '127.0.0.1', config('SERVER', default='127.0.0.1')
 ]
 
-# Login URL for authentication redirects
-#LOGIN_URL = '/login/'
-LOGIN_URL = 'two_factor:login'
-LOGIN_REDIRECT_URL = 'conversation-interface'  # Redirect to your desired page after login
-
-# this one is optional
-#LOGIN_REDIRECT_URL = 'two_factor:profile'
-
-# Optional: Customize 2FA settings
-TWO_FACTOR_PATCH_ADMIN = True  # Apply 2FA to Django admin
-TWO_FACTOR_LOGIN_TEMPLATE = 'two_factor/login_register.html'
-TWO_FACTOR_QR_FACTORY = 'qrcode.image.pil.PilImage'  # Generates QR codes for authenticator apps
-
-# Optional: Control when users should be redirected to setup
-TWO_FACTOR_AUTO_SETUP = False  # If False, users must manually complete the setup
-
-#OTP_EMAIL_SENDER = config("EMAIL_HOST_USER")
-
-
 # To route traffic through OWASP ZAP for testing
 PROXY = {
     'http': 'http://127.0.0.1:8080',
     'https': 'http://127.0.0.1:8080',
 }
 
-
 CSRF_TRUSTED_ORIGINS = [
     'https://siisi.copromanager.pro',
-    'https://www.siisi.copromanager.pro'
+    'https://www.siisi.copromanager.pro',
+    'http://127.0.0.1:8001',
+    'http://0.0.0.0:8001'
 ]
-
-# Set secure headers (Optional but recommended for production)
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-X_FRAME_OPTIONS = 'DENY'
-
-SESSION_COOKIE_SECURE = not config('DEBUG', default=True, cast=bool)
-CSRF_COOKIE_SECURE = not config('DEBUG', default=True, cast=bool)
-SECURE_SSL_REDIRECT = not config('DEBUG', default=True, cast=bool)
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-SESSION_COOKIE_AGE = 900  # 15 minutes
-
 
 # Allow all origins to access the API
 # CORS_ALLOW_ALL_ORIGINS = True  # Not recommended for production
@@ -117,14 +65,53 @@ SESSION_COOKIE_AGE = 900  # 15 minutes
 # Other CORS settings you might use
 CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication
 
-# Credentials for Openai
-OPENAI_API_KEY = api_key=config("OPENAI_API_KEY")
+# Login URL for authentication redirects
+#LOGIN_URL = '/login/'
+LOGIN_URL = 'two_factor:login'
+LOGIN_REDIRECT_URL = 'conversation-interface'  # Redirect to your desired page after login
+LOGOUT_REDIRECT_URL = 'index'
+
+# Optional: Customize 2FA settings
+TWO_FACTOR_PATCH_ADMIN = True  # Apply 2FA to Django admin
+TWO_FACTOR_LOGIN_TEMPLATE = 'two_factor/login_register.html'
+TWO_FACTOR_QR_FACTORY = 'qrcode.image.pil.PilImage'  # Generates QR codes for authenticator apps
+
+# Optional: Control when users should be redirected to setup
+TWO_FACTOR_AUTO_SETUP = False  # If False, users must manually complete the setup
+
+#OTP_EMAIL_SENDER = config("EMAIL_HOST_USER")
 
 # reCAPTCHA settings for v2 and v3
 RECAPTCHA_PUBLIC_KEY = config('RECAPTCHA_PUBLIC_KEY')
 RECAPTCHA_PRIVATE_KEY = config('RECAPTCHA_PRIVATE_KEY')
 
 RECAPTCHA_REQUIRED_SCORE = 0.85  # For reCAPTCHA v3
+
+# Set secure headers (Optional but recommended for production)
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+
+# Ensuring security settings are enforced only in production
+SESSION_COOKIE_SECURE = not config('DEBUG', default=True, cast=bool)
+CSRF_COOKIE_SECURE = not config('DEBUG', default=True, cast=bool)
+SECURE_SSL_REDIRECT = not config('DEBUG', default=True, cast=bool)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+SESSION_COOKIE_AGE = 900  # 15 minutes
+
+# Use production email settings only if DEBUG is False
+if not DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = config('EMAIL_HOST')
+    EMAIL_PORT = config('EMAIL_PORT', cast=int)
+    EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Credentials for Openai
+OPENAI_API_KEY = api_key=config("OPENAI_API_KEY")
 
 
 # Application definition

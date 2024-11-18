@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-17 21:26+0100\n"
+"POT-Creation-Date: 2024-11-18 01:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1564,18 +1564,22 @@ msgstr ""
 msgid "Error verifying reCAPTCHA, please try again."
 msgstr ""
 
-#: siisi/settings.py:247
+#: siisi/settings.py:248
 msgid "English"
 msgstr ""
 
-#: siisi/settings.py:248
+#: siisi/settings.py:249
 msgid "French"
 msgstr ""
 
-#: siisi/settings.py:249
+#: siisi/settings.py:250
 msgid "Spanish"
 msgstr ""
 
-#: siisi/settings.py:250
+#: siisi/settings.py:251
 msgid "Portuguese"
+msgstr ""
+
+#: templates/main.html:8
+msgid "View this category in:"
 msgstr ""
