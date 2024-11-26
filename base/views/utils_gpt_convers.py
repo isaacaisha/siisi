@@ -93,7 +93,7 @@ def render_conversation_template(request, template_name: str, context: dict):
     return render(request, template_name, context)
 
 
-@login_required
+@login_required(login_url='login')
 def allConversations(request):
     owner_id = request.user.id
     filters = ConversationFilters(
@@ -126,7 +126,7 @@ def allConversations(request):
     return render_conversation_template(request, 'base/conversation_all.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 def likedConversations(request):
     owner_id = request.user.id
     filters = ConversationFilters(
@@ -161,7 +161,6 @@ def likedConversations(request):
     return render_conversation_template(request, 'base/conversations_liked.html', context)
 
 
-@login_required
 def updateLike(request, conversation_id):
     if request.method == 'POST':
         try:
@@ -175,7 +174,7 @@ def updateLike(request, conversation_id):
     return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 
-@login_required
+@login_required(login_url='login')
 def ConversationById(request):
     select_conversation_form = ConversationIdForm(request.POST or None)
     context = {
@@ -191,7 +190,7 @@ def ConversationById(request):
     return render(request, 'base/conversation_by_id.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 def ConversationSelected(request, conversation_id):
     conversation_ = get_object_or_404(Conversation, pk=conversation_id)
     context = {
@@ -207,7 +206,7 @@ def ConversationSelected(request, conversation_id):
         return render(request, 'base/conversation_selected.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 def deleteConversation(request):
     delete_conversation_form = DeleteForm()
     context = {
@@ -231,7 +230,8 @@ def deleteConversation(request):
                 
     return render(request, 'base/conversation_delete.html', context)
 
-@login_required
+
+@login_required(login_url='login')
 def conversationsDatabase(request):
     database_form = DatabaseForm()
     conversations = Conversation.objects.order_by('-created_at').all()
@@ -270,7 +270,7 @@ def conversationsDatabase(request):
 
     return render(request, 'base/conversations_database.html', context)
 
-@login_required
+@login_required(login_url='login')
 def deleteData(request):
     database_form = DatabaseForm()
     context = {

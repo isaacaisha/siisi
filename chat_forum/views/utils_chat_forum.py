@@ -121,6 +121,7 @@ def deleteMessage(request, pk):
     return render(request, 'chat_forum/delete.html', context)
 
 
+@login_required(login_url='login')
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
@@ -134,6 +135,7 @@ def topicsPage(request):
     return render(request, 'chat_forum/topics.html', context)
 
 
+@login_required(login_url='login')
 def activityPage(request):
     # Set hide_edit_user to True only if the user is not logged in
     hide_edit_user = not request.user.is_authenticated

@@ -10,6 +10,7 @@ from ..models import Room, Topic, Message
 from datetime import datetime
 
 
+@login_required(login_url='login')
 def chatForum(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
 
@@ -33,7 +34,7 @@ def chatForum(request):
     return render(request, 'chat_forum/chat_forum.html', context)
 
 
-@login_required
+@login_required(login_url='login')
 def room(request, pk):
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all()

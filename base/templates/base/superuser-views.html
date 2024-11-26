@@ -1,4 +1,3 @@
-{% extends 'main.html' %}
 {% load i18n %}
 {% load static %}
 
@@ -8,45 +7,103 @@
 
 {% block title %}Super User Interface{% endblock %}
 
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}<link rel="stylesheet" href="{% static 'styles/wall-poster.css' %}" />{% endblock stylesheets %}
+
 {% block content %}
-<div class="chat-container">
-    <!-- Header Section -->
-    <header class="bg-secondary text-white p-4 text-center mt-5">
-        <h1>{% blocktrans trimmed %}-¡!¡-<br>Chat AI<br>Something Big<br>Is comming<br>-¡!¡-{% endblocktrans %}</h1>
-    </header>
+<!-- 
+Wall Poster Animation
+https://codepen.io/wakana-k/pen/MWZbVxm
+Copyright (c) 2023 by Wakana Y.K. @wakana-k
+-->
+<!-- Custom fonts for this template -->
 
-    <!-- Main Chat Section -->
-    <main class="flex flex-col flex-grow p-4">
-        <!-- Chat History -->
-        <div id="chat-history" class="chat-history mb-4" role="log" aria-live="polite">
-            <!-- Messages will be dynamically added here -->
-        </div>
+<div id="background">
+    <div id="blank"></div>
 
-        <!-- Chat Input Form -->
-        <div class="justify-center text-center mb-3">
-            <form method="POST" id="chat-form" class="flex w-full">
-                {% csrf_token %}
-                <div>
-                    <input id="chat-input" type="text" class="border border-primary bg-white text-dark"
-                        placeholder="Type your message here...">
-                    <br>
-                    <button type="submit" class="btn bg-secondary text-white p-4">
-                        {% blocktrans trimmed %}Send{% endblocktrans %}
-                    </button>
-                </div>
-            </form>
+    <label><input type="radio" name="photo" checked />
+        <div class="outer"
+            style="background-image:url(https://images.unsplash.com/photo-1620503374956-c942862f0372?&q=100&dpr=2&w=400);">
+            <div class="inner">
+                <p>Be Good,</p>
+            </div>
         </div>
+    </label>
+    <label><input type="radio" name="photo" />
+        <div class="outer"
+            style="background-image:url(https://images.unsplash.com/photo-1543848089-530aad06491a?&q=100&dpr=2&w=400);">
+            <div class="inner">
+                <p>Doing Good,</p>
+            </div>
+        </div>
+    </label>
+    <label><input type="radio" name="photo" />
+        <div class="outer"
+            style="background-image:url(https://images.unsplash.com/photo-1550684848-fac1c5b4e853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTQxODQ2NDZ8&ixlib=rb-4.0.3&q=100&dpr=2&w=400);">
+            <div class="inner text3">
+                <p style="font-size: smaller;">By Acting GOOD -¡!¡-</p>
+            </div>
+        </div>
+    </label>
 
-        <!-- Footer Section -->
-        <div class="text-center mt-5 mb-3">
-            <span class="copyright">
-                {% blocktrans trimmed %}© DBT Copyright {{ date }}{% endblocktrans %}
-            </span>
-        </div>
-    </main>
+    <div id="border"></div>
 </div>
 
-<script src="{% static 'js/index-chatgpt.js' %}"></script>
+<main>
+    <section>
+        <div>
+            <p id='arrow'>&raquo;</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h1>Wall Poster Animation</h1>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p></p>
+        </div>
+    </section>
+    <section>
+        <div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <h2>Photo credits</h2>
+            <p><br></p>
+            <ul>
+                <li>Kam Idris - <a target="_blank" href="https://unsplash.com/photos/_HqHX3LBN18">brown wooden framed
+                        yellow padded chair</a></li>
+                <li>Steve Johnson - <a target="_blank" href="https://unsplash.com/photos/4Djs1vdYov4">multicolored
+                        abstract painting</a></li>
+                <li>Pawel Czerwinski - <a target="_blank" href="https://unsplash.com/photos/vI5XwPbGvmY">white and blue
+                        smoke illustration</a></li>
+                <li>Rodion Kutsaiev - <a target="_blank" href="https://unsplash.com/photos/pVoEPpLw818">a close up of
+                        water droplets on a window</a></li>
+            </ul>
+            <p><br><b>on <a target="_blank" href="https://unsplash.com/">Unsplash</a>.</b></p>
+            <p><br></p>
+            <p>Thanks!</p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p></p>
+        </div>
+    </section>
+    <section>
+        <div>
+            <p></p>
+        </div>
+    </section>
+    <footer>
+        <a href="https://codepen.io/wakana-k/">@wakana-k</a>
+    </footer>
+</main>
+
+<script src="{% static 'js/wall-poster.js' %}"></script>
 
 {% block footer %}{% endblock %}
 

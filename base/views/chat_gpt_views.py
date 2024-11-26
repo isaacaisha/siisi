@@ -43,8 +43,7 @@ conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
 memory_summary = ConversationSummaryBufferMemory(llm=llm, max_token_limit=3)
 
 
-# View for the VIP page, requiring 2FA status
-@login_required(login_url='index')
+@login_required(login_url='login')
 def conversationInterface(request):
     writing_text_form = TextAreaForm()
     drawing_form = TextAreaDrawingIndex()
@@ -169,7 +168,9 @@ def latestAudioUrl(request):
         return JsonResponse({"error": "No audio found"}, status=404)
     
 
+# View for the VIP page, requiring 2FA status
 @otp_required
+@login_required(login_url='two_factor:login')
 def superuserViews(request):
     context = {
         'date': timezone.now().strftime("%a %d %B %Y"),

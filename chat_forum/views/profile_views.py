@@ -6,6 +6,7 @@ from ..forms import UserForm
 from datetime import datetime
 
 
+@login_required(login_url='login')
 def userProfile(request, pk):
     # Set hide_edit_user to True only if the user is not logged in
     hide_edit_user = request.user.is_authenticated
