@@ -1,0 +1,131 @@
+{% extends 'main.html' %}
+{% load i18n %}
+
+{% load static %}
+
+{% block work_in_progress %}{% endblock %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon7.ico' %}">
+{% endblock %}
+
+{% block title %}
+{% if page != 'login superuser' %}
+- Register Super User
+{% else %}
+- Login Super User
+{% endif %}
+{% endblock %}
+
+{% block profile__avatar %}{% endblock %}
+
+{% block content %}
+
+<main class="auth layout">
+  {% if page == 'login superuser' %}
+  <div class="">
+    <div class="container">
+      <div class="layout__boxHeader">
+        <div class="layout__boxTitle">
+          <h3>{% blocktrans trimmed %}-¡!¡- Login Super User -¡!¡-{% endblocktrans %}</h3>
+        </div>
+      </div>
+      <div class="layout__body">
+        <h2 class="auth__tagline">-¡!¡- SìįSí Chacal -¡!¡-</h2>
+
+        <!-- Login Super User Section -->
+        <div class="container mt-5">
+            <!--<div class="layout__boxHeader justify-content-center">
+                <div class="layout__boxTitle">
+                    <h3>{% blocktrans trimmed %}-¡!¡- Login Super User -¡!¡-{% endblocktrans %}</h3>
+                </div>
+            </div>-->
+            <div class="layout__body">
+                <div class="row justify-content-center">
+                    <!-- Login Card -->
+                    <div class="col-md-4">
+                        <div class="card shadow-sm border-success">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-success">
+                                    {% blocktrans trimmed %}Login Super User{% endblocktrans %}
+                                </h5>
+                                <p class="card-text">
+                                    {% blocktrans trimmed %}
+                                        Access your account and manage your User profile.
+                                    {% endblocktrans %}
+                                </p>
+                                <a href="{% url 'two_factor:login' %}" 
+                                class="btn btn-success bg-success justify-content-center w-100">
+                                    {% blocktrans trimmed %}Login{% endblocktrans %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Action -->
+                <div class="auth__action text-center mt-3">
+                    <p>{% blocktrans trimmed %}Haven't signed up yet?{% endblocktrans %}</p>
+                    <a href="{% url 'register-superuser' %}" class="btn btn--link">
+                        {% blocktrans trimmed %}Sign Up{% endblocktrans %}
+                    </a>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% else %}
+  <div class="">
+    <div class="container">
+      <div class="layout__boxHeader">
+        <div class="layout__boxTitle">
+          <h3>Register Super User</h3>
+        </div>
+      </div>
+      <div class="layout__body">
+        <h2 class="auth__tagline">-¡!¡- Good or Good -¡!¡-</h2>
+
+        <!-- Register Super User Section -->
+        <div class="container mt-5">
+            <div class="layout__body">
+                <div class="row justify-content-center">
+                    <!-- Login Card -->
+                    <div class="col-md-4">
+                        <div class="card shadow-sm border-success">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-success">
+                                    {% blocktrans trimmed %}Register Super User{% endblocktrans %}
+                                </h5>
+                                <p class="card-text">
+                                    {% blocktrans trimmed %}
+                                        Access your account and manage your User profile.
+                                    {% endblocktrans %}
+                                </p>
+                                <a href="{% url 'two_factor:setup' %}" 
+                                class="btn btn-success bg-success justify-content-center w-100">
+                                    {% blocktrans trimmed %}Register{% endblocktrans %}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sign Up Action -->
+                <div class="auth__action text-center mt-3">
+                    <p>{% blocktrans trimmed %}Already Signed Up?{% endblocktrans %}</p>
+                    <a href="{% url 'login-superuser' %}" class="btn btn--link">
+                        {% blocktrans trimmed %}Login{% endblocktrans %}
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+  </div>
+  {% endif %}
+</main>
+
+{% endblock %}

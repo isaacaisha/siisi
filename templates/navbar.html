@@ -25,6 +25,12 @@
         </a>
       </li>
       {% else %}
+      <!-- Login Super User -->
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'login-superuser' %}">
+          Super User
+        </a>
+      </li>
       <li class="nav-item">
         <a class="nav-link active" href="{% url 'conversation-interface' %}">
           Conversation Interface

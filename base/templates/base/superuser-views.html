@@ -1,0 +1,53 @@
+{% extends 'main.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block favicon %}
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
+{% endblock %}
+
+{% block title %}Super User Interface{% endblock %}
+
+{% block content %}
+<div class="chat-container">
+    <!-- Header Section -->
+    <header class="bg-secondary text-white p-4 text-center mt-5">
+        <h1>{% blocktrans trimmed %}-¡!¡-<br>Chat AI<br>Something Big<br>Is comming<br>-¡!¡-{% endblocktrans %}</h1>
+    </header>
+
+    <!-- Main Chat Section -->
+    <main class="flex flex-col flex-grow p-4">
+        <!-- Chat History -->
+        <div id="chat-history" class="chat-history mb-4" role="log" aria-live="polite">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Chat Input Form -->
+        <div class="justify-center text-center mb-3">
+            <form method="POST" id="chat-form" class="flex w-full">
+                {% csrf_token %}
+                <div>
+                    <input id="chat-input" type="text" class="border border-primary bg-white text-dark"
+                        placeholder="Type your message here...">
+                    <br>
+                    <button type="submit" class="btn bg-secondary text-white p-4">
+                        {% blocktrans trimmed %}Send{% endblocktrans %}
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="text-center mt-5 mb-3">
+            <span class="copyright">
+                {% blocktrans trimmed %}© DBT Copyright {{ date }}{% endblocktrans %}
+            </span>
+        </div>
+    </main>
+</div>
+
+<script src="{% static 'js/index-chatgpt.js' %}"></script>
+
+{% block footer %}{% endblock %}
+
+{% endblock %}

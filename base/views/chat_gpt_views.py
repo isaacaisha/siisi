@@ -33,7 +33,7 @@ from langchain.memory import ConversationBufferMemory, ConversationSummaryBuffer
 from langdetect import detect
 
 # Date and time handling
-from datetime import datetime
+from django.utils import timezone
 
 
 openai = OpenAIEmbeddings(api_key=os.getenv("OPENAI_API_KEY"))
@@ -45,7 +45,6 @@ memory_summary = ConversationSummaryBufferMemory(llm=llm, max_token_limit=3)
 
 # View for the VIP page, requiring 2FA status
 @login_required(login_url='index')
-@otp_required
 def conversationInterface(request):
     writing_text_form = TextAreaForm()
     drawing_form = TextAreaDrawingIndex()
@@ -66,7 +65,7 @@ def conversationInterface(request):
         'memory_buffer': memory.buffer_as_str,
         'memory_load': memory.load_memory_variables({}),
         'latest_conversation': latest_conversation,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime("%a %d %B %Y"),
     }
     return render(request, 'base/conversation_interface.html', context)
 
@@ -168,4 +167,12 @@ def latestAudioUrl(request):
         return JsonResponse({"audio_url": audio_url})
     else:
         return JsonResponse({"error": "No audio found"}, status=404)
+    
+
+@otp_required
+def superuserViews(request):
+    context = {
+        'date': timezone.now().strftime("%a %d %B %Y"),
+        }
+    return render(request, 'base/superuser-views.html', context)
     

@@ -13,10 +13,6 @@ from django.contrib.auth.views import PasswordResetConfirmView, PasswordResetCom
 from django.utils import timezone
 
 
-class CustomLoginView(LoginView):
-    template_name = 'custom_login.html'
-
-
 def registerPage(request):
     page = 'register'
     form = MyUserCreationForm(request.POST or None)
@@ -29,9 +25,8 @@ def registerPage(request):
                 user = form.save(commit=False)
                 user.username = user.username.lower()
                 user.save()
-                messages.success(request, 'Registration successful! Please finish the setup.')
-                # Redirect to two_factor setup
-                return redirect('two_factor:setup')
+                messages.success(request, 'Registration successful! Please login.')
+                return redirect('login')
             except Exception as e:
                 messages.error(request, f'Sorry, an error occurred: {e}')
         else:
@@ -62,8 +57,7 @@ def loginPage(request):
 
             if user:
                 login(request, user)
-                # Redirect to two_factor login
-                return redirect('two_factor:login')
+                return redirect('conversation-interface')
             else:
                 messages.error(request, f'User email: {email} or Password  doesn\'t exit 😝')
         else:
@@ -77,6 +71,32 @@ def loginPage(request):
         'date': timezone.now().strftime("%a %d %B %Y"),
         }
     return render(request, 'two_factor_auth/login_register.html', context)
+    
+    
+def register_superuser(request):
+    page = 'register superuser'
+    hide_navbar = True
+    hide_edit_user = True
+    context = {
+        'page': page,
+        'hide_navbar': hide_navbar,
+        'hide_edit_user': hide_edit_user,
+        'date': timezone.now().strftime("%a %d %B %Y"),
+        }
+    return render(request, 'two_factor_auth/login_register_superuser.html', context)
+    
+    
+def login_superuser(request):
+    page = 'login superuser'
+    hide_navbar = True
+    hide_edit_user = True
+    context = {
+        'page': page,
+        'hide_navbar': hide_navbar,
+        'hide_edit_user': hide_edit_user,
+        'date': timezone.now().strftime("%a %d %B %Y"),
+        }
+    return render(request, 'two_factor_auth/login_register_superuser.html', context)
 
 
 def logoutUser(request):

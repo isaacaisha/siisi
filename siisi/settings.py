@@ -62,13 +62,13 @@ CSRF_TRUSTED_ORIGINS = [
 #     'https://sub.example.com',
 # ]
 
+
 # Other CORS settings you might use
 CORS_ALLOW_CREDENTIALS = True  # Allow cookies and HTTP authentication
 
 # Login URL for authentication redirects
-#LOGIN_URL = '/login/'
 LOGIN_URL = 'two_factor:login'
-LOGIN_REDIRECT_URL = 'conversation-interface'  # Redirect to your desired page after login
+LOGIN_REDIRECT_URL = 'superuser-views'  # Redirect to your desired page after login
 LOGOUT_REDIRECT_URL = 'index'
 
 # Optional: Customize 2FA settings
@@ -176,7 +176,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.i18n',
             ],
             # Ensure this section is properly configured
             'loaders': [
@@ -185,10 +184,6 @@ TEMPLATES = [
             ],
         },
     },
-]
-
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
 ]
 
 WSGI_APPLICATION = 'siisi.wsgi.application'
@@ -238,20 +233,21 @@ LANGUAGES = [
     ('pt', _('Portuguese')),
 ]
 
+# Set the directory for translation files
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
+
 #LANGUAGE_CODE = 'en-us'  # Default language
 LANGUAGE_CODE = 'fr'  # Default language
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+
 USE_L10N = True
 
 USE_TZ = True
-
-# Set the directory for translation files
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',
-]
 
 
 # Static files (CSS, JavaScript, Images)

@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import (
+    superuserViews,
     conversationInterface, interfaceAnswer, serveAudioFromDb, latestAudioUrl,
     allConversations, updateLike, likedConversations,
     ConversationById, ConversationSelected,deleteConversation,
@@ -10,6 +11,8 @@ from .views import (
 # Create your urls here.
 
 urlpatterns = [
+    path('superuser-views', superuserViews, name='superuser-views'),
+
     path('conversation-interface', conversationInterface, name='conversation-interface'),
     path('interface-answer/', interfaceAnswer, name='interface-answer'),
     path('audio/<int:conversation_id>/', serveAudioFromDb, name='serve_audio_from_db'),

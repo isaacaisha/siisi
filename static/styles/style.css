@@ -1895,7 +1895,7 @@ body.dark-mode {
 
 /* Dark Mode Styling */
 .togglebutton input:checked + .toggle {
-  background-color: #4d4d4d;
+  background-color: #ab51f5;
 }
 
 .togglebutton input:checked + .toggle::before {
@@ -1940,7 +1940,7 @@ td > ul > li {
   white-space: normal; /* Allows the text to wrap */
 }
 
-#chat-input, #id_auth-username, #id_auth-password,
+#chat-input, #id_auth-username, #id_auth-password, #id_backup-otp_token,
 #id_token-otp_token, #id_generator-token, #id_validation-token {
   background-color: #fff;
   color: #333 !important;
