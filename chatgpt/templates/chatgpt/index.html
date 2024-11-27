@@ -10,13 +10,27 @@
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
 {% endblock %}
 
-{% block title %}Home{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
 
 {% block content %}
+
+<p>{% trans "Current language: " %}{{ LANGUAGE_CODE }}</p>
+<form class="language-form" method="post" action="{% url 'set_language' %}">
+    {% csrf_token %}
+    <select name="language">
+        {% for lang_code, lang_name in LANGUAGES %}
+        <option value="{{ lang_code }}">{{ lang_name }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">{% trans "Change language" %}</button>
+</form>
+
 <div class="chat-container">
     <!-- Header Section -->
     <header class="bg-secondary text-white p-4 text-center mt-5">
         <h1>{% blocktrans trimmed %}Chat AI{% endblocktrans %}</h1>
+        <!--<p>{% trans "Welcome to the website!" %}</p>
+        <p>{{ output }}</p>-->
     </header>
     
     <!-- Main Chat Section -->
@@ -32,7 +46,7 @@
                 {% csrf_token %}
                 <div>
                     <input id="chat-input" type="text" class="border border-primary bg-white text-dark" 
-                           placeholder="Type your message here...">
+                           placeholder="{% trans 'Type your message here...' %}">
                     <br>
                     <button type="submit" class="btn bg-secondary text-white p-4">
                         {% blocktrans trimmed %}Send{% endblocktrans %}
@@ -45,7 +59,7 @@
         <div class="container mt-5">
             <div class="layout__boxHeader justify-content-center">
                 <div class="layout__boxTitle">
-                    <h3>-{% blocktrans trimmed %}¡!¡- Login User -¡!¡-{% endblocktrans %}</h3>
+                    <h3>{% blocktrans trimmed %}¡!¡- Login User -¡!¡{% endblocktrans %}</h3>
                 </div>
             </div>
             <div class="layout__body">

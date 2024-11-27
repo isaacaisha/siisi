@@ -49,8 +49,8 @@ PROXY = {
 CSRF_TRUSTED_ORIGINS = [
     'https://siisi.copromanager.pro',
     'https://www.siisi.copromanager.pro',
-    'http://127.0.0.1:8001',
-    'http://0.0.0.0:8001'
+    'http://127.0.0.1:8000',
+    'http://0.0.0.0:8000'
 ]
 
 # Allow all origins to access the API
@@ -153,6 +153,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     #that detects the user's preferred language from their browser settings or session and applies it
     'django.middleware.locale.LocaleMiddleware',
+    'siisi.middleware.ThreadLocals',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -169,18 +170,14 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         # Remove this if you are specifying custom loaders
-        # 'APP_DIRS': True,
+        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-            ],
-            # Ensure this section is properly configured
-            'loaders': [
-                'django.template.loaders.filesystem.Loader',
-                'django.template.loaders.app_directories.Loader',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -236,10 +233,12 @@ LANGUAGES = [
 # Set the directory for translation files
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
+    os.path.join(BASE_DIR, 'env', 'lib', 'python3.12', 'site-packages', 'two_factor', 'locale')  # two_factor app's locale folder
 ]
 
 #LANGUAGE_CODE = 'en-us'  # Default language
-LANGUAGE_CODE = 'fr'  # Default language
+#LANGUAGE_CODE = 'fr'  # Default language
+LANGUAGE_COOKIE_NAME = 'django_language'  # Default is 'django_language'
 
 TIME_ZONE = 'UTC'
 

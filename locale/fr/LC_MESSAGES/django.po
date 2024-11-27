@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-18 01:03+0100\n"
+"POT-Creation-Date: 2024-11-27 02:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,41 +18,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: chatgpt/templates/chatgpt/index.html:19
+#: chatgpt/templates/chatgpt/index.html:13
+msgid "Home"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:17
+msgid "Current language: "
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:25
+msgid "Change language"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:31
 msgid "Chat AI"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:38
+#: chatgpt/templates/chatgpt/index.html:32
+msgid "Welcome to the website!"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:49
+msgid "Type your message here..."
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:52
 msgid "Send"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:48
-msgid "¡!¡- VIP Login -¡!¡-"
+#: chatgpt/templates/chatgpt/index.html:62
+msgid "¡!¡- Login User -¡!¡"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:58
-msgid "Login to VIP Dashboard"
+#: chatgpt/templates/chatgpt/index.html:72
+msgid "Login to User Dashboard"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:61
-msgid "Access your account and manage your VIP profile."
+#: chatgpt/templates/chatgpt/index.html:75
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:53
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:102
+msgid "Access your account and manage your User profile."
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:67
+#: chatgpt/templates/chatgpt/index.html:81
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:59
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:119
 msgid "Login"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:76
+#: chatgpt/templates/chatgpt/index.html:90
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:68
 msgid "Haven't signed up yet?"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:78
+#: chatgpt/templates/chatgpt/index.html:92
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:70
 msgid "Sign Up"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:87
+#: chatgpt/templates/chatgpt/index.html:101
 #, python-format
 msgid "© DBT Copyright %(date)s"
+msgstr ""
+
+#: chatgpt/views.py:21 chatgpt/views.py:41
+msgid "Hello, World!"
+msgstr ""
+
+#: chatgpt/views.py:28
+msgid "Hello, World!, how are you doing?"
+msgstr ""
+
+#: chatgpt/views.py:35
+msgid "Welcome to my site."
+msgstr ""
+
+#: chatgpt/views.py:62
+msgid "You are a helpful assistant."
 msgstr ""
 
 #: env/lib/python3.12/site-packages/click/_termui_impl.py:518
@@ -1564,22 +1606,39 @@ msgstr ""
 msgid "Error verifying reCAPTCHA, please try again."
 msgstr ""
 
-#: siisi/settings.py:248
+#: siisi/settings.py:232
 msgid "English"
 msgstr ""
 
-#: siisi/settings.py:249
+#: siisi/settings.py:233
 msgid "French"
 msgstr ""
 
-#: siisi/settings.py:250
+#: siisi/settings.py:234
 msgid "Spanish"
 msgstr ""
 
-#: siisi/settings.py:251
+#: siisi/settings.py:235
 msgid "Portuguese"
 msgstr ""
 
-#: templates/main.html:8
-msgid "View this category in:"
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:30
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:40
+msgid "-¡!¡- Login Super User -¡!¡-"
+msgstr ""
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:50
+msgid "Login Super User"
+msgstr ""
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:99
+msgid "Register Super User"
+msgstr ""
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:108
+msgid "Register"
+msgstr ""
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:117
+msgid "Already Signed Up?"
 msgstr ""

@@ -14,8 +14,10 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
+from django.views.i18n import set_language
+
+from django.contrib import admin
 from django.urls import path,  include
 from two_factor.urls import urlpatterns as tf_urls
 
@@ -31,6 +33,11 @@ urlpatterns = [
     path('', include('chat_forum.urls')), 
     #path('api', include('base.api.urls')),
 ]
+
+urlpatterns += i18n_patterns(
+    # Translated URLs
+    path('set_language/', set_language, name='set_language'),
+)
 
 # Serve media files during development
 if settings.DEBUG:

@@ -4,6 +4,9 @@ from django.shortcuts import render
 from django.conf import settings
 from django.http import JsonResponse
 
+from django.utils.translation import gettext as _, activate, get_language
+from siisi.middleware import get_current_request  
+
 from openai import OpenAI
 from .models import ChatData
 
@@ -14,13 +17,35 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 
 def index(request):
+    #activate('es')  # Force Spanish
+    # Get current language from request
+    current_request = get_current_request()
+    if current_request:
+        lang = current_request.LANGUAGE_CODE
+        activate(lang)  # Activate the language for translations
+
+
+    print(f"LANGUAGE_CODE: {request.LANGUAGE_CODE}")  # Debug language code
+    print(f"Available Languages: {settings.LANGUAGES}")  # Confirm languages
+    print(f"Current Request: {get_current_request()}")
+
+    output = _("Welcome to my site.")
     context = {
+        'output': output,
         'date': timezone.now().strftime("%a %d %B %Y"),
         }
+    
+    print(_('Hello, World!')) 
     return render(request, 'chatgpt/index.html', context)
 
 
 def response(request):
+    # Get current language from request
+    current_request = get_current_request()
+    if current_request:
+        lang = current_request.LANGUAGE_CODE
+        activate(lang)  # Activate the language for translations
+
     if request.method == 'POST':
         message = request.POST.get('message', '')
 
@@ -31,7 +56,7 @@ def response(request):
         completion = client.chat.completions.create(
             model='gpt-4',
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content": _("You are a helpful assistant.")},
                 {"role": "user", "content": message}
             ]
         )
@@ -45,7 +70,7 @@ def response(request):
 
         # Convert the OpenAI response to speech
         try:
-            tts = gTTS(text=answer, lang='en')
+            tts = gTTS(text=answer, lang=get_language())  # Use the active language
             audio_path = os.path.join(settings.MEDIA_ROOT, f'response_{new_chat.id}.mp3')
             tts.save(audio_path)
         except Exception as e:
