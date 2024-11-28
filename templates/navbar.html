@@ -1,16 +1,16 @@
-{% load static %}
+{% load static i18n %}
 
 <!-- Navbar -->
 {% if not hide_navbar %}
 <nav class="navbar navbar-expand-md navbar-dark">
-  <a class="navbar-brand col" href="https://siisiex.copromanager.pro/" aria-label="SìįSí Dbt Documentation"
+  <a class="navbar-brand col" href="https://siisiex.copromanager.pro/" aria-label="{% trans 'SìįSí Dbt Documentation' %}"
     target="_blank">
-    SìįSí Dbt
+    {% trans 'SìįSí Dbt' %}
   </a>
   <button class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse"
     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-    aria-label="Toggle navigation">
-    Menu <span class="navbar-toggler-icon"></span>
+    aria-label="{% trans 'Toggle navigation' %}">
+    {% trans 'Menu' %} <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -18,9 +18,9 @@
       {% if not user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-link log-out" href="{% url 'logout' %}">
-          <span class="d-block" style="font-size:1.9rem;">∞<br>∞ New session ∞<br></span>
+          <span class="d-block" style="font-size:1.9rem;">∞<br>∞ {% trans 'New session' %} ∞<br></span>
           <button id="logout" type="button" class="btn btn-secondary">
-            <span class="gold1" style="font-size:1.45rem;">Login</span>
+            <span class="gold1" style="font-size:1.45rem;">{% trans 'Login' %}</span>
           </button>
         </a>
       </li>
@@ -28,46 +28,69 @@
       <!-- Login Super User -->
       <li class="nav-item">
         <a class="nav-link active" href="{% url 'login-superuser' %}">
-          Super User
+          {% trans 'Super User' %}
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="{% url 'conversation-interface' %}">
-          Conversation Interface
+          {% trans 'Conversation Interface' %}
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'all-conversations' %}">All Your Conversations</a>
+        <a class="nav-link" href="{% url 'all-conversations' %}">
+          {% trans 'All Your Conversations' %}
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'liked-conversations' %}">Liked Conversations 
+        <a class="nav-link" href="{% url 'liked-conversations' %}">
+          {% trans 'Liked Conversations' %} 
           <i class="fa fa-heart"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'conversation-by-id' %}">ID Conversation</a>
+        <a class="nav-link" href="{% url 'conversation-by-id' %}">
+          {% trans 'ID Conversation' %}
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'delete-conversation' %}">Delete Conversation</a>
+        <a class="nav-link" href="{% url 'delete-conversation' %}">
+          {% trans 'Delete Conversation' %}
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'chat-forum' %}">Chat Forum</a>
+        <a class="nav-link" href="{% url 'chat-forum' %}">
+          {% trans 'Chat Forum' %}
+        </a>
       </li>
-      <!--<li class="nav-item">
-        <a class="nav-link" href="{% url 'drawing-generator' %}">Drawing Generator</a>
+      <!-- Uncommented Section -->
+      <!--
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'drawing-generator' %}">
+          {% trans 'Drawing Generator' %}
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'website-review-generator' %}">Website Review Generator</a>
+        <a class="nav-link" href="{% url 'website-review-generator' %}">
+          {% trans 'Website Review Generator' %}
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'liked-reviews' %}">Liked Reviews <i class="fa fa-heart"></i></a>
+        <a class="nav-link" href="{% url 'liked-reviews' %}">
+          {% trans 'Liked Reviews' %} <i class="fa fa-heart"></i>
+        </a>
       </li>
       <li class="nav-item">
         <hr class="gold" style="margin: 0 37%;">
-        <a class="nav-link" href="{% url 'extras-features' %}">Extras Features</a>
-        <hr class="gold" style="margin: 0 37%;">-->
+        <a class="nav-link" href="{% url 'extras-features' %}">
+          {% trans 'Extras Features' %}
+        </a>
+        <hr class="gold" style="margin: 0 37%;">
+      </li>
+      -->
       <li class="nav-item">
-        <a class="nav-link log-out" href="{% url 'logout' %}">Logout</a>
+        <a class="nav-link log-out" href="{% url 'logout' %}">
+          {% trans 'Logout' %}
+        </a>
       </li>
       {% endif %}
     </ul>

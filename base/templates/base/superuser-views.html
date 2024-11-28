@@ -1,11 +1,12 @@
-{% load i18n %}
-{% load static %}
+<!-- base/templates/base/superuser-views.html -->
+
+{% load static i18n %}
 
 {% block favicon %}
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
 {% endblock %}
 
-{% block title %}Super User Interface{% endblock %}
+{% block title %}{% trans "Super User Interface" %}{% endblock %}
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}<link rel="stylesheet" href="{% static 'styles/wall-poster.css' %}" />{% endblock stylesheets %}
@@ -25,7 +26,7 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
         <div class="outer"
             style="background-image:url(https://images.unsplash.com/photo-1620503374956-c942862f0372?&q=100&dpr=2&w=400);">
             <div class="inner">
-                <p>Be Good,</p>
+                <p>{% trans "Be Good," %}</p>
             </div>
         </div>
     </label>
@@ -33,7 +34,7 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
         <div class="outer"
             style="background-image:url(https://images.unsplash.com/photo-1543848089-530aad06491a?&q=100&dpr=2&w=400);">
             <div class="inner">
-                <p>Doing Good,</p>
+                <p>{% trans "Doing Good," %}</p>
             </div>
         </div>
     </label>
@@ -41,7 +42,7 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
         <div class="outer"
             style="background-image:url(https://images.unsplash.com/photo-1550684848-fac1c5b4e853?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTQxODQ2NDZ8&ixlib=rb-4.0.3&q=100&dpr=2&w=400);">
             <div class="inner text3">
-                <p style="font-size: smaller;">By Acting GOOD -¡!¡-</p>
+                <p style="font-size: smaller;">{% trans "By Acting GOOD -¡!¡-" %}</p>
             </div>
         </div>
     </label>
@@ -53,7 +54,7 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
     <section>
         <!-- Back to home btn -->
         <div class="center back-home mb-3">
-            <a href="{% url 'conversation-interface' %}" class="grey" style="font-size: xx-small;">-¡!¡- Back Home -¡!¡-</a>
+            <a href="{% url 'conversation-interface' %}" class="grey" style="font-size: xx-small;">{% trans "-¡!¡- Back Home -¡!¡-" %}</a>
         </div>
         <div>
             <p id='arrow'>&raquo;</p>
@@ -61,7 +62,7 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
     </section>
     <section>
         <div>
-            <h1>Wall Poster Animation</h1>
+            <h1>{% trans "Wall Poster Animation" %}</h1>
         </div>
     </section>
     <section>
@@ -75,21 +76,17 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
     </section>
     <section>
         <div>
-            <h2>Photo credits</h2>
+            <h2>{% trans "Photo credits" %}</h2>
             <p><br></p>
             <ul>
-                <li>Kam Idris - <a target="_blank" href="https://unsplash.com/photos/_HqHX3LBN18">brown wooden framed
-                        yellow padded chair</a></li>
-                <li>Steve Johnson - <a target="_blank" href="https://unsplash.com/photos/4Djs1vdYov4">multicolored
-                        abstract painting</a></li>
-                <li>Pawel Czerwinski - <a target="_blank" href="https://unsplash.com/photos/vI5XwPbGvmY">white and blue
-                        smoke illustration</a></li>
-                <li>Rodion Kutsaiev - <a target="_blank" href="https://unsplash.com/photos/pVoEPpLw818">a close up of
-                        water droplets on a window</a></li>
+                <li>{% trans "Kam Idris - " %}<a target="_blank" href="https://unsplash.com/photos/_HqHX3LBN18">{% trans "brown wooden framed yellow padded chair" %}</a></li>
+                <li>{% trans "Steve Johnson - " %}<a target="_blank" href="https://unsplash.com/photos/4Djs1vdYov4">{% trans "multicolored abstract painting" %}</a></li>
+                <li>{% trans "Pawel Czerwinski - " %}<a target="_blank" href="https://unsplash.com/photos/vI5XwPbGvmY">{% trans "white and blue smoke illustration" %}</a></li>
+                <li>{% trans "Rodion Kutsaiev - " %}<a target="_blank" href="https://unsplash.com/photos/pVoEPpLw818">{% trans "a close up of water droplets on a window" %}</a></li>
             </ul>
-            <p><br><b>on <a target="_blank" href="https://unsplash.com/">Unsplash</a>.</b></p>
+            <p><br><b>{% trans "on" %} <a target="_blank" href="https://unsplash.com/">{% trans "Unsplash" %}</a>.</b></p>
             <p><br></p>
-            <p>Thanks!</p>
+            <p>{% trans "Thanks!" %}</p>
         </div>
     </section>
     <section>
@@ -103,7 +100,7 @@ Copyright (c) 2023 by Wakana Y.K. @wakana-k
         </div>
     </section>
     <footer>
-        <a href="https://codepen.io/wakana-k/">@wakana-k</a>
+        <a href="https://codepen.io/wakana-k/">{% trans "@wakana-k" %}</a>
     </footer>
 </main>
 

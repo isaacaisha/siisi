@@ -1,11 +1,11 @@
-<!-- conversation_selected.html -->
+<!-- base/templates/base/conversation_selected.html -->
 
 {% extends 'main.html' %}
 
 {% load static %}
 
 {% block title %}
-    - Conversations Detailed Template
+    - {% trans "Conversations Detailed Template" %}
 {% endblock %}
 
 {% block favicon %}
@@ -17,11 +17,11 @@
     <div class="p-3 rounded-3 jumbotron text-light">
         <div class="container-fluid p-1">
             <h1 class="">
-                <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" class="crown img-fluid mx-auto" width="100"
-                    height="100">
-                Conversation 🔥{{ conversation_id }}🔥 -¡!¡-
-                <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" class="crown img-fluid mx-auto" width="100"
-                    height="100">
+                <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" 
+                class="crown img-fluid mx-auto" width="100" height="100">
+                {% trans "Conversation" %} 🔥{{ conversation_id }}🔥 -¡!¡-
+                <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" 
+                class="crown img-fluid mx-auto" width="100" height="100">
             </h1>
         </div>
     </div>
@@ -36,12 +36,12 @@
         <div class="text-center">
             <div class="p-3 rounded-3 jumbotron bg-dark text-light my-4">
                 <div class="py-1">
-                    <h1 class="text-center">-¡!¡- Conversation Detailed -¡!¡-</h1>
+                    <h1 class="text-center">-¡!¡- {% trans "Conversation Detailed" %} -¡!¡-</h1>
                 </div>
             </div>
 
             <hr class="green mb-3">
-            <h3 class="conversations">Conversation Details</h3>
+            <h3 class="conversations">{% trans "Conversation Details" %}</h3>
             <hr class="green mb-5">
             <hr class="gold mb-4">
 
@@ -50,7 +50,7 @@
                     <div class="col-md-12">
                         <div class="d-flex justify-content-between">
                             <div class="conversation_id">
-                                <strong>Conversation ID:</strong> {{ conversation.id }}
+                                <strong>{% trans "Conversation ID:" %}</strong> {{ conversation.id }}
                             </div>
                         </div>
                     </div>
@@ -70,14 +70,15 @@
                     </div>
                 </div>
                 <div class="created-at mb-3">
-                    <strong>Created on:</strong> {{ conversation.created_at }}
+                    <strong>{% trans "Created on:" %}</strong> {{ conversation.created_at }}
                 </div>
                 <div class="row mb-2">
                     <div class="col-md-12 text-center">
                         <div class="text-center">
-                            <audio id="response-audio-{{ conversation.id }}" controls class="w-100" style="max-width: 271px; height: 37px;">
+                            <audio id="response-audio-{{ conversation.id }}" controls class="w-100" 
+                            style="max-width: 271px; height: 37px;">
                                 <source src="{% url 'serve_audio_from_db' conversation.id %}" type="audio/mp3">
-                                Your browser does not support the audio element.
+                                {% trans "Your browser does not support the audio element." %}
                             </audio>
                         </div>
                     </div>
@@ -85,7 +86,7 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <div class="like-button" data-conversation-id="{{ conversation.id }}" {% if conversation.liked %}
-                            style="color: pink;" {% else %} style="color: lightcyan;" {% endif %}>
+                            style="color: #ab51f5;" {% else %} style="color: lightcyan;" {% endif %}>
                             <i class="fa fa-heart fa-2x"></i>
                             <hr class="green mb-3" style="margin: 0 45%;">
                     
@@ -99,7 +100,7 @@
             </div>
             <div class="mb-3">
                 <a href="javascript:history.back();" class="nav-link white">
-                    Click to Go Back to Select Conversation
+                    {% trans "Click to Go Back to Select Conversation" %}
                 </a>
             </div>
             <hr class="gold mb-5">
@@ -107,7 +108,7 @@
         
             <!--  Back to home btn -->
             <div class="center back-home mb-3">
-                <a href="{% url 'conversation-interface' %}" class="nav-link grey">-¡!¡- Back Home -¡!¡-</a>
+                <a href="{% url 'conversation-interface' %}" class="nav-link grey">-¡!¡- {% trans "Back Home" %} -¡!¡-</a>
             </div>
         
             <hr class="crimson mb-5">

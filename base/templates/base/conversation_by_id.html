@@ -1,11 +1,11 @@
-<!-- selected_conversation.html -->
+<!-- base/templates/base/conversation_by_id.html -->
 
 {% extends 'main.html' %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block title %}
-    - Conversations by ID Template
+    {% trans "Conversations by ID Template" %}
 {% endblock %}
 
 {% block favicon %}
@@ -17,26 +17,28 @@
     <div class="container-fluid">
         <div class="p-3 rounded-3 jumbotron bg-dark text-light my-4">
             <div class="py-1">
-                <h1 class="text-center">-¡!¡- Conversation by ID -¡!¡-</h1>
+                <h1 class="text-center">{% trans "-¡!¡- Conversation by ID -¡!¡-" %}</h1>
             </div>
         </div>
 
         <hr class="green mb-3">
-        <h3 class="conversations mb-3">Select a Conversation</h3>
+        <h3 class="conversations mb-3">{% trans "Select a Conversation" %}</h3>
 
         <hr class="green mb-5">
         <hr class="gold">
 
         <div class="row text-center">
             <div class="col-lg-8 col-md-10 mx-auto mb-3">
-                <!-- Corrected Form -->
+                <!-- Form with Translation -->
                 <form method="POST" action="{% url 'conversation-by-id' %}"
                     class="container-fluid d-flex flex-column align-items-center">
                     {% csrf_token %}
                     <div class="form-group w-50 text-center">
                         {{ select_conversation_form.as_p }}
                     </div>
-                    <button type="submit" class="btn btn-outline-info mt-3" disabled>Select</button>
+                    <button type="submit" class="btn btn-outline-info mt-3" disabled>
+                        {% trans "Select" %}
+                    </button>
                 </form>
             </div>
         </div>
@@ -46,11 +48,12 @@
 
         <!-- Back to home btn -->
         <div class="center back-home mb-3">
-            <a href="{% url 'conversation-interface' %}" class="grey">-¡!¡- Back Home -¡!¡-</a>
+            <a href="{% url 'conversation-interface' %}" class="grey">
+                {% trans "-¡!¡- Back Home -¡!¡-" %}
+            </a>
         </div>
 
         <hr class="crimson mb-5">
     </div>
 </main>
-
 {% endblock %}

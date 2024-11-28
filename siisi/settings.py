@@ -150,10 +150,10 @@ AUTH_USER_MODEL = 'two_factor_auth.User'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     #that detects the user's preferred language from their browser settings or session and applies it
     'django.middleware.locale.LocaleMiddleware',
     'siisi.middleware.ThreadLocals',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -232,12 +232,14 @@ LANGUAGES = [
 
 # Set the directory for translation files
 LOCALE_PATHS = [
+    #os.path.join(BASE_DIR, 'locale'),
+    '/Users/lesanebyby/Desktop/siisi/locale',
     os.path.join(BASE_DIR, 'locale'),
     os.path.join(BASE_DIR, 'env', 'lib', 'python3.12', 'site-packages', 'two_factor', 'locale')  # two_factor app's locale folder
 ]
 
 #LANGUAGE_CODE = 'en-us'  # Default language
-#LANGUAGE_CODE = 'fr'  # Default language
+LANGUAGE_CODE = 'fr'  # Default language
 LANGUAGE_COOKIE_NAME = 'django_language'  # Default is 'django_language'
 
 TIME_ZONE = 'UTC'

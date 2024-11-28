@@ -1,13 +1,15 @@
+<!-- chat_forum/templates/chat_forum/profile.html -->
+
 {% extends 'main.html' %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block favicon %}
 <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon3.ico' %}">
 {% endblock %}
 
 {% block title %}
-    - Profile Template
+    - {% trans "Profile Template" %}
 {% endblock %}
 
 {% block content %}
@@ -21,12 +23,6 @@
     <!-- Room List Start -->
     <div class="roomList">
         <div class="profile">
-          <!--<div class="profile__avatar">
-            <div class="avatar avatar--large active">
-              <img src="{{user.avatar.url}}" />
-            </div>
-          </div>-->
-
           <div class="layout__boxHeader mt-5 mb-5">
             <div class="layout__boxTitle">
               <a href="{{request.META.HTTP_REFERER}}">
@@ -37,20 +33,19 @@
                   </path>
                 </svg>
               </a>
-              <h3>PROFILE</h3>
+              <h3>{% trans "PROFILE" %}</h3>
             </div>
           </div>
 
           <div class="profile__about">
-            <h3>About</h3>
+            <h3>{% trans "About" %}</h3>
             <p>{{user.bio}}</p>
           </div>
         </div>
 
         <div class="roomList__header">
           <div>
-            <h2>Study Rooms Hosted by {{user.username}}</a>
-            </h2>
+            <h2>{% trans "Study Rooms Hosted by" %} {{user.username}}</h2>
           </div>
         </div>
         
@@ -65,7 +60,7 @@
 
   <!--  Back to chat-forum btn -->
   <div class="center back-home mt-5 mb-5">
-    <a href="{% url 'chat-forum' %}" class="grey">-¡!¡- Chat Forum -¡!¡-</a>
+    <a href="{% url 'chat-forum' %}" class="grey">-¡!¡- {% trans "Chat Forum" %} -¡!¡-</a>
   </div>
 </main>
   

@@ -1,15 +1,15 @@
-<!-- base/conversation_interface.html -->
+<!-- base/templates/base/conversation_interface.html -->
 
 {% extends 'main.html' %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block favicon %}
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
 {% endblock %}
 
 {% block title %}
-    - Conversation Interface Template
+    {% trans "Conversation Interface Template" %}
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="p-3 rounded-3 jumbotron bg-dark text-light my-4">
             <div class="py-1">
-                <h1 class="text-center">-¡!¡- ·SìįSí·Dbt· Interface -¡!¡-</h1>
+                <h1 class="text-center">{% trans "-¡!¡- ·SìįSí·Dbt· Interface -¡!¡-" %}</h1>
             </div>
         </div>
         <!-- Flash message display -->
@@ -35,24 +35,24 @@
 
         <div class="conversations">
             <hr class="crimson mt-5 mb-3">
-            <button id="showPopupButton" type="button" class="btn submit">Show Instructions</button>
+            <button id="showPopupButton" type="button" class="btn submit">{% trans "Show Instructions" %}</button>
         
             <div id="popupContainer" class="popup-container conversations mt-3" style="display: none;">
                 <div class="popup-content">
-                    <p>Welcome to the<br><span class="SìįSí">-¡!¡-SìįSí-¡!¡-</span><br>app</p>
+                    <p>{% trans "Welcome to the" %}<br><span class="SìįSí">{% trans "-¡!¡-SìįSí-¡!¡-" %}</span><br>{% trans "app" %}</p>
                     <ol class="align-left">
                         <li>
-                            <span class="mediumslateblue">Click On Start Writing</span><br>(to write a text) or<br>
-                            <span class="mediumslateblue">Click on Speech Recognition</span><br>(to speech a text)
+                            <span class="mediumslateblue">{% trans "Click On Start Writing" %}</span><br>({% trans "to write a text" %}) {% trans "or" %}<br>
+                            <span class="mediumslateblue">{% trans "Click on Speech Recognition" %}</span><br>({% trans "to speech a text" %})
                         </li>
                         <li>
-                            <span class="mediumslateblue">Click On Get The Response</span><br>(to get SìįSí's answer)
+                            <span class="mediumslateblue">{% trans "Click On Get The Response" %}</span><br>({% trans "to get SìįSí's answer" %})
                         </li>
                         <li>
-                            <span class="mediumslateblue">Click On PlayBack Audio</span><br>(to listen the playback)
+                            <span class="mediumslateblue">{% trans "Click On PlayBack Audio" %}</span><br>({% trans "to listen the playback" %})
                         </li>
                     </ol>
-                    <span>Enjoy</span>
+                    <span>{% trans "Enjoy" %}</span>
                     <br>
                     <div id="closePopupButton" type="" class="mt-3 mb-3">
                         <i class="fa-regular fa-circle-xmark fa-xl"></i>
@@ -68,37 +68,36 @@
                     <div id="error-message" class="alert alert-danger" style="display: none;"></div>
                 
                     <hr class="gold mb-3">
-                    <button id="start-button" type="button" class="btn">-¡!¡- Start Writing -¡!¡-</button>
+                    <button id="start-button" type="button" class="btn">{% trans "-¡!¡- Start Writing -¡!¡-" %}</button>
                     <hr class="gold mb-3">
                 
-                    <button id="speechRecognitionButton" type="button" class="btn">-¡!¡- Speech Recognition -¡!¡-</button>
+                    <button id="speechRecognitionButton" type="button" class="btn">{% trans "-¡!¡- Speech Recognition -¡!¡-" %}</button>
                     <hr class="gold mb-5">
                 
                     <div id="textarea-container" style="display: none;" class="align-left m-5">
-                        <label for="userInput" class="label_">Write Your Text, below:
+                        <label for="userInput" class="label_">{% trans "Write Your Text, below:" %}
                             <br>
-                            (be Specific for a better result)
+                            {% trans "(be Specific for a better result)" %}
                         </label>
                         <textarea class="form-control mb-4" id="userInput" name="writing_text"
-                            placeholder="¡!¡ T😎 INTERACT, WRITE  HERE ¡!¡" oninput="capitalizeSentences(this)"></textarea>
+                            placeholder="{% trans '¡!¡ T😎 INTERACT, WRITE HERE ¡!¡' %}" oninput="capitalizeSentences(this)"></textarea>
                     </div>
                 
                     <div id="loading-indicator" style="display:none;" class="text-center mb-1">
-                        <p>Loading...</p>
-                        <img class="loading" src="https://media1.giphy.com/media/VseXvvxwowwCc/200w.webp" alt="Loading">
+                        <p>{% trans "Loading..." %}</p>
+                        <img class="loading" src="https://media1.giphy.com/media/VseXvvxwowwCc/200w.webp" alt="{% trans 'Loading' %}">
                     </div>
                     <div id="loading-circle" class="load mb-3" style="display: none;"></div>
                 
                     <hr class="green mb-3">
                     <button id="generateButton" class="btn generate-text mb-3" type="submit">
-                        Get The Response 🔥-¡!¡-
-                        <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" class="crown img-fluid mx-auto" width="100"
-                            height="100">
-                        -¡!¡-🔥
+                        {% trans "Get The Response" %} 
+                        🔥-¡!¡-<img src="{% static 'images/crown.webp' %}" alt="{% trans 'Crown Icon' %}" 
+                        class="crown img-fluid mx-auto" width="100" height="100">-¡!¡-🔥
                     </button>
                     <div class="center">
                         <button id="interruptButton" type="button" class="btn" style="display: none;">
-                            Stop ·SìįSí·Dbt· Response
+                            {% trans "Stop ·SìįSí·Dbt· Response" %}
                         </button>
                     </div>
                 </form>
@@ -113,7 +112,7 @@
                     <div class="row justify-content-center mb-3">
                         <div class="col-auto">
                             <button id="playbackButton" type="button" class="btn btn-outline">
-                                -¡!¡- PlayBack Audio -¡!¡-
+                                {% trans "-¡!¡- PlayBack Audio -¡!¡-" %}
                             </button>
                         </div>
                     </div>
@@ -123,7 +122,7 @@
                             <audio id="response-audio" controls class="mb-3"
                                 style="max-width: 271px; height: 31px;">
                                 <source src="" type="audio/mp3">
-                                Your browser does not support the audio element.
+                                {% trans "Your browser does not support the audio element." %}
                             </audio>
                         </div>
                     </div>
@@ -132,8 +131,7 @@
             
                 <hr class="mediumslateblue mt-5 mb-3">
             
-                <a id="aiGeneratorBtn" type="button" class="btn" href="{% url 'drawing-generator' %}">Analize, Generate, Edit...,
-                    Your Images</a>
+                <a id="aiGeneratorBtn" type="button" class="btn" href="{% url 'drawing-generator' %}">{% trans "Analize, Generate, Edit..., Your Images" %}</a>
                 
                 <hr class="mediumslateblue">
                 <br>

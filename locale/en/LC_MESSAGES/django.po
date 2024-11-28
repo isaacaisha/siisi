@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-27 01:40+0000\n"
+"POT-Creation-Date: 2024-11-28 19:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,66 +18,666 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: chatgpt/templates/chatgpt/index.html:25
-msgid "Change language"
+#: base/templates/base/conversation_all.html:9
+msgid "All Your Conversations Template"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:31
-msgid "Chat AI"
+#: base/templates/base/conversation_all.html:21
+msgid "-¡!¡- All Your Conversations -¡!¡-"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:32
-msgid "Welcome to the website!"
+#: base/templates/base/conversation_all.html:27
+msgid "Conversations Datas"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:52
+#: base/templates/base/conversation_all.html:33
+#: base/templates/base/conversations_liked.html:34
+msgid "Click to Go Back"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:46
+#: base/templates/base/conversations_liked.html:47
+msgid "Number of conversations to retrieve:"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:50
+#: base/templates/base/conversations_liked.html:50
+msgid "Number of conversations to skip:"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:53
+#: base/templates/base/conversations_liked.html:53
+msgid "Word to search in conversations:"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:57
+#: base/templates/base/conversations_liked.html:57
+msgid "Look for"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:65
+#: base/templates/base/conversations_liked.html:65
+msgid "Total of"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:65
+msgid "Conversations"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:68
+#: base/templates/base/conversations_liked.html:68
+msgid "Conversations Retrieved"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:71
+#: base/templates/base/conversations_liked.html:71
+msgid "Conversations Skipped"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:74
+#: base/templates/base/conversations_liked.html:74
+msgid "Search results for"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:74
+#: base/templates/base/conversations_liked.html:74
+msgid "in conversations"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:82
+#: base/templates/base/conversation_all.html:133
+#: base/templates/base/conversation_selected.html:53
+#: base/templates/base/conversations_liked.html:82
+msgid "Conversation ID:"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:92
+msgid "·SìįSí·Dbt·:"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:98
+#: base/templates/base/conversation_all.html:136
+msgid "Created At:"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:105
+#: base/templates/base/conversation_interface.html:125
+#: base/templates/base/conversation_selected.html:81
+#: base/templates/base/conversations_liked.html:105
+msgid "Your browser does not support the audio element."
+msgstr ""
+
+#: base/templates/base/conversation_all.html:126
+#: base/templates/base/conversations_liked.html:126
+msgid "Show Conversations"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:143
+#: base/templates/base/conversations_liked.html:143
+msgid "Show Conversations JSON"
+msgstr ""
+
+#: base/templates/base/conversation_all.html:159
+#: base/templates/base/conversation_by_id.html:52
+#: base/templates/base/conversation_delete.html:52
+#: base/templates/base/conversations_liked.html:159
+#: base/templates/base/superuser-views.html:58
+msgid "-¡!¡- Back Home -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_by_id.html:8
+msgid "Conversations by ID Template"
+msgstr ""
+
+#: base/templates/base/conversation_by_id.html:20
+msgid "-¡!¡- Conversation by ID -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_by_id.html:25
+#: base/templates/base/conversation_delete.html:25
+msgid "Select a Conversation"
+msgstr ""
+
+#: base/templates/base/conversation_by_id.html:40
+msgid "Select"
+msgstr ""
+
+#: base/templates/base/conversation_delete.html:8
+msgid "Delete Conversations Template"
+msgstr ""
+
+#: base/templates/base/conversation_delete.html:20
+msgid "-¡!¡- Conversation to Delete -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_delete.html:40
+#: env/lib/python3.12/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:12
+msgid "Conversation Interface Template"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:21
+msgid "-¡!¡- ·SìįSí·Dbt· Interface -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:38
+msgid "Show Instructions"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:42
+msgid "Welcome to the"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:42
+msgid "-¡!¡-SìįSí-¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:42
+msgid "app"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:45
+msgid "Click On Start Writing"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:45
+msgid "to write a text"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:45
+#: env/lib/python3.12/site-packages/django/utils/text.py:286
+msgid "or"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:46
+msgid "Click on Speech Recognition"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:46
+msgid "to speech a text"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:49
+msgid "Click On Get The Response"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:49
+msgid "to get SìįSí's answer"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:52
+msgid "Click On PlayBack Audio"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:52
+msgid "to listen the playback"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:55
+msgid "Enjoy"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:71
+msgid "-¡!¡- Start Writing -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:74
+msgid "-¡!¡- Speech Recognition -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:78
+msgid "Write Your Text, below:"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:80
+msgid "(be Specific for a better result)"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:83
+msgid "¡!¡ T😎 INTERACT, WRITE HERE ¡!¡"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:87
+msgid "Loading..."
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:88
+msgid "Loading"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:94
+msgid "Get The Response"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:95 templates/main.html:68
+#: templates/main.html:70
+msgid "Crown Icon"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:100
+msgid "Stop ·SìįSí·Dbt· Response"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:115
+msgid "-¡!¡- PlayBack Audio -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversation_interface.html:134
+msgid "Analize, Generate, Edit..., Your Images"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:8
+msgid "Conversations Detailed Template"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:22
+msgid "Conversation"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:39
+msgid "Conversation Detailed"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:44
+msgid "Conversation Details"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:73
+#: base/templates/base/conversations_liked.html:98
+msgid "Created on:"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:103
+msgid "Click to Go Back to Select Conversation"
+msgstr ""
+
+#: base/templates/base/conversation_selected.html:111
+msgid "Back Home"
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:10
+msgid "- Conversations Liked Template -"
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:22
+msgid "-¡!¡- Conversations Liked -¡!¡-"
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:28
+msgid "Conversations Liked Datas"
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:65
+msgid "Conversations Liked"
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:133
+msgid "- Conversation ID: "
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:134
+msgid "- "
+msgstr ""
+
+#: base/templates/base/conversations_liked.html:136
+msgid "- Created At: "
+msgstr ""
+
+#: base/templates/base/superuser-views.html:10
+msgid "Super User Interface"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:30
+msgid "Be Good,"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:38
+msgid "Doing Good,"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:46
+msgid "By Acting GOOD -¡!¡-"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:66
+msgid "Wall Poster Animation"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:80
+msgid "Photo credits"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:83
+msgid "Kam Idris - "
+msgstr ""
+
+#: base/templates/base/superuser-views.html:83
+msgid "brown wooden framed yellow padded chair"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:84
+msgid "Steve Johnson - "
+msgstr ""
+
+#: base/templates/base/superuser-views.html:84
+msgid "multicolored abstract painting"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:85
+msgid "Pawel Czerwinski - "
+msgstr ""
+
+#: base/templates/base/superuser-views.html:85
+msgid "white and blue smoke illustration"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:86
+msgid "Rodion Kutsaiev - "
+msgstr ""
+
+#: base/templates/base/superuser-views.html:86
+msgid "a close up of water droplets on a window"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:88
+msgid "on"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:88
+msgid "Unsplash"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:90
+msgid "Thanks!"
+msgstr ""
+
+#: base/templates/base/superuser-views.html:104
+msgid "@wakana-k"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:12
+msgid "Activity Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:25
+#: chat_forum/templates/chat_forum/delete.html:25
+#: chat_forum/templates/chat_forum/room.html:32
+#: chat_forum/templates/chat_forum/room_form.html:24
+#: chat_forum/templates/chat_forum/topics.html:24
+#: chat_forum/templates/chat_forum/update_user.html:27
+msgid "arrow-left"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:31
+#: chat_forum/templates/chat_forum/activity_component.html:7
+#: chat_forum/templates/chat_forum/chat_forum.html:39
+msgid "Recent Activities"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:45
+#: chat_forum/templates/chat_forum/activity_component.html:18
+#: chat_forum/templates/chat_forum/feed_component.html:16
+#: chat_forum/templates/chat_forum/room.html:125
+msgid "ago"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:53
+#: chat_forum/templates/chat_forum/activity_component.html:26
+#: chat_forum/templates/chat_forum/room.html:67
+#: chat_forum/templates/chat_forum/room.html:114
+msgid "remove"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:64
+#: chat_forum/templates/chat_forum/activity_component.html:37
+msgid "replied to post"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/activity.html:71
+#: chat_forum/templates/chat_forum/activity_component.html:44
+msgid "No activity found."
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:8
+msgid "Chat Forum Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:29
+#: chat_forum/templates/chat_forum/topics.html:37
+msgid "search"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:34
+#: chat_forum/templates/chat_forum/topics.html:41
+msgid "Search for posts"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:38
+#: chat_forum/templates/chat_forum/topics.html:29
+#: chat_forum/templates/chat_forum/topics_component.html:5
+msgid "Browse Topics"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:45
+#: chat_forum/templates/chat_forum/room.html:23
+msgid "Study Room"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:46
+msgid " Rooms available"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:51
+msgid "add"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/chat_forum.html:56
+msgid "Create Room"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/delete.html:12
+msgid "Delete Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/delete.html:31
+msgid "DELETE"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/delete.html:39
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/delete.html:43
+msgid "Confirm"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/feed_component.html:24
+msgid "user-group"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/feed_component.html:38
+#: chat_forum/templates/chat_forum/room.html:148
+msgid "Joined"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/feed_component.html:40
+msgid "Topic"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/profile.html:12
+msgid "Profile Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/profile.html:36
+msgid "PROFILE"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/profile.html:41
+msgid "About"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/profile.html:48
+msgid "Study Rooms Hosted by"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/profile.html:63 templates/navbar.html:62
+msgid "Chat Forum"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room.html:13
+msgid "Room Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room.html:49
+msgid "edit"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room.html:84
+msgid "Hosted By"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room.html:93
+msgid "Descriptions"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room.html:139
+msgid "Write your message here..."
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room.html:140
+#: chatgpt/templates/chatgpt/index.html:43
 msgid "Send"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:62
-msgid "¡!¡- Login User -¡!¡-"
+#: chat_forum/templates/chat_forum/room.html:148
+msgid "Participants"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:72
+#: chat_forum/templates/chat_forum/room.html:169
+msgid "Back to Forum"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:12
+msgid "Room Form Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:30
+msgid "Create/Update Study Room"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:38
+msgid "Enter a Topic"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:50
+msgid "Room Name"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:55
+msgid "Room Description"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:60
+#: chat_forum/templates/chat_forum/update_user.html:48
+msgid "Cancel"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/room_form.html:61
+msgid "Submit"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/topics.html:12
+msgid "Topics Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/topics.html:48
+#: chat_forum/templates/chat_forum/topics_component.html:10
+msgid "All"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/topics_component.html:24
+msgid "More"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/topics_component.html:26
+msgid "chevron-down"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/update_user.html:12
+msgid "Update User Template"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/update_user.html:33
+msgid "Update Profile"
+msgstr ""
+
+#: chat_forum/templates/chat_forum/update_user.html:49
+msgid "Update"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:15
+msgid "Home"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:22
+msgid "Chat AI"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:23
+msgid "Welcome to the website!"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:40
+msgid "Type your message here..."
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:53
+msgid "-¡!¡- Login User -¡!¡-"
+msgstr ""
+
+#: chatgpt/templates/chatgpt/index.html:63
 msgid "Login to User Dashboard"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:75
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:53
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:102
+#: chatgpt/templates/chatgpt/index.html:66
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:46
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:95
 msgid "Access your account and manage your User profile."
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:81
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:59
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:119
+#: chatgpt/templates/chatgpt/index.html:72 templates/navbar.html:23
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:52
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:112
 msgid "Login"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:90
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:68
+#: chatgpt/templates/chatgpt/index.html:81
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:61
 msgid "Haven't signed up yet?"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:92
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:70
+#: chatgpt/templates/chatgpt/index.html:83
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:63
 msgid "Sign Up"
 msgstr ""
 
-#: chatgpt/templates/chatgpt/index.html:101
+#: chatgpt/templates/chatgpt/index.html:92
 #, python-format
 msgid "© DBT Copyright %(date)s"
 msgstr ""
 
-#: chatgpt/views.py:26
+#: chatgpt/views.py:32
 msgid "Welcome to my site."
 msgstr ""
 
-#: chatgpt/views.py:32
+#: chatgpt/views.py:38
 msgid "Hello, World!"
 msgstr ""
 
-#: chatgpt/views.py:53
+#: chatgpt/views.py:59
 msgid "You are a helpful assistant."
 msgstr ""
 
@@ -951,10 +1551,6 @@ msgstr[1] ""
 msgid "Order"
 msgstr ""
 
-#: env/lib/python3.12/site-packages/django/forms/formsets.py:499
-msgid "Delete"
-msgstr ""
-
 #: env/lib/python3.12/site-packages/django/forms/models.py:901
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
@@ -1364,10 +1960,6 @@ msgctxt "String to return when truncating text"
 msgid "%(truncated_text)s…"
 msgstr ""
 
-#: env/lib/python3.12/site-packages/django/utils/text.py:286
-msgid "or"
-msgstr ""
-
 #. Translators: This string is used as a separator between list elements
 #: env/lib/python3.12/site-packages/django/utils/text.py:305
 #: env/lib/python3.12/site-packages/django/utils/timesince.py:135
@@ -1590,39 +2182,186 @@ msgstr ""
 msgid "Error verifying reCAPTCHA, please try again."
 msgstr ""
 
-#: siisi/settings.py:232
+#: siisi/settings.py:227
 msgid "English"
 msgstr ""
 
-#: siisi/settings.py:233
+#: siisi/settings.py:228
 msgid "French"
 msgstr ""
 
-#: siisi/settings.py:234
+#: siisi/settings.py:229
 msgid "Spanish"
 msgstr ""
 
-#: siisi/settings.py:235
+#: siisi/settings.py:230
 msgid "Portuguese"
 msgstr ""
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:30
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:40
-msgid "-¡!¡- Login Super User -¡!¡-"
+#: templates/main.html:11
+msgid ""
+"Experience the power of AI with ·SìįSí·Dbt·, your personal assistant powered "
+"by ChatGPT. Enhance productivity, streamline tasks, and get personalized "
+"assistance."
 msgstr ""
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:50
+#: templates/main.html:12 templates/main.html:18
+msgid "·SìįSí·Dbt· - AI Personal Assistant"
+msgstr ""
+
+#: templates/main.html:14 templates/main.html:20
+msgid ""
+"·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase "
+"productivity, automate tasks, and receive personalized recommendations."
+msgstr ""
+
+#: templates/main.html:23
+msgid ""
+"AI assistant, ChatGPT, productivity, automation, personalized "
+"recommendations, ·SìįSí·Dbt·"
+msgstr ""
+
+#: templates/main.html:24
+msgid "Developer"
+msgstr ""
+
+#: templates/main.html:39
+msgid "·SìįSí·Dbt· App"
+msgstr ""
+
+#: templates/main.html:69
+msgid "·SìįSí·Dbt· OpenAI"
+msgstr ""
+
+#: templates/main.html:77
+msgid "Current language: "
+msgstr ""
+
+#: templates/main.html:85
+msgid "Change language"
+msgstr ""
+
+#: templates/main.html:93
+msgid "Dark Mode"
+msgstr ""
+
+#: templates/main.html:101
+msgid "Work in Progress Animation"
+msgstr ""
+
+#: templates/main.html:113
+msgid "Avatar"
+msgstr ""
+
+#: templates/main.html:115
+msgid "Default Avatar"
+msgstr ""
+
+#: templates/main.html:124
+msgid "Edit Profile"
+msgstr ""
+
+#: templates/main.html:155
+msgid "SìįSí FastAPI"
+msgstr ""
+
+#: templates/main.html:164
+msgid "Instagram DBTEvolution"
+msgstr ""
+
+#: templates/main.html:172
+msgid "FastAPI Documentation"
+msgstr ""
+
+#: templates/main.html:180
+msgid "Isaac Aisha\\"
+msgstr ""
+
+#: templates/main.html:191
+msgid "Copyright"
+msgstr ""
+
+#: templates/navbar.html:6
+msgid "SìįSí Dbt Documentation"
+msgstr ""
+
+#: templates/navbar.html:8
+msgid "SìįSí Dbt"
+msgstr ""
+
+#: templates/navbar.html:12
+msgid "Toggle navigation"
+msgstr ""
+
+#: templates/navbar.html:13
+msgid "Menu"
+msgstr ""
+
+#: templates/navbar.html:21
+msgid "New session"
+msgstr ""
+
+#: templates/navbar.html:31
+msgid "Super User"
+msgstr ""
+
+#: templates/navbar.html:36
+msgid "Conversation Interface"
+msgstr ""
+
+#: templates/navbar.html:41
+msgid "All Your Conversations"
+msgstr ""
+
+#: templates/navbar.html:46
+msgid "Liked Conversations"
+msgstr ""
+
+#: templates/navbar.html:52
+msgid "ID Conversation"
+msgstr ""
+
+#: templates/navbar.html:57
+msgid "Delete Conversation"
+msgstr ""
+
+#: templates/navbar.html:69
+msgid "Drawing Generator"
+msgstr ""
+
+#: templates/navbar.html:74
+msgid "Website Review Generator"
+msgstr ""
+
+#: templates/navbar.html:79
+msgid "Liked Reviews"
+msgstr ""
+
+#: templates/navbar.html:85
+msgid "Extras Features"
+msgstr ""
+
+#: templates/navbar.html:92
+msgid "Logout"
+msgstr ""
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
+#, python-format
+msgid "-¡!¡- %(page)s -¡!¡-"
+msgstr ""
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:43
 msgid "Login Super User"
 msgstr ""
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:99
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:92
 msgid "Register Super User"
 msgstr ""
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:108
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:101
 msgid "Register"
 msgstr ""
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:117
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:110
 msgid "Already Signed Up?"
 msgstr ""

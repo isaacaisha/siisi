@@ -1,13 +1,15 @@
+<!-- chat_forum/templates/chat_forum/delete.html -->
+
 {% extends 'main.html' %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block favicon %}
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon1.ico' %}">
 {% endblock %}
 
 {% block title %}
-    - Delete Template
+    - {% trans "Delete Template" %}
 {% endblock %}
 
 {% block content %}
@@ -20,13 +22,13 @@
                         <a href="{{ request.META.HTTP_REFERER }}">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
                                 viewBox="0 0 32 32">
-                                <title>arrow-left</title>
+                                <title>{% trans "arrow-left" %}</title>
                                 <path
                                     d="M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z">
                                 </path>
                             </svg>
                         </a>
-                        <h3>DELETE</h3>
+                        <h3>{% trans "DELETE" %}</h3>
                     </div>
                 </div>
                 <div class="layout__body">
@@ -34,11 +36,11 @@
                         {% csrf_token %}
 
                         <div class="form__group">
-                            <p>Are you sure you want to delete 🔥{{obj}}{{message}}🔥?</p>
+                            <p>{% trans "Are you sure you want to delete" %} 🔥{{obj}}{{message}}🔥?</p>
                         </div>
 
                         <div class="for__group text-center m-0">
-                            <input class="btn btn--dark" type="submit" value="Confirm" />
+                            <input class="btn btn--dark" type="submit" value="{% trans 'Confirm' %}" />
                         </div>
 
                     </form>

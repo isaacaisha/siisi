@@ -1,6 +1,10 @@
+<!-- chat_forum/templates/chat_forum/activity_compnent.html -->
+
+{% load static i18n %}
+
 <div class="activities">
   <div class="activities__header">
-    <h2>Recent Activities</h2>
+    <h2>{% trans "Recent Activities" %}</h2>
   </div>
   {% for message in room_messages %}
   <div class="activities__box">
@@ -11,7 +15,7 @@
         </div>
         <p>
           @{{message.user}}
-          <span>{{message.created|timesince}} ago</span>
+          <span>{{message.created|timesince}} {% trans "ago" %}</span>
         </p>
       </a>
 
@@ -19,10 +23,10 @@
       <div class="roomListRoom__actions">
         <a href="{% url 'delete-message' message.id %}">
           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-            <title>remove</title>
+            <title>{% trans "remove" %}</title>
             <path
-              d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
-            ></path>
+              d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z">
+            </path>
           </svg>
         </a>
       </div>
@@ -30,15 +34,13 @@
     </div>
 
     <div class="activities__boxContent">
-      <p>replied to post “<a href="{% url 'room' message.room.id %}">{{message.room}}</a>”</p>
+      <p>{% trans "replied to post" %} “<a href="{% url 'room' message.room.id %}">{{message.room}}</a>”</p>
       <div class="activities__boxRoomContent">
-        <!-- Display the first 55 characters -->
-        <!--{{ message.body|slice:":55" }}{% if message.body|length > 50 %}...{% endif %}-->
-        {{ message.body|truncatewords:7 }}  <!-- Shows the first 7 words -->
+        {{ message.body|truncatewords:7 }} <!-- Shows the first 7 words -->
       </div>
     </div>
   </div>
   {% empty %}
-    <p>No activity found.</p>  <!-- Handle case when no activity -->
+  <p>{% trans "No activity found." %}</p> <!-- Handle case when no activity -->
   {% endfor %}
 </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+{% load static i18n %}
 <html lang="en">
 
 <head>
@@ -8,20 +8,20 @@
   <meta name="geo.place-name" content="Spain">
   <meta property="og:type" content="website">
   <meta name="description"
-    content="Experience the power of AI with ·SìįSí·Dbt·, your personal assistant powered by ChatGPT. Enhance productivity, streamline tasks, and get personalized assistance.">
-  <meta property="og:title" content="·SìįSí·Dbt· - AI Personal Assistant">
+    content="{% trans 'Experience the power of AI with ·SìįSí·Dbt·, your personal assistant powered by ChatGPT. Enhance productivity, streamline tasks, and get personalized assistance.' %}">
+  <meta property="og:title" content="{% trans '·SìįSí·Dbt· - AI Personal Assistant' %}">
   <meta property="og:description"
-    content="·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase productivity, automate tasks, and receive personalized recommendations.">
+    content="{% trans '·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase productivity, automate tasks, and receive personalized recommendations.' %}">
   <meta property="og:image" content="https://siisi.copromanager.pro/static/images/logo_ai.jpg">
   <meta property="og:url" content="https://siisi.copromanager.pro">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="·SìįSí·Dbt· - AI Personal Assistant">
+  <meta name="twitter:title" content="{% trans '·SìįSí·Dbt· - AI Personal Assistant' %}">
   <meta name="twitter:description"
-    content="·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase productivity, automate tasks, and receive personalized recommendations.">
+    content="{% trans '·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase productivity, automate tasks, and receive personalized recommendations.' %}">
   <meta name="twitter:image" content="https://siisi.copromanager.pro/static/images/logo3.jpg">
   <meta name="keywords"
-    content="AI assistant, ChatGPT, productivity, automation, personalized recommendations, ·SìįSí·Dbt·">
-  <meta name="author" content="Developer">
+    content="{% trans 'AI assistant, ChatGPT, productivity, automation, personalized recommendations, ·SìįSí·Dbt·' %}">
+  <meta name="author" content="{% trans 'Developer' %}">
   <meta name="google-site-verification" content="bYBQsihs2g2t3_99rBWJO60qaXSCS7ay3kIz5urnBGs">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
@@ -36,8 +36,8 @@
       integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
   </noscript>
 
-  <title>{% block title %}{% endblock %} 👌🏿·SìįSí·Dbt· App💪🏿</title>
-  
+  <title>{% block title %}{% endblock %} 👌🏿{% trans '·SìįSí·Dbt· App' %}💪🏿</title>
+
   <!-- reCAPTCHA_v3 -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcIhHoqAAAAAApFkpygkoHmhy-nvpjpK41ntV4K"></script>
 
@@ -65,23 +65,32 @@
       <div class="p-3 rounded-3 jumbotron text-light">
         <div class="container-fluid p-1">
           <h1 class="">
-            <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" class="crown img-fluid mx-auto" width="100"
-              height="100">
-            ·SìįSí·Dbt· OpenAI
-            <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" class="crown img-fluid mx-auto" width="100"
-              height="100">
+            <img src="{% static 'images/crown.webp' %}" alt="{% trans 'Crown Icon' %}" class="crown img-fluid mx-auto" width="100" height="100">
+            {% trans '·SìįSí·Dbt· OpenAI' %}
+            <img src="{% static 'images/crown.webp' %}" alt="{% trans 'Crown Icon' %}" class="crown img-fluid mx-auto" width="100" height="100">
           </h1>
         </div>
       </div>
     </div>
     {% endblock %}
+    
+    <p>{% trans "Current language: " %}{{ LANGUAGE_CODE }}</p>
+    <form class="language-form" method="post" action="{% url 'set_language' %}">
+      {% csrf_token %}
+      <select name="language">
+        {% for lang_code, lang_name in LANGUAGES %}
+        <option value="{{ lang_code }}">{{ lang_name }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">{% trans "Change language" %}</button>
+    </form>
 
     <div class="togglebutton">
       <label>
         <input type="checkbox" id="theme-toggle">
         <span id="darkMode" class="toggle"></span>
       </label>
-      <span class="dark-mode-text">Dark Mode</span>
+      <span class="dark-mode-text">{% trans 'Dark Mode' %}</span>
     </div>
 
     {% block navbar %}
@@ -89,7 +98,7 @@
     {% endblock %}
 
     {% block work_in_progress %}
-    <p class="text-center mb-5"><img src="https://media.giphy.com/media/QJfCtrknxjcGPnRfMl/giphy.gif" style="width:19%;"></p>
+    <p class="text-center mb-5"><img src="https://media.giphy.com/media/QJfCtrknxjcGPnRfMl/giphy.gif" alt="{% trans 'Work in Progress Animation' %}" style="width:19%;"></p>
     {% endblock %}
 
     <!-- Room List Start -->
@@ -100,10 +109,10 @@
       <div class="profile">
         <div class="profile__avatar">
           <div class="avatar avatar--large active">
-            {% if user.is_authenticated and user.avatar %}
-            <img src="{{ user.avatar.url }}" alt="{{ user.username }}'s Avatar" />
+            {% if user.avatar %}
+            <img src="{{ user.avatar.url }}" alt="{{ user.username|escapejs }}'s {% trans 'Avatar' %}" />
             {% else %}
-            <img src="{% static 'images/avatar.svg' %}" alt="Default Avatar" />
+            <img src="{% static 'images/avatar.svg' %}" alt="{% trans 'Default Avatar' %}" />
             {% endif %}
           </div>
         </div>
@@ -112,7 +121,7 @@
           <h3>{{ user.username }} 🚀</h3>
           <p>{{ user.email }}</p>
           {% block edit_profile_btn %}
-          <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+          <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">{% trans 'Edit Profile' %}</a>
           {% endblock %}
           {% endif %}
         </div>
@@ -143,7 +152,7 @@
     <footer id="footer">
       <h6 class="text-center mb-3">
         <a href="https://siisi.api.copromanager.pro/docs" target="_blank" class="api">
-          SìįSí FastAPI
+          {% trans 'SìįSí FastAPI' %}
         </a>
       </h6>
 
@@ -152,7 +161,7 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center">
               <li class="list-inline-item">
-                <a href="https://www.instagram.com/dbtevolution/" aria-label="Instagram DBTEvolution" target="_blank">
+                <a href="https://www.instagram.com/dbtevolution/" aria-label="{% trans 'Instagram DBTEvolution' %}" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
@@ -160,7 +169,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://siisi.api.copromanager.pro/docs" aria-label="FastAPI Documentation" target="_blank">
+                <a href="https://siisi.api.copromanager.pro/docs" aria-label="{% trans 'FastAPI Documentation' %}" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fa-solid fa-code fa-stack-1x fa-inverse"></i>
@@ -168,7 +177,7 @@
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/isaacaisha" aria-label="Isaac Aisha's GitHub" target="_blank">
+                <a href="https://github.com/isaacaisha" aria-label="{% trans 'Isaac Aisha\'s GitHub' %}" target="_blank">
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-github fa-stack-1x fa-inverse"></i>
@@ -179,7 +188,7 @@
 
             <div class="center mb-3">
               <span class="copyright">
-                © DBT Copyright {{ date }}
+                © DBT {% trans 'Copyright' %} {{ date }}
               </span>
             </div>
           </div>

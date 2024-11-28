@@ -1,3 +1,5 @@
+<!-- chat_forum/templates/chatgpt/index.html -->
+
 {% extends 'main.html' %}
 {% load i18n %}
 {% load static %}
@@ -13,17 +15,6 @@
 {% block title %}{% trans "Home" %}{% endblock %}
 
 {% block content %}
-
-<p>{% trans "Current language: " %}{{ LANGUAGE_CODE }}</p>
-<form class="language-form" method="post" action="{% url 'set_language' %}">
-    {% csrf_token %}
-    <select name="language">
-        {% for lang_code, lang_name in LANGUAGES %}
-        <option value="{{ lang_code }}">{{ lang_name }}</option>
-        {% endfor %}
-    </select>
-    <button type="submit">{% trans "Change language" %}</button>
-</form>
 
 <div class="chat-container">
     <!-- Header Section -->
