@@ -1,6 +1,7 @@
+# base/views/utils_chat_gpt.py
+
 import os
 import json
-import pytz
 import numpy as np
 from scipy.spatial.distance import cosine
 
@@ -17,7 +18,7 @@ from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 # Memory handling for conversations
-from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory  # Updated memory class import
+from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
 
 # Language detection
 from langdetect import detect
@@ -44,6 +45,7 @@ os.makedirs(AUDIO_FOLDER_PATH, exist_ok=True)
 
 
 def generate_conversation_context(user_input, user_conversations):
+    """Generate context from user conversations."""
     conversation_strings = [memory.conversations_summary for memory in user_conversations]
     qdocs = f"[{','.join(conversation_strings[-3:])}]"
     created_at_list = [str(memory.created_at) for memory in user_conversations]
@@ -57,6 +59,7 @@ def generate_conversation_context(user_input, user_conversations):
 
 
 def handle_llm_response(user_input, conversation_context, detected_lang):
+    """Handle user input and generate assistant response."""
     detected_lang = detect(user_input)
     conversation_context = adjust_conversation_context(conversation_context)
     response = get_llm_response(user_input, conversation_context)
