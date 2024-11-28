@@ -75,12 +75,9 @@ def loginPage(request):
     
 def register_superuser(request):
     page = 'register superuser'
-    hide_navbar = True
-    hide_edit_user = True
+
     context = {
         'page': page,
-        'hide_navbar': hide_navbar,
-        'hide_edit_user': hide_edit_user,
         'date': timezone.now().strftime("%a %d %B %Y"),
         }
     return render(request, 'two_factor_auth/login_register_superuser.html', context)
@@ -88,12 +85,9 @@ def register_superuser(request):
     
 def login_superuser(request):
     page = 'login superuser'
-    hide_navbar = True
-    hide_edit_user = True
+
     context = {
         'page': page,
-        'hide_navbar': hide_navbar,
-        'hide_edit_user': hide_edit_user,
         'date': timezone.now().strftime("%a %d %B %Y"),
         }
     return render(request, 'two_factor_auth/login_register_superuser.html', context)

@@ -1,5 +1,3 @@
-# base/utils.py
-
 import os
 import json
 import pytz
@@ -14,11 +12,12 @@ from django.utils import timezone
 from ..models import Conversation, User
 
 # Langchain and OpenAI integrations
-from langchain.chains import ConversationChain
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
 # Memory handling for conversations
-from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory
+from langchain.memory import ConversationBufferMemory, ConversationSummaryBufferMemory  # Updated memory class import
 
 # Language detection
 from langdetect import detect
@@ -30,8 +29,11 @@ from gtts.lang import tts_langs
 # Load environment variables and initialize LangChain components
 openai = OpenAIEmbeddings(api_key=settings.OPENAI_API_KEY)
 llm = ChatOpenAI(temperature=0.0, model="gpt-4o")
-memory = ConversationBufferMemory()
-conversation = ConversationChain(llm=llm, memory=memory, verbose=False)
+memory = ConversationBufferMemory(k=3)
+
+# Define a simple prompt template
+prompt = PromptTemplate(input_variables=["input"], template="{input}")
+conversation = LLMChain(llm=llm, memory=memory, prompt=prompt, verbose=False)
 memory_summary = ConversationSummaryBufferMemory(llm=llm, max_token_limit=3)
 
 # Define base directory and media folder path
@@ -62,6 +64,7 @@ def handle_llm_response(user_input, conversation_context, detected_lang):
     assistant_reply = clean_assistant_reply(assistant_reply)
     detected_lang, flash_message = handle_language_support(detected_lang)
     audio_data = generate_audio_data(assistant_reply, detected_lang)
+
     memory_summary.save_context({"input": user_input}, {"output": response})
     return assistant_reply, audio_data, response, flash_message
 

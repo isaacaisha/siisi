@@ -17,8 +17,6 @@
 {% endif %}
 {% endblock %}
 
-{% block profile__avatar %}{% endblock %}
-
 {% block content %}
 
 <main class="auth layout">
@@ -27,7 +25,7 @@
     <div class="container">
       <div class="layout__boxHeader">
         <div class="layout__boxTitle">
-          <h3>{% blocktrans trimmed %}-¡!¡- Login Super User -¡!¡-{% endblocktrans %}</h3>
+          <h3>{% blocktrans trimmed %}-¡!¡- {{ page }} -¡!¡-{% endblocktrans %}</h3>
         </div>
       </div>
       <div class="layout__body">
@@ -35,11 +33,6 @@
 
         <!-- Login Super User Section -->
         <div class="container mt-5">
-            <!--<div class="layout__boxHeader justify-content-center">
-                <div class="layout__boxTitle">
-                    <h3>{% blocktrans trimmed %}-¡!¡- Login Super User -¡!¡-{% endblocktrans %}</h3>
-                </div>
-            </div>-->
             <div class="layout__body">
                 <div class="row justify-content-center">
                     <!-- Login Card -->
@@ -81,7 +74,7 @@
     <div class="container">
       <div class="layout__boxHeader">
         <div class="layout__boxTitle">
-          <h3>Register Super User</h3>
+          <h3>-¡!¡- {{ page }} -¡!¡-</h3>
         </div>
       </div>
       <div class="layout__body">
