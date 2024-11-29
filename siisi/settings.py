@@ -36,7 +36,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = [
     'siisi.copromanager.pro',
     'www.siisi.copromanager.pro',
-    '142.93.235.205', '0.0.0.0', '192.168.243.182',
+    '142.93.235.205', '0.0.0.0', '192.168.86.182',
     '127.0.0.1', config('SERVER', default='127.0.0.1')
 ]
 

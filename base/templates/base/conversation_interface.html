@@ -15,7 +15,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <main>
-    <div class="container-fluid">
+    <div class="container-fluid mb-5">
         <div class="p-3 rounded-3 jumbotron bg-dark text-light my-4">
             <div class="py-1">
                 <h1 class="text-center">{% trans "-¡!¡- ·SìįSí·Dbt· Interface -¡!¡-" %}</h1>
@@ -129,12 +129,13 @@
                     <hr class="green">
                 </div>
             
-                <hr class="mediumslateblue mt-5 mb-3">
+                <!--<hr class="mediumslateblue mt-5 mb-3">
             
-                <a id="aiGeneratorBtn" type="button" class="btn" href="{% url 'drawing-generator' %}">{% trans "Analize, Generate, Edit..., Your Images" %}</a>
+                <a id="aiGeneratorBtn" type="button" class="btn" href="{% url 'drawing-generator' %}">
+                    {% trans "Analize, Generate, Edit..., Your Images" %}
+                </a>
                 
-                <hr class="mediumslateblue">
-                <br>
+                <hr class="mediumslateblue">-->
             </div>
         </div>
     </div>

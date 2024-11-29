@@ -1,6 +1,7 @@
 # base/views/chat_gpt_views.py
 
 import io
+
 import numpy as np
 from django.shortcuts import render, get_object_or_404
 from django.http import FileResponse, JsonResponse, HttpResponse
@@ -69,10 +70,11 @@ def interfaceAnswer(request):
                 # Handle case where no embeddings exist
                 assistant_reply, audio_data, response, flash_message = handle_llm_response(user_input, None, detected_lang)
                 save_to_database(request.user, user_input, response, audio_data)
+                flash_message = flash_message or _("Embedding data not found, generating new response.")
                 return JsonResponse({
                     "answer_text": assistant_reply,
                     "detected_lang": detected_lang,
-                    "flash_message": _("Embedding data not found, generating new response.")
+                    "flash_message": _(flash_message)
                 })
             else:
                 flash_message = _("Response successfully generated.")
@@ -112,6 +114,8 @@ def interfaceAnswer(request):
         assistant_reply, audio_data, response, flash_message = handle_llm_response(user_input, conversation_context, detected_lang)
         save_to_database(request.user, user_input, response, audio_data)
 
+        # Ensure flash_message is never None before translation
+        flash_message = flash_message or ''  # Default to an empty string if None
         return JsonResponse({
             "answer_text": assistant_reply,
             "detected_lang": detected_lang,
@@ -124,11 +128,13 @@ def interfaceAnswer(request):
 def serveAudioFromDb(request, conversation_id):
     """Serve audio file from a specific conversation."""
     conversation = get_object_or_404(Conversation, id=conversation_id)
+
     if conversation.audio_datas:
         audio_data = io.BytesIO(conversation.audio_datas)
         return FileResponse(
             audio_data,
             content_type='audio/mpeg',
+            as_attachment=True,
             filename=f"audio_{conversation_id}.mp3"
         )
     return HttpResponse(_("Audio not found"), status=404)
