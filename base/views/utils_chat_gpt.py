@@ -7,6 +7,7 @@ from scipy.spatial.distance import cosine
 
 from django.http import JsonResponse
 from django.conf import settings
+from django.utils.translation import gettext as _
 from django.utils import timezone
 
 # Models from the same Django app
@@ -101,7 +102,7 @@ def clean_assistant_reply(assistant_reply):
 def handle_language_support(detected_lang):
     flash_message = None
     if detected_lang not in tts_langs():
-        flash_message = f"Language '{detected_lang}' not supported, falling back to English."
+        flash_message = _("Language '{detected_lang}' not supported, falling back to English.").format(detected_lang=detected_lang)
         detected_lang = 'en'
     return detected_lang, flash_message
 

@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import FileResponse, JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-# Date and time handling
+from django.utils.translation import gettext as _
 from django.utils import timezone
 
 # 2 Factor Authentication integration
@@ -44,7 +44,7 @@ def conversationInterface(request):
         'user_input': user_input,
         'answer': answer,
         'latest_conversation': latest_conversation,
-        'date': timezone.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
     }
     return render(request, 'base/conversation_interface.html', context)
 
@@ -58,7 +58,7 @@ def interfaceAnswer(request):
         user_email = request.user.email
 
         if user_email == 'medusadbt@gmail.com':
-            print("Using embedding method for medusadbt@gmail.com")
+            print(_("Using embedding method for medusadbt@gmail.com"))
             # Fetch recent conversations and generate embeddings
             user_conversations = Conversation.objects.filter(owner=request.user).order_by('-created_at')[:91]
             embeddings = [
@@ -72,8 +72,11 @@ def interfaceAnswer(request):
                 return JsonResponse({
                     "answer_text": assistant_reply,
                     "detected_lang": detected_lang,
-                    "flash_message": flash_message
+                    "flash_message": _("Embedding data not found, generating new response.")
                 })
+            else:
+                flash_message = _("Response successfully generated.")
+
 
             # Find most relevant conversation
             index, similarity = find_most_relevant_conversation(user_input, embeddings)
@@ -112,7 +115,7 @@ def interfaceAnswer(request):
         return JsonResponse({
             "answer_text": assistant_reply,
             "detected_lang": detected_lang,
-            "flash_message": flash_message
+            "flash_message":  _(flash_message)
         })
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
@@ -128,7 +131,7 @@ def serveAudioFromDb(request, conversation_id):
             content_type='audio/mpeg',
             filename=f"audio_{conversation_id}.mp3"
         )
-    return HttpResponse("Audio not found", status=404)
+    return HttpResponse(_("Audio not found"), status=404)
 
 
 # Function to provide the URL for the latest audio
@@ -138,7 +141,7 @@ def latestAudioUrl(request):
     if latest_conversation and latest_conversation.audio_datas:
         audio_url = reverse('serve_audio_from_db', args=[latest_conversation.id])
         return JsonResponse({"audio_url": audio_url})
-    return JsonResponse({"error": "No audio found"}, status=404)
+    return JsonResponse({"error": _("No audio found")}, status=404)
 
 
 # Super User page requiring 2FA
@@ -146,5 +149,7 @@ def latestAudioUrl(request):
 @login_required(login_url='two_factor:login')
 def superuserViews(request):
     """Render the superuser views page, restricted by 2FA."""
-    context = {'date': timezone.now().strftime("%a %d %B %Y")}
+    context = {
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
+        }
     return render(request, 'base/superuser-views.html', context)

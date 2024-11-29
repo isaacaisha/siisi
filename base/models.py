@@ -1,4 +1,7 @@
+# base/models.py
+
 from django.db import models
+from django.utils.translation import gettext as _
 
 from two_factor_auth.models import User
 
@@ -17,7 +20,7 @@ class Conversation(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='conversations')
 
     def __str__(self):
-        return f"{self.user_name} - {self.created_at}"
+        return _("{} - {}").format(self.user_name, self.created_at)
 
 
 class DrawingDatabase(models.Model):
@@ -29,7 +32,7 @@ class DrawingDatabase(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user_name} - {self.created_at}"
+        return _("{} - {}").format(self.user_name, self.created_at)
 
 
 class WebsiteReview(models.Model):
@@ -43,8 +46,8 @@ class WebsiteReview(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='website_reviews')
 
     def __str__(self):
-        return f"{self.site_url} - {self.created_at}"
-
+        return _("{} - {}").format(self.site_url, self.created_at)
+    
 
 class BlogPost(models.Model):
     youtube_title = models.CharField(max_length=255)
@@ -55,4 +58,4 @@ class BlogPost(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
 
     def __str__(self):
-        return f"{self.youtube_title} - {self.created_at}"
+        return _("{} - {}").format(self.youtube_title, self.created_at)

@@ -1,17 +1,17 @@
-# views/utils_chat_forum.py
+# chat_forum/views/utils_chat_forum.py
 
 import json
 
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.utils.translation import gettext as _
+from django.utils import timezone
 
 from chat_forum.views.chat_forum_views import room
 
 from ..models import Room, Topic, Message
 from ..forms import RoomForm
-
-from datetime import datetime
 
 
 @login_required(login_url='/login')
@@ -34,7 +34,7 @@ def createRoom(request):
     context = {
         'form': form,
         'topics': topics,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'chat_forum/room_form.html', context)
 
@@ -46,7 +46,7 @@ def updateRoom(request, pk):
     topics = Topic.objects.all()
 
     if request.user != room.host:
-        return HttpResponse('You\'re not Allowed 😝')
+        return HttpResponse(_('You\'re not Allowed 😝'))
 
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
@@ -61,7 +61,7 @@ def updateRoom(request, pk):
         'room': room,
         'form': form,
         'topics': topics,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'chat_forum/room_form.html', context)
 
@@ -71,7 +71,7 @@ def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
 
     if request.user != room.host:
-        return HttpResponse('You\'re not Allowed 😝')
+        return HttpResponse(_('You\'re not Allowed 😝'))
 
     if request.method == 'POST':
         # Capture the room's data before deletion
@@ -83,8 +83,8 @@ def deleteRoom(request, pk):
             'description': room.description,
             # 'participants': room.participants,
             # Format datetime to exclude microseconds and timezone
-            'updated': room.updated.strftime('%Y-%m-%d %H:%M:%S'),
-            'created': room.created.strftime('%Y-%m-%d %H:%M:%S'),
+            'updated': room.updated.strftime(_('%Y-%m-%d')),
+            'created': room.created.strftime(_('%Y-%m-%d')),
             }
         # Print the captured data
         print(f"Deleted room data: {json.dumps(room_data, indent=4)}")
@@ -94,7 +94,7 @@ def deleteRoom(request, pk):
 
     context = {
         'obj':room,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
 
     return render(request, 'chat_forum/delete.html', context)
@@ -105,7 +105,7 @@ def deleteMessage(request, pk):
     message = Message.objects.get(id=pk)
 
     if request.user != message.user:
-        return HttpResponse('You\'re not Allowed 😝')
+        return HttpResponse(_('You\'re not Allowed 😝'))
 
     if request.method == 'POST':
         # Delete the message
@@ -115,7 +115,7 @@ def deleteMessage(request, pk):
     context = {
         'obj':room,
         'message': message,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
 
     return render(request, 'chat_forum/delete.html', context)
@@ -129,7 +129,7 @@ def topicsPage(request):
 
     context = {
         'topics': topics,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
     }
 
     return render(request, 'chat_forum/topics.html', context)
@@ -145,7 +145,7 @@ def activityPage(request):
     context = {
         'room_messages': room_messages,
         'hide_edit_user': hide_edit_user,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
     }
 
     return render(request, 'chat_forum/activity.html', context)

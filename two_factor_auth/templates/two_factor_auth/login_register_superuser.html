@@ -11,13 +11,11 @@
 {% endblock %}
 
 {% block title %}
-{% blocktrans trimmed %}
   {% if page != 'login superuser' %}
-    Register Super User
+    {% blocktrans trimmed %}Register Super User{% endblocktrans %}
   {% else %}
-    Login Super User
+    {% blocktrans trimmed %}Login Super User{% endblocktrans %}
   {% endif %}
-{% endblocktrans %}
 {% endblock %}
 
 {% block content %}

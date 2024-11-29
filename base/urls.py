@@ -4,7 +4,6 @@ from .views import (
     conversationInterface, interfaceAnswer, serveAudioFromDb, latestAudioUrl,
     allConversations, updateLike, likedConversations,
     ConversationById, ConversationSelected,deleteConversation,
-    conversationsDatabase, deleteData, 
     drawingGenerator, websiteReviewGenerator, likedReviews, extrasFeatures, 
 )
 
@@ -25,9 +24,6 @@ urlpatterns = [
     path('delete-conversation/', deleteConversation, name='delete-conversation'),
     
     path('extras-features/', extrasFeatures, name='extras-features'),
-
-    path('databse-conversation/', conversationsDatabase, name='databse-conversation'),
-    path('delete-data/', deleteData, name='delete-data'),
 
     path('drawing-generator/', drawingGenerator, name='drawing-generator'),
 

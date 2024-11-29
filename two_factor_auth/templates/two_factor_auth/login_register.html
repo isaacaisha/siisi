@@ -11,11 +11,11 @@
 {% endblock %}
 
 {% block title %}
-{% if page != 'login' %}
-{% blocktrans %}Register{% endblocktrans %}
-{% else %}
-{% blocktrans %}Login{% endblocktrans %}
-{% endif %}
+  {% if page != 'login' %}
+    {% blocktrans trimmed %}Register{% endblocktrans %}
+  {% else %}
+    {% blocktrans trimmed %}Login{% endblocktrans %}
+  {% endif %}
 {% endblock %}
 
 {% block profile__avatar %}{% endblock %}
@@ -92,22 +92,22 @@
           {% csrf_token %}
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.name.id_for_label }}">{% blocktrans %}{{ form.name.label }}{% endblocktrans %}</label>
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
             {{ form.name }}
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.username.id_for_label }}">{% blocktrans %}{{ form.username.label }}{% endblocktrans %}</label>
+            <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
             {{ form.username }}
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.email.id_for_label }}">{% blocktrans %}{{ form.email.label }}{% endblocktrans %}</label>
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
             {{ form.email }}
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.password1.id_for_label }}">{% blocktrans %}{{ form.password1.label }}{% endblocktrans %}</label>
+            <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
             {{ form.password1 }}
             <i class="fa fa-eye-slash position-absolute"
               style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"
@@ -115,7 +115,7 @@
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.password2.id_for_label }}">{% blocktrans %}{{ form.password2.label }}{% endblocktrans %}</label>
+            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
             {{ form.password2 }}
             <i class="fa fa-eye-slash position-absolute"
               style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"

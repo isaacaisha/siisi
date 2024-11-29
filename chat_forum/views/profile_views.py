@@ -1,9 +1,12 @@
-import datetime
+# chat_forum/views/profile_views.py
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.utils.translation import gettext as _
+from django.utils import timezone
+
 from ..models import User, Topic
 from ..forms import UserForm
-from datetime import datetime
 
 
 @login_required(login_url='login')
@@ -22,7 +25,7 @@ def userProfile(request, pk):
         'romm_messages': romm_messages,
         'topics': topics,
         'hide_edit_user': hide_edit_user,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'chat_forum/profile.html', context)
 
@@ -40,6 +43,6 @@ def updateUser(request):
 
     context = {
         'form': form,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
     }
     return render(request, 'chat_forum/update_user.html', context)

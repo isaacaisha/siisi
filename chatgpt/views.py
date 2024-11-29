@@ -1,3 +1,5 @@
+# chatgpt/views.py
+
 import os
 
 from django.shortcuts import render
@@ -5,13 +7,17 @@ from django.conf import settings
 from django.http import JsonResponse
 
 from django.utils.translation import gettext as _, activate, get_language
+from django.utils import timezone
+
+from siisi.utils import activate_current_language
 from siisi.middleware import get_current_request  
 
 from openai import OpenAI
 from .models import ChatData
 
 from gtts import gTTS
-from django.utils import timezone
+# Language detection
+from langdetect import detect
 
 client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
@@ -19,32 +25,17 @@ client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 def index(request):
     #activate('es')  # Force Spanish
     # Get current language from request
-    current_request = get_current_request()
-    if current_request:
-        lang = current_request.LANGUAGE_CODE
-        activate(lang)  # Activate the language for translations
-
-
-    print(f"LANGUAGE_CODE: {request.LANGUAGE_CODE}")  # Debug language code
-    print(f"Available Languages: {settings.LANGUAGES}")  # Confirm languages
-    print(f"Current Request: {get_current_request()}")
-
-    output = _("Welcome to my site.")
+    #activate_current_language() # Activate the language for translations
+        
     context = {
-        'output': output,
-        'date': timezone.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
-    
-    print(_('Hello, World!')) 
     return render(request, 'chatgpt/index.html', context)
 
 
 def response(request):
     # Get current language from request
-    current_request = get_current_request()
-    if current_request:
-        lang = current_request.LANGUAGE_CODE
-        activate(lang)  # Activate the language for translations
+    #activate_current_language() # Activate the language for translations
 
     if request.method == 'POST':
         message = request.POST.get('message', '')
@@ -70,7 +61,7 @@ def response(request):
 
         # Convert the OpenAI response to speech
         try:
-            tts = gTTS(text=answer, lang=get_language())  # Use the active language
+            tts = gTTS(text=answer, lang=detect)  # Use the active language
             audio_path = os.path.join(settings.MEDIA_ROOT, f'response_{new_chat.id}.mp3')
             tts.save(audio_path)
         except Exception as e:

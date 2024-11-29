@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-28 20:49+0000\n"
+"POT-Creation-Date: 2024-11-29 11:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -16,6 +16,32 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: base/forms.py:9
+msgid "Writing Text"
+msgstr "Texto para escribir"
+
+#: base/forms.py:13
+#, fuzzy
+#| msgid "Drawing Generator"
+msgid "Drawing Index"
+msgstr "Generador de Dibujos"
+
+#: base/forms.py:17 base/forms.py:21
+#, fuzzy
+#| msgid "Conversation ID:"
+msgid "Conversation ID"
+msgstr "ID de la Conversación:"
+
+#: base/forms.py:23
+#, fuzzy
+#| msgid "- Conversation ID: "
+msgid "Enter Conversation ID to delete"
+msgstr "- ID de Conversación: "
+
+#: base/models.py:23 base/models.py:35 base/models.py:49 base/models.py:61
+msgid "{} - {}"
+msgstr "{} - {}"
 
 #: base/templates/base/conversation_all.html:9
 msgid "All Your Conversations Template"
@@ -121,7 +147,7 @@ msgstr "Mostrar JSON de conversaciones"
 #: base/templates/base/conversation_by_id.html:52
 #: base/templates/base/conversation_delete.html:52
 #: base/templates/base/conversations_liked.html:159
-#: base/templates/base/superuser-views.html:58
+#: base/templates/base/superuser-views.html:57
 msgid "-¡!¡- Back Home -¡!¡-"
 msgstr "-¡!¡- Volver a inicio -¡!¡-"
 
@@ -326,77 +352,254 @@ msgstr "- "
 msgid "- Created At: "
 msgstr "- Creado el: "
 
-#: base/templates/base/superuser-views.html:10
+#: base/templates/base/superuser-views.html:9
 msgid "Super User Interface"
 msgstr "Interfaz de Superusuario"
 
-#: base/templates/base/superuser-views.html:30
+#: base/templates/base/superuser-views.html:29
 msgid "Be Good,"
 msgstr "Sé bueno,"
 
-#: base/templates/base/superuser-views.html:38
+#: base/templates/base/superuser-views.html:37
 msgid "Doing Good,"
 msgstr "Haciendo el Bien,"
 
-#: base/templates/base/superuser-views.html:46
-msgid "By Acting GOOD -¡!¡-"
-msgstr "Actuando BIEN -¡!¡-"
+#: base/templates/base/superuser-views.html:45
+msgid "By Acting GOOD"
+msgstr "Actuando BIEN"
 
-#: base/templates/base/superuser-views.html:66
+#: base/templates/base/superuser-views.html:65
 msgid "Wall Poster Animation"
 msgstr "Animación de Póster de Pared"
 
-#: base/templates/base/superuser-views.html:80
+#: base/templates/base/superuser-views.html:79
 msgid "Photo credits"
 msgstr "Créditos de Fotos"
 
-#: base/templates/base/superuser-views.html:83
+#: base/templates/base/superuser-views.html:82
 msgid "Kam Idris - "
 msgstr "Kam Idris - "
 
-#: base/templates/base/superuser-views.html:83
+#: base/templates/base/superuser-views.html:82
 msgid "brown wooden framed yellow padded chair"
 msgstr "silla amarilla acolchada con marco de madera marrón"
 
-#: base/templates/base/superuser-views.html:84
+#: base/templates/base/superuser-views.html:83
 msgid "Steve Johnson - "
 msgstr "Steve Johnson - "
 
-#: base/templates/base/superuser-views.html:84
+#: base/templates/base/superuser-views.html:83
 msgid "multicolored abstract painting"
 msgstr "pintura abstracta multicolor"
 
-#: base/templates/base/superuser-views.html:85
+#: base/templates/base/superuser-views.html:84
 msgid "Pawel Czerwinski - "
 msgstr "Pawel Czerwinski - "
 
-#: base/templates/base/superuser-views.html:85
+#: base/templates/base/superuser-views.html:84
 msgid "white and blue smoke illustration"
 msgstr "ilustración de humo blanco y azul"
 
-#: base/templates/base/superuser-views.html:86
+#: base/templates/base/superuser-views.html:85
 msgid "Rodion Kutsaiev - "
 msgstr "Rodion Kutsaiev - "
 
-#: base/templates/base/superuser-views.html:86
+#: base/templates/base/superuser-views.html:85
 msgid "a close up of water droplets on a window"
 msgstr "un primer plano de gotas de agua en una ventana"
 
-#: base/templates/base/superuser-views.html:88
+#: base/templates/base/superuser-views.html:87
 msgid "on"
 msgstr "en"
 
-#: base/templates/base/superuser-views.html:88
+#: base/templates/base/superuser-views.html:87
 msgid "Unsplash"
 msgstr "Unsplash"
 
-#: base/templates/base/superuser-views.html:90
+#: base/templates/base/superuser-views.html:89
 msgid "Thanks!"
 msgstr "¡Gracias!"
 
-#: base/templates/base/superuser-views.html:104
+#: base/templates/base/superuser-views.html:103
 msgid "@wakana-k"
 msgstr "@wakana-k"
+
+#: base/views/chat_gpt_views.py:47 base/views/chat_gpt_views.py:153
+#: base/views/extras_feats.py:13 base/views/extras_feats.py:21
+#: base/views/extras_feats.py:29 base/views/extras_feats.py:37
+#: base/views/utils_gpt_convers.py:107 base/views/utils_gpt_convers.py:142
+#: base/views/utils_gpt_convers.py:188 base/views/utils_gpt_convers.py:203
+#: chat_forum/views/chat_forum_views.py:33
+#: chat_forum/views/chat_forum_views.py:57 chat_forum/views/profile_views.py:28
+#: chat_forum/views/profile_views.py:46 chat_forum/views/utils_chat_forum.py:37
+#: chat_forum/views/utils_chat_forum.py:64
+#: chat_forum/views/utils_chat_forum.py:97
+#: chat_forum/views/utils_chat_forum.py:118
+#: chat_forum/views/utils_chat_forum.py:132
+#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:31
+#: two_factor_auth/views.py:43 two_factor_auth/views.py:74
+#: two_factor_auth/views.py:84 two_factor_auth/views.py:94
+#: two_factor_auth/views.py:118 two_factor_auth/views.py:133
+#: two_factor_auth/views.py:146
+msgid "%a %d %B %Y"
+msgstr "%a %d %B %Y"
+
+#: base/views/chat_gpt_views.py:61
+msgid "Using embedding method for medusadbt@gmail.com"
+msgstr "Usando el método de incrustación para medusadbt@gmail.com"
+
+#: base/views/chat_gpt_views.py:75
+msgid "Embedding data not found, generating new response."
+msgstr "Datos de incrustación no encontrados, generando nueva respuesta."
+
+#: base/views/chat_gpt_views.py:78
+msgid "Response successfully generated."
+msgstr "Respuesta generada con éxito."
+
+#: base/views/chat_gpt_views.py:134
+msgid "Audio not found"
+msgstr "Audio no encontrado"
+
+#: base/views/chat_gpt_views.py:144
+msgid "No audio found"
+msgstr "No se encontró audio"
+
+# Corrected from fuzzy translation
+#: base/views/utils_chat_gpt.py:105
+#, python-brace-format
+msgid "Language '{detected_lang}' not supported, falling back to English."
+msgstr "El idioma '{detected_lang}' no es compatible, volviendo a inglés."
+
+#: base/views/utils_gpt_convers.py:112 base/views/utils_gpt_convers.py:147
+#, python-brace-format
+msgid "No conversations found for search term: '{filters.search}'"
+msgstr ""
+"No se encontraron conversaciones para el término de búsqueda: '{filters."
+"search}'"
+
+#: base/views/utils_gpt_convers.py:159
+msgid "Liked status updated successfully"
+msgstr "Estado de 'Me gusta' actualizado con éxito"
+
+#: base/views/utils_gpt_convers.py:162
+msgid "Invalid request method"
+msgstr "Método de solicitud no válido"
+
+#: base/views/utils_gpt_convers.py:171
+msgid "Date format: %a %d %B %Y"
+msgstr "Formato de fecha: %a %d %B %Y"
+
+# No translation needed for date format.
+#: base/views/utils_gpt_convers.py:217
+#, python-brace-format
+msgid "Conversation with ID: 🔥{conversation_id}🔥 deleted 😎"
+msgstr "Conversación con ID: 🔥{conversation_id}🔥 eliminada 😎"
+
+#: chat_forum/forms.py:15 chat_forum/models.py:20
+#: chat_forum/templates/chat_forum/room_form.html:50
+msgid "Room Name"
+msgstr "Nombre de la Sala"
+
+#: chat_forum/forms.py:16 chat_forum/models.py:21
+#: chat_forum/templates/chat_forum/room_form.html:55
+msgid "Room Description"
+msgstr "Descripción de la Sala"
+
+#: chat_forum/forms.py:17
+#, fuzzy
+#| msgid "Topic"
+msgid "Room Topic"
+msgstr "Tema"
+
+#: chat_forum/forms.py:26 templates/main.html:115 two_factor_auth/models.py:38
+msgid "Avatar"
+msgstr "Avatar"
+
+#: chat_forum/forms.py:27 two_factor_auth/forms.py:29
+#: two_factor_auth/models.py:35
+#, fuzzy
+#| msgid "Room Name"
+msgid "Name"
+msgstr "Nombre de la Sala"
+
+#: chat_forum/forms.py:28 two_factor_auth/forms.py:30
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: chat_forum/forms.py:29
+#, fuzzy
+#| msgid "Email address"
+msgid "Email Address"
+msgstr "Dirección de correo electrónico"
+
+#: chat_forum/forms.py:30
+msgid "Biography"
+msgstr "Biografía"
+
+#: chat_forum/models.py:11
+#, fuzzy
+#| msgid "Topic"
+msgid "Topic Name"
+msgstr "Tema"
+
+#: chat_forum/models.py:18
+#, fuzzy
+#| msgid "Hosted By"
+msgid "Host"
+msgstr "Alojado por"
+
+#: chat_forum/models.py:19
+#: chat_forum/templates/chat_forum/feed_component.html:40
+msgid "Topic"
+msgstr "Tema"
+
+#: chat_forum/models.py:22 chat_forum/templates/chat_forum/room.html:147
+msgid "Participants"
+msgstr "Participantes"
+
+#: chat_forum/models.py:23 chat_forum/models.py:39
+#, fuzzy
+#| msgid "Update"
+msgid "Last Updated"
+msgstr "Actualizar"
+
+# Assuming no translation is required for this term
+#: chat_forum/models.py:24 chat_forum/models.py:40 chatgpt/models.py:11
+#, fuzzy
+#| msgid "Created At:"
+msgid "Created At"
+msgstr "Creado el:"
+
+#: chat_forum/models.py:28 chat_forum/models.py:37
+#, fuzzy
+#| msgid "Room Name"
+msgid "Room"
+msgstr "Nombre de la Sala"
+
+#: chat_forum/models.py:29
+msgid "Rooms"
+msgstr "Salas"
+
+#: chat_forum/models.py:36 two_factor_auth/models.py:51
+msgid "User"
+msgstr "Usuario"
+
+#: chat_forum/models.py:38
+#, fuzzy
+#| msgid "Messages"
+msgid "Message Body"
+msgstr "Mensajes"
+
+#: chat_forum/models.py:44 chatgpt/models.py:9
+#, fuzzy
+#| msgid "Messages"
+msgid "Message"
+msgstr "Mensajes"
+
+#: chat_forum/models.py:45
+#: env/lib/python3.12/site-packages/django/contrib/messages/apps.py:16
+msgid "Messages"
+msgstr "Mensajes"
 
 #: chat_forum/templates/chat_forum/activity.html:12
 msgid "Activity Template"
@@ -404,7 +607,7 @@ msgstr "Plantilla de Actividad"
 
 #: chat_forum/templates/chat_forum/activity.html:25
 #: chat_forum/templates/chat_forum/delete.html:25
-#: chat_forum/templates/chat_forum/room.html:32
+#: chat_forum/templates/chat_forum/room.html:31
 #: chat_forum/templates/chat_forum/room_form.html:24
 #: chat_forum/templates/chat_forum/topics.html:24
 #: chat_forum/templates/chat_forum/update_user.html:27
@@ -420,14 +623,14 @@ msgstr "Actividades Recientes"
 #: chat_forum/templates/chat_forum/activity.html:45
 #: chat_forum/templates/chat_forum/activity_component.html:18
 #: chat_forum/templates/chat_forum/feed_component.html:16
-#: chat_forum/templates/chat_forum/room.html:125
+#: chat_forum/templates/chat_forum/room.html:124
 msgid "ago"
 msgstr "hace"
 
 #: chat_forum/templates/chat_forum/activity.html:53
 #: chat_forum/templates/chat_forum/activity_component.html:26
-#: chat_forum/templates/chat_forum/room.html:67
-#: chat_forum/templates/chat_forum/room.html:114
+#: chat_forum/templates/chat_forum/room.html:66
+#: chat_forum/templates/chat_forum/room.html:113
 msgid "remove"
 msgstr "eliminar"
 
@@ -457,12 +660,12 @@ msgstr "Buscar publicaciones"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:38
 #: chat_forum/templates/chat_forum/topics.html:29
-#: chat_forum/templates/chat_forum/topics_component.html:5
+#: chat_forum/templates/chat_forum/topics_component.html:7
 msgid "Browse Topics"
 msgstr "Explorar Temas"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:45
-#: chat_forum/templates/chat_forum/room.html:23
+#: chat_forum/templates/chat_forum/room.html:22
 msgid "Study Room"
 msgstr "Sala de Estudio"
 
@@ -499,13 +702,9 @@ msgid "user-group"
 msgstr "grupo-de-usuario"
 
 #: chat_forum/templates/chat_forum/feed_component.html:38
-#: chat_forum/templates/chat_forum/room.html:148
+#: chat_forum/templates/chat_forum/room.html:147
 msgid "Joined"
 msgstr "Unido"
-
-#: chat_forum/templates/chat_forum/feed_component.html:40
-msgid "Topic"
-msgstr "Tema"
 
 #: chat_forum/templates/chat_forum/profile.html:12
 msgid "Profile Template"
@@ -527,36 +726,32 @@ msgstr "Salas de Estudio Alojadas por"
 msgid "Chat Forum"
 msgstr "Foro de Chat"
 
-#: chat_forum/templates/chat_forum/room.html:13
+#: chat_forum/templates/chat_forum/room.html:12
 msgid "Room Template"
 msgstr "Plantilla de Sala"
 
-#: chat_forum/templates/chat_forum/room.html:49
+#: chat_forum/templates/chat_forum/room.html:48
 msgid "edit"
 msgstr "editar"
 
-#: chat_forum/templates/chat_forum/room.html:84
+#: chat_forum/templates/chat_forum/room.html:83
 msgid "Hosted By"
 msgstr "Alojado por"
 
-#: chat_forum/templates/chat_forum/room.html:93
+#: chat_forum/templates/chat_forum/room.html:92
 msgid "Descriptions"
 msgstr "Descripciones"
 
-#: chat_forum/templates/chat_forum/room.html:139
+#: chat_forum/templates/chat_forum/room.html:138
 msgid "Write your message here..."
 msgstr "Escribe tu mensaje aquí..."
 
-#: chat_forum/templates/chat_forum/room.html:140
+#: chat_forum/templates/chat_forum/room.html:139
 #: chatgpt/templates/chatgpt/index.html:43
 msgid "Send"
 msgstr "Enviar"
 
-#: chat_forum/templates/chat_forum/room.html:148
-msgid "Participants"
-msgstr "Participantes"
-
-#: chat_forum/templates/chat_forum/room.html:169
+#: chat_forum/templates/chat_forum/room.html:168
 msgid "Back to Forum"
 msgstr "Volver al Foro"
 
@@ -572,14 +767,6 @@ msgstr "Crear/Actualizar Sala de Estudio"
 msgid "Enter a Topic"
 msgstr "Introduce un Tema"
 
-#: chat_forum/templates/chat_forum/room_form.html:50
-msgid "Room Name"
-msgstr "Nombre de la Sala"
-
-#: chat_forum/templates/chat_forum/room_form.html:55
-msgid "Room Description"
-msgstr "Descripción de la Sala"
-
 #: chat_forum/templates/chat_forum/room_form.html:60
 #: chat_forum/templates/chat_forum/update_user.html:48
 msgid "Cancel"
@@ -594,15 +781,15 @@ msgid "Topics Template"
 msgstr "Plantilla de Temas"
 
 #: chat_forum/templates/chat_forum/topics.html:48
-#: chat_forum/templates/chat_forum/topics_component.html:10
+#: chat_forum/templates/chat_forum/topics_component.html:12
 msgid "All"
 msgstr "Todos"
 
-#: chat_forum/templates/chat_forum/topics_component.html:24
+#: chat_forum/templates/chat_forum/topics_component.html:26
 msgid "More"
 msgstr "Más"
 
-#: chat_forum/templates/chat_forum/topics_component.html:26
+#: chat_forum/templates/chat_forum/topics_component.html:28
 msgid "chevron-down"
 msgstr "chevron-abajo"
 
@@ -620,6 +807,40 @@ msgstr "Actualizar Perfil"
 msgid "Update"
 msgstr "Actualizar"
 
+#: chat_forum/views/chat_forum_views.py:70
+#: chat_forum/views/chat_forum_views.py:71
+#: chat_forum/views/utils_chat_forum.py:86
+#: chat_forum/views/utils_chat_forum.py:87
+msgid "%Y-%m-%d"
+msgstr "%Y-%m-%d"
+
+#: chat_forum/views/chat_forum_views.py:74
+#, python-brace-format
+msgid "Room data: {room_data}"
+msgstr "Datos de la sala: {room_data}"
+
+#: chat_forum/views/utils_chat_forum.py:49
+#: chat_forum/views/utils_chat_forum.py:74
+#: chat_forum/views/utils_chat_forum.py:108
+msgid "You're not Allowed 😝"
+msgstr "No tienes permiso 😝"
+
+#: chatgpt/models.py:10
+#, fuzzy
+#| msgid "Get The Response"
+msgid "Response"
+msgstr "Obtener la Respuesta"
+
+#: chatgpt/models.py:14
+#, fuzzy
+#| msgid "Chat AI"
+msgid "Chat Data"
+msgstr "Chat IA"
+
+#: chatgpt/models.py:15
+msgid "Chat Data Entries"
+msgstr "Entradas de Datos del Chat"
+
 #: chatgpt/templates/chatgpt/index.html:15
 msgid "Home"
 msgstr "Inicio"
@@ -629,7 +850,9 @@ msgid "Chat AI"
 msgstr "Chat IA"
 
 #: chatgpt/templates/chatgpt/index.html:23
-msgid "Welcome to the website!"
+#, fuzzy
+#| msgid "Welcome to the website!"
+msgid "Welcome to the website ·SìįSí·Dbt·"
 msgstr "¡Bienvenido al sitio web!"
 
 #: chatgpt/templates/chatgpt/index.html:40
@@ -651,17 +874,22 @@ msgid "Access your account and manage your User profile."
 msgstr "Accede a tu cuenta y administra tu perfil de usuario."
 
 #: chatgpt/templates/chatgpt/index.html:72 templates/navbar.html:23
+#: two_factor_auth/templates/two_factor_auth/login_register.html:17
+#: two_factor_auth/templates/two_factor_auth/login_register.html:61
+#: two_factor_auth/templates/two_factor_auth/login_register.html:141
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:52
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:112
 msgid "Login"
 msgstr "Iniciar sesión"
 
 #: chatgpt/templates/chatgpt/index.html:81
+#: two_factor_auth/templates/two_factor_auth/login_register.html:67
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:61
 msgid "Haven't signed up yet?"
 msgstr "¿Aún no te has registrado?"
 
 #: chatgpt/templates/chatgpt/index.html:83
+#: two_factor_auth/templates/two_factor_auth/login_register.html:68
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:63
 msgid "Sign Up"
 msgstr "Registrarse"
@@ -671,15 +899,7 @@ msgstr "Registrarse"
 msgid "© DBT Copyright %(date)s"
 msgstr "© DBT Copyright %(date)s"
 
-#: chatgpt/views.py:32
-msgid "Welcome to my site."
-msgstr "Bienvenido a mi sitio."
-
-#: chatgpt/views.py:38
-msgid "Hello, World!"
-msgstr "¡Hola, Mundo!"
-
-#: chatgpt/views.py:59
+#: chatgpt/views.py:50
 msgid "You are a helpful assistant."
 msgstr "Eres un asistente útil."
 
@@ -967,10 +1187,6 @@ msgid "{len_type} values are required, but {len_value} was given."
 msgid_plural "{len_type} values are required, but {len_value} were given."
 msgstr[0] "Se requieren {len_type} valores, pero se dio {len_value}."
 msgstr[1] "Se requieren {len_type} valores, pero se dieron {len_value}."
-
-#: env/lib/python3.12/site-packages/django/contrib/messages/apps.py:16
-msgid "Messages"
-msgstr "Mensajes"
 
 #: env/lib/python3.12/site-packages/django/contrib/sitemaps/apps.py:8
 msgid "Site Maps"
@@ -2332,51 +2548,39 @@ msgstr "Aplicación ·SìįSí·Dbt·"
 msgid "·SìįSí·Dbt· OpenAI"
 msgstr "·SìįSí·Dbt· OpenAI"
 
-#: templates/main.html:77
-msgid "Current language: "
-msgstr "Idioma actual: "
-
-#: templates/main.html:85
-msgid "Change language"
-msgstr "Cambiar idioma"
-
-#: templates/main.html:93
+#: templates/main.html:83
 msgid "Dark Mode"
 msgstr "Modo Oscuro"
 
-#: templates/main.html:101
+#: templates/main.html:103
 msgid "Work in Progress Animation"
 msgstr "Animación de Trabajo en Progreso"
 
-#: templates/main.html:113
-msgid "Avatar"
-msgstr "Avatar"
-
-#: templates/main.html:115
+#: templates/main.html:117
 msgid "Default Avatar"
 msgstr "Avatar Predeterminado"
 
-#: templates/main.html:124
+#: templates/main.html:126
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: templates/main.html:155
+#: templates/main.html:157
 msgid "SìįSí FastAPI"
 msgstr "SìįSí FastAPI"
 
-#: templates/main.html:164
+#: templates/main.html:166
 msgid "Instagram DBTEvolution"
 msgstr "Instagram DBTEvolution"
 
-#: templates/main.html:172
+#: templates/main.html:174
 msgid "FastAPI Documentation"
 msgstr "Documentación de FastAPI"
 
-#: templates/main.html:180
+#: templates/main.html:182
 msgid "Isaac Aisha\\"
 msgstr "Isaac Aisha\\"
 
-#: templates/main.html:191
+#: templates/main.html:193
 msgid "Copyright"
 msgstr "Derechos de Autor"
 
@@ -2444,23 +2648,297 @@ msgstr "Características Extras"
 msgid "Logout"
 msgstr "Cerrar Sesión"
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
-#, python-format
-msgid "-¡!¡- %(page)s -¡!¡-"
-msgstr "-¡!¡- %(page)s -¡!¡-"
+#: two_factor_auth/forms.py:19 two_factor_auth/forms.py:34
+#: two_factor_auth/forms.py:43
+msgid "Captcha"
+msgstr "Captcha"
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:43
-msgid "Login Super User"
-msgstr "Iniciar Sesión como Superusuario"
+#: two_factor_auth/forms.py:31 two_factor_auth/models.py:36
+#: two_factor_auth/templates/two_factor_auth/login_register.html:41
+msgid "Email"
+msgstr "Correo Electrónico"
 
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:92
-msgid "Register Super User"
-msgstr "Registrar Superusuario"
+#: two_factor_auth/forms.py:32
+#: two_factor_auth/templates/two_factor_auth/login_register.html:46
+msgid "Password"
+msgstr "Contraseña"
 
+#: two_factor_auth/forms.py:33
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:41
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm Password"
+msgstr "Confirmar Contraseña"
+
+#: two_factor_auth/forms.py:38
+msgid "e.g. siisiChacal@gmail.com"
+msgstr "por ejemplo, siisiChacal@gmail.com"
+
+#: two_factor_auth/forms.py:39
+msgid "••••••••"
+msgstr "••••••••"
+
+#: two_factor_auth/forms.py:55
+msgid "ReCAPTCHA validation failed. Please try again."
+msgstr "Falló la validación de ReCAPTCHA. Por favor, inténtalo de nuevo."
+
+#: two_factor_auth/models.py:14
+msgid "The Email field must be set"
+msgstr "El campo de Correo Electrónico debe ser completado"
+
+#: two_factor_auth/models.py:27
+msgid "Superuser must have is_staff=True."
+msgstr "El superusuario debe tener is_staff=True."
+
+#: two_factor_auth/models.py:29
+msgid "Superuser must have is_superuser=True."
+msgstr "El superusuario debe tener is_superuser=True."
+
+#: two_factor_auth/models.py:37
+msgid "Bio"
+msgstr "Biografía"
+
+#: two_factor_auth/models.py:52
+msgid "Users"
+msgstr "Usuarios"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:15
+#: two_factor_auth/templates/two_factor_auth/login_register.html:134
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:101
 msgid "Register"
 msgstr "Registrar"
 
+#: two_factor_auth/templates/two_factor_auth/login_register.html:31
+#: two_factor_auth/templates/two_factor_auth/login_register.html:85
+#, fuzzy, python-format
+#| msgid "%(page)s page"
+msgid "%(page)s"
+msgstr "Página de %(page)s"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:35
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:32
+#, fuzzy
+#| msgid "-¡!¡-SìįSí-¡!¡-"
+msgid "-¡!¡- SìįSí Chacal -¡!¡-"
+msgstr "-¡!¡-SìįSí-¡!¡-"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:42
+#, fuzzy
+#| msgid "e.g. siisiChacal@gmail.com"
+msgid "e.g. siisiAi@gmail.com"
+msgstr "por ejemplo, siisiChacal@gmail.com"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:72
+msgid "Forgot your password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:73
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:54
+msgid "Reset Password"
+msgstr "Restablecer la contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:89
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:81
+#, fuzzy
+#| msgid "-¡!¡- Login User -¡!¡-"
+msgid "-¡!¡- Good or Good -¡!¡-"
+msgstr "-¡!¡- Bueno o Bueno -¡!¡-"
+
+#: two_factor_auth/templates/two_factor_auth/login_register.html:140
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:110
 msgid "Already Signed Up?"
 msgstr "¿Ya estás registrado?"
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:15
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:92
+msgid "Register Super User"
+msgstr "Registrar Superusuario"
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:17
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:43
+msgid "Login Super User"
+msgstr "Iniciar Sesión como Superusuario"
+
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:77
+#, python-format
+msgid "-¡!¡- %(page)s -¡!¡-"
+msgstr "-¡!¡- %(page)s -¡!¡-"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:7
+#: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:22
+msgid "Password Reset Complete"
+msgstr "Restablecimiento de contraseña completado"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:24
+msgid ""
+"Your password has been successfully reset. You can now log in with your new "
+"password."
+msgstr ""
+"Tu contraseña ha sido restablecida con éxito. Ahora puedes iniciar sesión "
+"con tu nueva contraseña."
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:27
+#: two_factor_auth/templates/two_factor_auth/password_reset_done.html:28
+#, fuzzy
+#| msgid "Back to Forum"
+msgid "Back to Login"
+msgstr "Volver al inicio de sesión"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:7
+msgid "Password Reset Confirm"
+msgstr "Confirmar restablecimiento de contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:22
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:39
+msgid "Confirm New Password"
+msgstr "Confirmar nueva contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:23
+msgid "Please enter your new password below."
+msgstr "Por favor ingresa tu nueva contraseña a continuación."
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:31
+#, fuzzy
+#| msgid "New session"
+msgid "New Password"
+msgstr "Nueva contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:33
+msgid "Enter Password"
+msgstr "Introducir contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:47
+msgid "reCAPTCHA"
+msgstr "reCAPTCHA"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_done.html:7
+msgid "Password Reset Done"
+msgstr "Restablecimiento de contraseña realizado"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_done.html:22
+msgid "Password Reset"
+msgstr "Restablecimiento de contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_done.html:24
+msgid ""
+"If an account with that email exists, you will receive a password reset "
+"email shortly."
+msgstr ""
+"Si existe una cuenta con ese correo electrónico, recibirás un correo de "
+"restablecimiento de contraseña en breve."
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:8
+msgid "Password Reset Request"
+msgstr "Solicitud de restablecimiento de contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:23
+msgid "Reset Your Password"
+msgstr "Restablece tu contraseña"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:24
+msgid ""
+"Enter your email address below, and we’ll send you a link to reset your "
+"password."
+msgstr ""
+"Introduce tu dirección de correo electrónico a continuación, y te enviaremos "
+"un enlace para restablecer tu contraseña."
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:36
+msgid "Send Reset Link"
+msgstr "Enviar enlace de restablecimiento"
+
+#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:41
+#, fuzzy
+#| msgid "Back to Forum"
+msgid "Back to login"
+msgstr "Volver al inicio de sesión"
+
+#: two_factor_auth/views.py:18
+#, fuzzy
+#| msgid "Register"
+msgid "register"
+msgstr "Registrar"
+
+#: two_factor_auth/views.py:29
+msgid "Registration successful! Please login."
+msgstr "¡Registro exitoso! Por favor, inicia sesión."
+
+#: two_factor_auth/views.py:32
+msgid "Sorry, an error occurred: "
+msgstr "Lo siento, ocurrió un error: "
+
+#: two_factor_auth/views.py:36
+msgid "Sorry, something went wrong during registration 😝. Details: "
+msgstr "Lo siento, algo salió mal durante el registro 😝. Detalles: "
+
+#: two_factor_auth/views.py:49
+#, fuzzy
+#| msgid "Login"
+msgid "login"
+msgstr "Iniciar sesión"
+
+#: two_factor_auth/views.py:65
+#, python-brace-format
+msgid "User email: {email} or Password doesn't exist 😝"
+msgstr "Correo electrónico de usuario: {email} o la contraseña no existe 😝"
+
+#: two_factor_auth/views.py:67
+#, fuzzy
+#| msgid "Error verifying reCAPTCHA, please try again."
+msgid "Invalid reCAPTCHA. Please try again 😝."
+msgstr "reCAPTCHA inválido. Por favor intenta de nuevo 😝."
+
+#: two_factor_auth/views.py:80
+#, fuzzy
+#| msgid "Register Super User"
+msgid "register superuser"
+msgstr "Registrar Superusuario"
+
+#: two_factor_auth/views.py:90
+#, fuzzy
+#| msgid "Login Super User"
+msgid "login superuser"
+msgstr "Iniciar sesión como Superusuario"
+
+#: two_factor_auth/views.py:109
+msgid "Password reset email has been sent!"
+msgstr "¡Se ha enviado el correo para restablecer la contraseña!"
+
+#: two_factor_auth/views.py:112
+#, fuzzy
+#| msgid "Enter a valid email address."
+msgid "Invalid email address."
+msgstr "Introduce una dirección de correo electrónico válida."
+
+#, python-format
+#~ msgid "%(form.name.label)s"
+#~ msgstr "%(form.name.label)s"
+
+#, python-format
+#~ msgid "%(form.username.label)s"
+#~ msgstr "%(form.username.label)s"
+
+#, python-format
+#~ msgid "%(form.email.label)s"
+#~ msgstr "%(form.email.label)s"
+
+#, python-format
+#~ msgid "%(form.password1.label)s"
+#~ msgstr "%(form.password1.label)s"
+
+#, python-format
+#~ msgid "%(form.password2.label)s"
+#~ msgstr "%(form.password2.label)s"
+
+#~ msgid "Welcome to my site."
+#~ msgstr "Bienvenido a mi sitio."
+
+#~ msgid "Hello, World!"
+#~ msgstr "¡Hola, Mundo!"
+
+#~ msgid "Current language: "
+#~ msgstr "Idioma actual: "
+
+#~ msgid "Change language"
+#~ msgstr "Cambiar idioma"

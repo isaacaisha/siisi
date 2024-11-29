@@ -5,9 +5,10 @@ import json
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.utils.translation import gettext as _
+from django.utils import timezone
 
 from ..models import Room, Topic, Message
-from datetime import datetime
 
 
 @login_required(login_url='login')
@@ -29,7 +30,7 @@ def chatForum(request):
         'topics': topics,
         'room_count': room_count,
         'room_messages': room_messages,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'chat_forum/chat_forum.html', context)
 
@@ -53,7 +54,7 @@ def room(request, pk):
         'room': room,
         'room_messages': room_messages,
         'participants': participants,
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
 
     if context:
@@ -66,9 +67,9 @@ def room(request, pk):
             'description': room.description,
             # 'participants': room.participants,
             # Format datetime to exclude microseconds and timezone
-            'updated': room.updated.strftime('%Y-%m-%d %H:%M:%S'),
-            'created': room.created.strftime('%Y-%m-%d %H:%M:%S'),
+            'updated': room.updated.strftime(_('%Y-%m-%d')),
+            'created': room.created.strftime(_('%Y-%m-%d')),
             }
         # Print the captured data
-        print(f"Room data: {json.dumps(room_data, indent=4)}")
+        print(_("Room data: {room_data}").format(room_data=json.dumps(room_data, indent=4)))
     return render(request, 'chat_forum/room.html', context)

@@ -1,3 +1,5 @@
+# chat_forum/urls.py
+
 from django.urls import path
 from .views import (
     chatForum, updateUser, userProfile, room,

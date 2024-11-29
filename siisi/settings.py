@@ -238,9 +238,8 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'env', 'lib', 'python3.12', 'site-packages', 'two_factor', 'locale')  # two_factor app's locale folder
 ]
 
-#LANGUAGE_CODE = 'en-us'  # Default language
-#LANGUAGE_CODE = 'fr'  # Default language
-#LANGUAGE_COOKIE_NAME = 'django_language'  # Default is 'django_language'
+LANGUAGE_CODE = 'en'  # Default language
+LANGUAGE_COOKIE_NAME = 'django_language'  # Default is 'django_language'
 
 TIME_ZONE = 'UTC'
 

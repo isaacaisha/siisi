@@ -2,14 +2,15 @@
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-from datetime import datetime
+from django.utils.translation import gettext as _
+from django.utils import timezone
 
 # Create your views here.
 
 @login_required
 def drawingGenerator(request):
     context = {
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'base/drawing_generator.html', context)
     
@@ -17,7 +18,7 @@ def drawingGenerator(request):
 @login_required
 def websiteReviewGenerator(request):
     context = {
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'base/website_review_generator.html', context)
     
@@ -25,7 +26,7 @@ def websiteReviewGenerator(request):
 @login_required
 def likedReviews(request):
     context = {
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'base/liked_reviews.html', context)
     
@@ -33,6 +34,6 @@ def likedReviews(request):
 @login_required
 def extrasFeatures(request):
     context = {
-        'date': datetime.now().strftime("%a %d %B %Y"),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
         }
     return render(request, 'base/extras_features.html', context)
