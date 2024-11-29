@@ -1,6 +1,8 @@
+<!-- two_factor_auth/templates/two_factor_auth/login_register.html-->
+
 {% extends 'main.html' %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block work_in_progress %}{% endblock %}
 
@@ -10,9 +12,9 @@
 
 {% block title %}
 {% if page != 'login' %}
-- Register
+{% blocktrans %}Register{% endblocktrans %}
 {% else %}
-- Login
+{% blocktrans %}Login{% endblocktrans %}
 {% endif %}
 {% endblock %}
 
@@ -26,29 +28,27 @@
     <div class="container">
       <div class="layout__boxHeader">
         <div class="layout__boxTitle">
-          <h3>{{ page }}</h3>
+          <h3>{% blocktrans %}{{ page }}{% endblocktrans %}</h3>
         </div>
       </div>
       <div class="layout__body">
-        <h2 class="auth__tagline">-¡!¡- SìįSí Chacal -¡!¡-</h2>
+        <h2 class="auth__tagline">{% blocktrans %}-¡!¡- SìįSí Chacal -¡!¡-{% endblocktrans %}</h2>
 
         <form class="form" method="POST" action="">
           {% csrf_token %}
 
           <div class="form__group">
-            <label for="username">Email</label>
-            <input id="username" name="email" type="text" placeholder="e.g. siisiAi@gmail.com" />
+            <label for="username">{% blocktrans %}Email{% endblocktrans %}</label>
+            <input id="username" name="email" type="text" placeholder="{% blocktrans %}e.g. siisiAi@gmail.com{% endblocktrans %}" />
           </div>
 
           <div class="form__group" style="position: relative;">
-            <label for="password">Password</label>
+            <label for="password">{% blocktrans %}Password{% endblocktrans %}</label>
             <input id="password" name="password" type="password" placeholder="••••••••" />
-            <!-- Eye icon for toggling password visibility -->
             <i class="fa fa-eye-slash position-absolute" id="togglePassword"
               style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"></i>
           </div>
 
-          <!-- reCAPTCHA_v2 i-Frame -->
           <div class="form__group">
             <div id="recaptcha-container">{{ form.captcha }}</div>
             {% for error in form.captcha.errors %}
@@ -58,20 +58,19 @@
 
           <div class="text-center">
             <button class="btn btn--main" type="submit">
-              Login
+              {% blocktrans %}Login{% endblocktrans %}
             </button>
           </div>
         </form>
 
         <div class="auth__action">
-          <p>Haven't signed up yet?</p>
-          <a href="{% url 'register' %}" class="btn btn--link">Sign Up</a>
+          <p>{% blocktrans %}Haven't signed up yet?{% endblocktrans %}</p>
+          <a href="{% url 'register' %}" class="btn btn--link">{% blocktrans %}Sign Up{% endblocktrans %}</a>
         </div>
 
-        <!-- Forgot your password? -->
         <div class="auth__action">
-          <p>Forgot your password?</p>
-          <a href="{% url 'password_reset' %}" class="btn btn--link">Reset Password</a>
+          <p>{% blocktrans %}Forgot your password?{% endblocktrans %}</p>
+          <a href="{% url 'password_reset' %}" class="btn btn--link">{% blocktrans %}Reset Password{% endblocktrans %}</a>
         </div>
 
       </div>
@@ -83,32 +82,32 @@
     <div class="container">
       <div class="layout__boxHeader">
         <div class="layout__boxTitle">
-          <h3>{{ page }}</h3>
+          <h3>{% blocktrans %}{{ page }}{% endblocktrans %}</h3>
         </div>
       </div>
       <div class="layout__body">
-        <h2 class="auth__tagline">-¡!¡- Good or Good -¡!¡-</h2>
+        <h2 class="auth__tagline">{% blocktrans %}-¡!¡- Good or Good -¡!¡-{% endblocktrans %}</h2>
 
         <form class="form" method="POST" action="">
           {% csrf_token %}
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            <label for="{{ form.name.id_for_label }}">{% blocktrans %}{{ form.name.label }}{% endblocktrans %}</label>
             {{ form.name }}
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+            <label for="{{ form.username.id_for_label }}">{% blocktrans %}{{ form.username.label }}{% endblocktrans %}</label>
             {{ form.username }}
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            <label for="{{ form.email.id_for_label }}">{% blocktrans %}{{ form.email.label }}{% endblocktrans %}</label>
             {{ form.email }}
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+            <label for="{{ form.password1.id_for_label }}">{% blocktrans %}{{ form.password1.label }}{% endblocktrans %}</label>
             {{ form.password1 }}
             <i class="fa fa-eye-slash position-absolute"
               style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"
@@ -116,14 +115,13 @@
           </div>
           
           <div class="form__group" style="position: relative;">
-            <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+            <label for="{{ form.password2.id_for_label }}">{% blocktrans %}{{ form.password2.label }}{% endblocktrans %}</label>
             {{ form.password2 }}
             <i class="fa fa-eye-slash position-absolute"
               style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"
               onclick="togglePassword('{{ form.password2.id_for_label }}')"></i>
           </div>
           
-          <!-- reCAPTCHA manually rendered -->
           <div class="form__group">
             <div id="recaptcha-container">{{ form.captcha }}</div>
             {% for error in form.captcha.errors %}
@@ -133,14 +131,14 @@
           
           <div class="text-center">
             <button class="btn btn--main" type="submit">
-              Register
+              {% blocktrans %}Register{% endblocktrans %}
             </button>
           </div>
         </form>
 
         <div class="auth__action">
-          <p>Already Signed Up?</p>
-          <a href="{% url 'login' %}" class="btn btn--link">Login</a>
+          <p>{% blocktrans %}Already Signed Up?{% endblocktrans %}</p>
+          <a href="{% url 'login' %}" class="btn btn--link">{% blocktrans %}Login{% endblocktrans %}</a>
         </div>
       </div>
     </div>

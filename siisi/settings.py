@@ -239,8 +239,8 @@ LOCALE_PATHS = [
 ]
 
 #LANGUAGE_CODE = 'en-us'  # Default language
-LANGUAGE_CODE = 'fr'  # Default language
-LANGUAGE_COOKIE_NAME = 'django_language'  # Default is 'django_language'
+#LANGUAGE_CODE = 'fr'  # Default language
+#LANGUAGE_COOKIE_NAME = 'django_language'  # Default is 'django_language'
 
 TIME_ZONE = 'UTC'
 

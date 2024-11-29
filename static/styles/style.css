@@ -1994,40 +1994,27 @@ label {
 =>  Translate Language BTN Section
 ================================*/
 
+.darkmode-selectlang-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.togglebutton {
+  display: flex;
+  align-items: center;
+}
+
+.language-form select {
+  padding: 2px 5px; /* Smaller padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px; /* Smaller font size */
+  width: auto; /* Let the width adjust dynamically */
+  height: 19; /* Adjust height for consistency */
+}
+
 .language-form {
-    display: inline-block;
-    margin: 0;
-    padding: 5px;
-  }
-
-  .language-form select {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px 10px;
-    background-color: #f8f9fa;
-    color: #333;
-    font-size: 14px;
-    outline: none;
-    cursor: pointer;
-    transition: border-color 0.3s ease;
-  }
-
-  .language-form select:hover {
-    border-color: #007bff;
-  }
-
-  .language-form button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    padding: 6px 12px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-left: 8px;
-    transition: background-color 0.3s ease;
-  }
-
-  .language-form button:hover {
-    background-color: #0056b3;
-  }
+  margin: 0;
+}
