@@ -1,4 +1,4 @@
-# base/views/chat_gpt_views.py
+# base/views/llm_interface.py
 
 import io
 
@@ -18,7 +18,7 @@ from ..models import Conversation
 from ..forms import TextAreaForm
 
 # Import helper functions from utils_chat_gpt
-from .utils_chat_gpt import (
+from .utils_llm_chat import (
     find_most_relevant_conversation,
     generate_conversation_context,
     handle_llm_response,

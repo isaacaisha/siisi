@@ -1,4 +1,4 @@
-# base/views/utils_gpt_convers.py
+# base/views/utils_llm_convers.py
 
 import json
 from django.http import JsonResponse
@@ -109,7 +109,8 @@ def allConversations(request):
 
     # Check if no conversations are found and set the search message
     if not serialized_conversations:
-        context["search_message"] = _("No conversations found for search term: '{filters.search}'").format(filters.search)
+        search_term = filters.search if filters.search else _("No search term provided")
+        context["search_message"] = _("No conversations found for search term: '{}'").format(search_term)
 
     return render_conversation_template(request, 'base/conversation_all.html', context)
 
@@ -144,7 +145,8 @@ def likedConversations(request):
 
     # Check if no conversations are found and set the search message
     if not serialized_liked_conversations:
-        context["search_message"] = _("No conversations found for search term: '{filters.search}'").format(filters.search)
+        search_term = filters.search if filters.search else _("No search term provided")
+        context["search_message"] = _("No conversations found for search term: '{}'").format(search_term)
 
     return render_conversation_template(request, 'base/conversations_liked.html', context)
 
@@ -180,7 +182,16 @@ def ConversationById(request):
 
 @login_required(login_url='login')
 def ConversationSelected(request, conversation_id):
-    conversation_ = get_object_or_404(Conversation, pk=conversation_id)
+    try:
+        conversation_ = get_object_or_404(Conversation, pk=conversation_id)
+    except:
+        context = {
+            'current_user': request.user,
+            'conversation_id': conversation_id,
+            'date': timezone.now().strftime(_("%a %d %B %Y")),
+        }
+        return render(request, 'base/conversation_not_found.html', context)
+
     context = {
         'current_user': request.user,
         'conversation_id': conversation_id,
@@ -189,34 +200,44 @@ def ConversationSelected(request, conversation_id):
     }
     
     if conversation_.owner_id != request.user.id:
-        return render(request, 'conversation_forbidden.html', context)
+        return render(request, 'base/conversation_forbidden.html', context)
     else:
         return render(request, 'base/conversation_selected.html', context)
 
 
 @login_required(login_url='login')
 def deleteConversation(request):
-    delete_conversation_form = DeleteForm()
+    delete_conversation_form = DeleteForm(request.POST or None)
     context = {
         'current_user': request.user,
         'delete_conversation_form': delete_conversation_form,
         'date': timezone.now().strftime(_("%a %d %B %Y")),
     }
-    
+
     if request.method == "POST":
         if delete_conversation_form.is_valid():
             conversation_id = delete_conversation_form.cleaned_data['conversation_id']
-            conversation_to_delete = get_object_or_404(Conversation, pk=conversation_id)
             
+            try:
+                # Attempt to retrieve the conversation
+                conversation_to_delete = Conversation.objects.get(pk=conversation_id)
+            except Conversation.DoesNotExist:
+                # Render the "conversation not found" template if the ID is invalid
+                context['conversation_id'] = conversation_id
+                return render(request, 'base/conversation_not_found.html', context)
+            
+            # Check if the logged-in user owns the conversation
             if conversation_to_delete.owner_id != request.user.id:
                 context['conversation_id'] = conversation_id
                 return render(request, 'base/conversation_forbidden.html', context)
-            else:
-                conversation_to_delete.delete()
-                messages.success(request, _(
-                    "Conversation with ID: 🔥{conversation_id}🔥 deleted 😎"
-                    ).format(conversation_id=conversation_id)
-                    )
-                return redirect('delete_conversation')
-                
+            
+            # Delete the conversation and redirect
+            conversation_to_delete.delete()
+            messages.success(request, _(
+                "Conversation with ID: 🔥{conversation_id}🔥 deleted 😎"
+            ).format(conversation_id=conversation_id))
+            return redirect('delete-conversation')
+        else:
+            messages.error(request, _("Invalid form submission. Please check your input."))
+
     return render(request, 'base/conversation_delete.html', context)

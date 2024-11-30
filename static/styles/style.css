@@ -1855,7 +1855,6 @@ body.dark-mode {
 
 .togglebutton {
   display: flex;
-  margin: 20px;
 }
 
 .togglebutton label {
@@ -1907,6 +1906,30 @@ body.dark-mode {
   margin-left: 10px;
   color: #4d4d4d;
   font-weight: bold;
+}
+
+/*==============================
+=>  Translate Language BTN Section
+================================*/
+
+.darkmode-selectlang-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.language-form select {
+  padding: 2px 5px; /* Smaller padding */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px; /* Smaller font size */
+  width: auto; /* Let the width adjust dynamically */
+  height: 19; /* Adjust height for consistency */
+}
+
+.language-form {
+  margin: 0;
 }
 
 /*==============================
@@ -1988,33 +2011,4 @@ label {
 
 .replay-btn:hover {
   background-color: #45a049;
-}
-
-/*==============================
-=>  Translate Language BTN Section
-================================*/
-
-.darkmode-selectlang-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.togglebutton {
-  display: flex;
-  align-items: center;
-}
-
-.language-form select {
-  padding: 2px 5px; /* Smaller padding */
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 12px; /* Smaller font size */
-  width: auto; /* Let the width adjust dynamically */
-  height: 19; /* Adjust height for consistency */
-}
-
-.language-form {
-  margin: 0;
 }

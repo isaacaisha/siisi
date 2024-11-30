@@ -40,7 +40,7 @@ $(document).ready(function () {
 
         // Update button color based on liked status
         if (liked) {
-          button.css("color", "pink");
+          button.css("color", "#ab51f5");
           messageElement.html(
             "Liked!<br>You can access your liked Reviews from the menu."
           );

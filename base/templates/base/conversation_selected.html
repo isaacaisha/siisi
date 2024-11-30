@@ -2,7 +2,7 @@
 
 {% extends 'main.html' %}
 
-{% load static %}
+{% load static i18n %}
 
 {% block title %}
     - {% trans "Conversations Detailed Template" %}
@@ -19,7 +19,7 @@
             <h1 class="">
                 <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" 
                 class="crown img-fluid mx-auto" width="100" height="100">
-                {% trans "Conversation" %} 🔥{{ conversation_id }}🔥 -¡!¡-
+                {% trans "Conversation" %} 🔥{{ conversation_id }}🔥
                 <img src="{% static 'images/crown.webp' %}" alt="Crown Icon" 
                 class="crown img-fluid mx-auto" width="100" height="100">
             </h1>

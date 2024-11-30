@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-29 11:08+0000\n"
+"POT-Creation-Date: 2024-11-29 22:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,122 +20,118 @@ msgstr ""
 
 #: base/forms.py:9
 msgid "Writing Text"
-msgstr ""
+msgstr "Texto de Escrita"
 
 #: base/forms.py:13
 msgid "Drawing Index"
-msgstr ""
+msgstr "Índice de Desenho"
 
 #: base/forms.py:17 base/forms.py:21
 msgid "Conversation ID"
-msgstr ""
-
-#: base/forms.py:23
-msgid "Enter Conversation ID to delete"
-msgstr ""
+msgstr "ID da Conversa"
 
 #: base/models.py:23 base/models.py:35 base/models.py:49 base/models.py:61
 msgid "{} - {}"
-msgstr ""
+msgstr "{} - {}"
 
 #: base/templates/base/conversation_all.html:9
 msgid "All Your Conversations Template"
-msgstr ""
+msgstr "Modelo de Todas as Suas Conversas"
 
 #: base/templates/base/conversation_all.html:21
 msgid "-¡!¡- All Your Conversations -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Todas as Suas Conversas -¡!¡-"
 
 #: base/templates/base/conversation_all.html:27
 msgid "Conversations Datas"
-msgstr ""
+msgstr "Dados das Conversas"
 
 #: base/templates/base/conversation_all.html:33
 #: base/templates/base/conversations_liked.html:34
 msgid "Click to Go Back"
-msgstr ""
+msgstr "Clique para Voltar"
 
 #: base/templates/base/conversation_all.html:46
 #: base/templates/base/conversations_liked.html:47
 msgid "Number of conversations to retrieve:"
-msgstr ""
+msgstr "Número de conversas a recuperar:"
 
 #: base/templates/base/conversation_all.html:50
 #: base/templates/base/conversations_liked.html:50
 msgid "Number of conversations to skip:"
-msgstr ""
+msgstr "Número de conversas a pular:"
 
 #: base/templates/base/conversation_all.html:53
 #: base/templates/base/conversations_liked.html:53
 msgid "Word to search in conversations:"
-msgstr ""
+msgstr "Palavra para pesquisar nas conversas:"
 
 #: base/templates/base/conversation_all.html:57
 #: base/templates/base/conversations_liked.html:57
 msgid "Look for"
-msgstr ""
+msgstr "Procurar"
 
 #: base/templates/base/conversation_all.html:65
 #: base/templates/base/conversations_liked.html:65
 msgid "Total of"
-msgstr ""
+msgstr "Total de"
 
 #: base/templates/base/conversation_all.html:65
 msgid "Conversations"
-msgstr ""
+msgstr "Conversas"
 
 #: base/templates/base/conversation_all.html:68
 #: base/templates/base/conversations_liked.html:68
 msgid "Conversations Retrieved"
-msgstr ""
+msgstr "Conversas Recuperadas"
 
 #: base/templates/base/conversation_all.html:71
 #: base/templates/base/conversations_liked.html:71
 msgid "Conversations Skipped"
-msgstr ""
+msgstr "Conversas Ignoradas"
 
 #: base/templates/base/conversation_all.html:74
 #: base/templates/base/conversations_liked.html:74
 msgid "Search results for"
-msgstr ""
+msgstr "Resultados da pesquisa para"
 
 #: base/templates/base/conversation_all.html:74
 #: base/templates/base/conversations_liked.html:74
 msgid "in conversations"
-msgstr ""
+msgstr "nas conversas"
 
 #: base/templates/base/conversation_all.html:82
 #: base/templates/base/conversation_all.html:133
 #: base/templates/base/conversation_selected.html:53
 #: base/templates/base/conversations_liked.html:82
 msgid "Conversation ID:"
-msgstr ""
+msgstr "ID da Conversa:"
 
 #: base/templates/base/conversation_all.html:92
 msgid "·SìįSí·Dbt·:"
-msgstr ""
+msgstr "·SìįSí·Dbt·:"
 
 #: base/templates/base/conversation_all.html:98
 #: base/templates/base/conversation_all.html:136
 msgid "Created At:"
-msgstr ""
+msgstr "Criado Em:"
 
 #: base/templates/base/conversation_all.html:105
 #: base/templates/base/conversation_interface.html:125
 #: base/templates/base/conversation_selected.html:81
 #: base/templates/base/conversations_liked.html:105
 msgid "Your browser does not support the audio element."
-msgstr ""
+msgstr "Seu navegador não suporta o elemento de áudio."
 
 #: base/templates/base/conversation_all.html:126
 #: base/templates/base/conversations_liked.html:126
 msgid "Show Conversations"
-msgstr ""
+msgstr "Mostrar Conversas"
 
 #: base/templates/base/conversation_all.html:143
 #: base/templates/base/conversations_liked.html:143
 msgid "Show Conversations JSON"
-msgstr ""
+msgstr "Mostrar Conversas em JSON"
 
 #: base/templates/base/conversation_all.html:159
 #: base/templates/base/conversation_by_id.html:52
@@ -143,436 +139,466 @@ msgstr ""
 #: base/templates/base/conversations_liked.html:159
 #: base/templates/base/superuser-views.html:57
 msgid "-¡!¡- Back Home -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Voltar para a Página Inicial -¡!¡-"
 
 #: base/templates/base/conversation_by_id.html:8
 msgid "Conversations by ID Template"
-msgstr ""
+msgstr "Modelo de Conversas por ID"
 
 #: base/templates/base/conversation_by_id.html:20
 msgid "-¡!¡- Conversation by ID -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Conversa por ID -¡!¡-"
 
 #: base/templates/base/conversation_by_id.html:25
 #: base/templates/base/conversation_delete.html:25
 msgid "Select a Conversation"
-msgstr ""
+msgstr "Selecione uma Conversa"
 
 #: base/templates/base/conversation_by_id.html:40
 msgid "Select"
-msgstr ""
+msgstr "Selecionar"
 
 #: base/templates/base/conversation_delete.html:8
 msgid "Delete Conversations Template"
-msgstr ""
+msgstr "Modelo de Exclusão de Conversas"
 
 #: base/templates/base/conversation_delete.html:20
 msgid "-¡!¡- Conversation to Delete -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Conversa para Excluir -¡!¡-"
 
 #: base/templates/base/conversation_delete.html:40
 #: env/lib/python3.12/site-packages/django/forms/formsets.py:499
 msgid "Delete"
-msgstr ""
+msgstr "Excluir"
+
+#: base/templates/base/conversation_forbidden.html:7
+#: base/templates/base/conversation_forbidden.html:51
+msgid "Access Forbidden"
+msgstr "Acesso Proibido"
+
+#: base/templates/base/conversation_forbidden.html:39
+#: base/templates/base/conversation_not_found.html:38
+#: base/templates/base/conversation_selected.html:22
+msgid "Conversation"
+msgstr "Conversa"
+
+#: base/templates/base/conversation_forbidden.html:53
+msgid "You do not have permission to view this conversation."
+msgstr "Você não tem permissão para visualizar esta conversa."
+
+#: base/templates/base/conversation_forbidden.html:55
+#: base/templates/base/conversation_not_found.html:51
+#: base/templates/base/conversation_selected.html:103
+msgid "Click to Go Back to Select Conversation"
+msgstr "Clique para Voltar e Selecionar a Conversa"
 
 #: base/templates/base/conversation_interface.html:12
 msgid "Conversation Interface Template"
-msgstr ""
+msgstr "Modelo de Interface de Conversa"
 
 #: base/templates/base/conversation_interface.html:21
 msgid "-¡!¡- ·SìįSí·Dbt· Interface -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Interface ·SìįSí·Dbt· -¡!¡-"
 
 #: base/templates/base/conversation_interface.html:38
 msgid "Show Instructions"
-msgstr ""
+msgstr "Mostrar Instruções"
 
 #: base/templates/base/conversation_interface.html:42
 msgid "Welcome to the"
-msgstr ""
+msgstr "Bem-vindo ao"
 
 #: base/templates/base/conversation_interface.html:42
 msgid "-¡!¡-SìįSí-¡!¡-"
-msgstr ""
+msgstr "-¡!¡-SìįSí-¡!¡-"
 
 #: base/templates/base/conversation_interface.html:42
 msgid "app"
-msgstr ""
+msgstr "aplicativo"
 
 #: base/templates/base/conversation_interface.html:45
 msgid "Click On Start Writing"
-msgstr ""
+msgstr "Clique em Começar a Escrever"
 
 #: base/templates/base/conversation_interface.html:45
 msgid "to write a text"
-msgstr ""
+msgstr "para escrever um texto"
 
 #: base/templates/base/conversation_interface.html:45
 #: env/lib/python3.12/site-packages/django/utils/text.py:286
 msgid "or"
-msgstr ""
+msgstr "ou"
 
 #: base/templates/base/conversation_interface.html:46
 msgid "Click on Speech Recognition"
-msgstr ""
+msgstr "Clique em Reconhecimento de Fala"
 
 #: base/templates/base/conversation_interface.html:46
 msgid "to speech a text"
-msgstr ""
+msgstr "para falar um texto"
 
 #: base/templates/base/conversation_interface.html:49
 msgid "Click On Get The Response"
-msgstr ""
+msgstr "Clique em Obter a Resposta"
 
 #: base/templates/base/conversation_interface.html:49
 msgid "to get SìįSí's answer"
-msgstr ""
+msgstr "para obter a resposta do SìįSí"
 
 #: base/templates/base/conversation_interface.html:52
 msgid "Click On PlayBack Audio"
-msgstr ""
+msgstr "Clique em Reproduzir Áudio"
 
 #: base/templates/base/conversation_interface.html:52
 msgid "to listen the playback"
-msgstr ""
+msgstr "para ouvir a reprodução"
 
 #: base/templates/base/conversation_interface.html:55
 msgid "Enjoy"
-msgstr ""
+msgstr "Aproveite"
 
 #: base/templates/base/conversation_interface.html:71
 msgid "-¡!¡- Start Writing -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Começar a Escrever -¡!¡-"
 
 #: base/templates/base/conversation_interface.html:74
 msgid "-¡!¡- Speech Recognition -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Reconhecimento de Fala -¡!¡-"
 
 #: base/templates/base/conversation_interface.html:78
 msgid "Write Your Text, below:"
-msgstr ""
+msgstr "Escreva seu texto abaixo:"
 
 #: base/templates/base/conversation_interface.html:80
 msgid "(be Specific for a better result)"
-msgstr ""
+msgstr "(seja específico para um melhor resultado)"
 
 #: base/templates/base/conversation_interface.html:83
 msgid "¡!¡ T😎 INTERACT, WRITE HERE ¡!¡"
-msgstr ""
+msgstr "¡!¡ T😎 INTERAJA, ESCREVA AQUI ¡!¡"
 
 #: base/templates/base/conversation_interface.html:87
 msgid "Loading..."
-msgstr ""
+msgstr "Carregando..."
 
 #: base/templates/base/conversation_interface.html:88
 msgid "Loading"
-msgstr ""
+msgstr "Carregando"
 
 #: base/templates/base/conversation_interface.html:94
 msgid "Get The Response"
-msgstr ""
+msgstr "Obter a Resposta"
 
 #: base/templates/base/conversation_interface.html:95 templates/main.html:68
 #: templates/main.html:70
 msgid "Crown Icon"
-msgstr ""
+msgstr "Ícone da Coroa"
 
 #: base/templates/base/conversation_interface.html:100
 msgid "Stop ·SìįSí·Dbt· Response"
-msgstr ""
+msgstr "Parar Resposta ·SìįSí·Dbt·"
 
 #: base/templates/base/conversation_interface.html:115
 msgid "-¡!¡- PlayBack Audio -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Reproduzir Áudio -¡!¡-"
 
-#: base/templates/base/conversation_interface.html:134
+#: base/templates/base/conversation_interface.html:135
 msgid "Analize, Generate, Edit..., Your Images"
-msgstr ""
+msgstr "Analise, Gere, Edite..., Suas Imagens"
+
+#: base/templates/base/conversation_not_found.html:7
+#: base/templates/base/conversation_not_found.html:49
+msgid "Conversation Not Found"
+msgstr "Conversa Não Encontrada"
+
+#: base/templates/base/conversation_not_found.html:50
+msgid ""
+"The conversation you are looking for does not exist or has been deleted."
+msgstr "A conversa que você está procurando não existe ou foi deletada."
 
 #: base/templates/base/conversation_selected.html:8
 msgid "Conversations Detailed Template"
-msgstr ""
-
-#: base/templates/base/conversation_selected.html:22
-msgid "Conversation"
-msgstr ""
+msgstr "Modelo de Conversas Detalhadas"
 
 #: base/templates/base/conversation_selected.html:39
 msgid "Conversation Detailed"
-msgstr ""
+msgstr "Conversa Detalhada"
 
 #: base/templates/base/conversation_selected.html:44
 msgid "Conversation Details"
-msgstr ""
+msgstr "Detalhes da Conversa"
 
 #: base/templates/base/conversation_selected.html:73
 #: base/templates/base/conversations_liked.html:98
 msgid "Created on:"
-msgstr ""
-
-#: base/templates/base/conversation_selected.html:103
-msgid "Click to Go Back to Select Conversation"
-msgstr ""
+msgstr "Criado em:"
 
 #: base/templates/base/conversation_selected.html:111
 msgid "Back Home"
-msgstr ""
+msgstr "Voltar para a Página Inicial"
 
 #: base/templates/base/conversations_liked.html:10
 msgid "- Conversations Liked Template -"
-msgstr ""
+msgstr "- Modelo de Conversas Curtidas -"
 
 #: base/templates/base/conversations_liked.html:22
 msgid "-¡!¡- Conversations Liked -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Conversas Curtidas -¡!¡-"
 
 #: base/templates/base/conversations_liked.html:28
 msgid "Conversations Liked Datas"
-msgstr ""
+msgstr "Dados das Conversas Curtidas"
 
 #: base/templates/base/conversations_liked.html:65
 msgid "Conversations Liked"
-msgstr ""
+msgstr "Conversas Curtidas"
 
 #: base/templates/base/conversations_liked.html:133
 msgid "- Conversation ID: "
-msgstr ""
+msgstr "- ID da Conversa: "
 
 #: base/templates/base/conversations_liked.html:134
 msgid "- "
-msgstr ""
+msgstr "- "
 
 #: base/templates/base/conversations_liked.html:136
 msgid "- Created At: "
-msgstr ""
+msgstr "- Criado Em: "
 
 #: base/templates/base/superuser-views.html:9
 msgid "Super User Interface"
-msgstr ""
+msgstr "Interface de Super Usuário"
 
 #: base/templates/base/superuser-views.html:29
 msgid "Be Good,"
-msgstr ""
+msgstr "Seja Bom,"
 
 #: base/templates/base/superuser-views.html:37
 msgid "Doing Good,"
-msgstr ""
+msgstr "Fazendo o Bem,"
 
 #: base/templates/base/superuser-views.html:45
 msgid "By Acting GOOD"
-msgstr ""
+msgstr "Agindo de Forma BOA"
 
 #: base/templates/base/superuser-views.html:65
 msgid "Wall Poster Animation"
-msgstr ""
+msgstr "Animação de Pôster na Parede"
 
 #: base/templates/base/superuser-views.html:79
 msgid "Photo credits"
-msgstr ""
+msgstr "Créditos das Fotos"
 
 #: base/templates/base/superuser-views.html:82
 msgid "Kam Idris - "
-msgstr ""
+msgstr "Kam Idris - "
 
 #: base/templates/base/superuser-views.html:82
 msgid "brown wooden framed yellow padded chair"
-msgstr ""
+msgstr "cadeira amarela estofada com moldura de madeira marrom"
 
 #: base/templates/base/superuser-views.html:83
 msgid "Steve Johnson - "
-msgstr ""
+msgstr "Steve Johnson - "
 
 #: base/templates/base/superuser-views.html:83
 msgid "multicolored abstract painting"
-msgstr ""
+msgstr "pintura abstrata multicolorida"
 
 #: base/templates/base/superuser-views.html:84
 msgid "Pawel Czerwinski - "
-msgstr ""
+msgstr "Pawel Czerwinski - "
 
 #: base/templates/base/superuser-views.html:84
 msgid "white and blue smoke illustration"
-msgstr ""
+msgstr "ilustração de fumaça branca e azul"
 
 #: base/templates/base/superuser-views.html:85
 msgid "Rodion Kutsaiev - "
-msgstr ""
+msgstr "Rodion Kutsaiev - "
 
 #: base/templates/base/superuser-views.html:85
 msgid "a close up of water droplets on a window"
-msgstr ""
+msgstr "um close de gotas d'água em uma janela"
 
 #: base/templates/base/superuser-views.html:87
 msgid "on"
-msgstr ""
+msgstr "em"
 
 #: base/templates/base/superuser-views.html:87
 msgid "Unsplash"
-msgstr ""
+msgstr "Unsplash"
 
 #: base/templates/base/superuser-views.html:89
 msgid "Thanks!"
-msgstr ""
+msgstr "Obrigado!"
 
 #: base/templates/base/superuser-views.html:103
 msgid "@wakana-k"
-msgstr ""
+msgstr "@wakana-k"
 
-#: base/views/chat_gpt_views.py:47 base/views/chat_gpt_views.py:153
 #: base/views/extras_feats.py:13 base/views/extras_feats.py:21
 #: base/views/extras_feats.py:29 base/views/extras_feats.py:37
-#: base/views/utils_gpt_convers.py:107 base/views/utils_gpt_convers.py:142
-#: base/views/utils_gpt_convers.py:188 base/views/utils_gpt_convers.py:203
-#: chat_forum/views/chat_forum_views.py:33
+#: base/views/llm_interface.py:48 base/views/llm_interface.py:159
+#: base/views/utils_llm_convers.py:107 base/views/utils_llm_convers.py:143
+#: base/views/utils_llm_convers.py:191 base/views/utils_llm_convers.py:199
+#: base/views/utils_llm_convers.py:214 chat_forum/views/chat_forum_views.py:33
 #: chat_forum/views/chat_forum_views.py:57 chat_forum/views/profile_views.py:28
 #: chat_forum/views/profile_views.py:46 chat_forum/views/utils_chat_forum.py:37
 #: chat_forum/views/utils_chat_forum.py:64
 #: chat_forum/views/utils_chat_forum.py:97
 #: chat_forum/views/utils_chat_forum.py:118
 #: chat_forum/views/utils_chat_forum.py:132
-#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:31
+#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:28
 #: two_factor_auth/views.py:43 two_factor_auth/views.py:74
 #: two_factor_auth/views.py:84 two_factor_auth/views.py:94
 #: two_factor_auth/views.py:118 two_factor_auth/views.py:133
 #: two_factor_auth/views.py:146
 msgid "%a %d %B %Y"
-msgstr ""
+msgstr "%a %d %B %Y"
 
-#: base/views/chat_gpt_views.py:61
+#: base/views/llm_interface.py:62
 msgid "Using embedding method for medusadbt@gmail.com"
-msgstr ""
+msgstr "Usando o método de incorporação para medusadbt@gmail.com"
 
-#: base/views/chat_gpt_views.py:75
+#: base/views/llm_interface.py:73
 msgid "Embedding data not found, generating new response."
-msgstr ""
+msgstr "Dados de incorporação não encontrados, gerando nova resposta."
 
-#: base/views/chat_gpt_views.py:78
+#: base/views/llm_interface.py:80
 msgid "Response successfully generated."
-msgstr ""
+msgstr "Resposta gerada com sucesso."
 
-#: base/views/chat_gpt_views.py:134
+#: base/views/llm_interface.py:140
 msgid "Audio not found"
-msgstr ""
+msgstr "Áudio não encontrado"
 
-#: base/views/chat_gpt_views.py:144
+#: base/views/llm_interface.py:150
 msgid "No audio found"
-msgstr ""
+msgstr "Nenhum áudio encontrado"
 
-#: base/views/utils_chat_gpt.py:105
+#: base/views/utils_llm_chat.py:105
 #, python-brace-format
 msgid "Language '{detected_lang}' not supported, falling back to English."
-msgstr ""
+msgstr "Idioma '{detected_lang}' não suportado, revertendo para o inglês."
 
-#: base/views/utils_gpt_convers.py:112 base/views/utils_gpt_convers.py:147
-#, python-brace-format
-msgid "No conversations found for search term: '{filters.search}'"
-msgstr ""
+#: base/views/utils_llm_convers.py:112 base/views/utils_llm_convers.py:148
+msgid "No search term provided"
+msgstr "Nenhum termo de pesquisa fornecido"
 
-#: base/views/utils_gpt_convers.py:159
+#: base/views/utils_llm_convers.py:113 base/views/utils_llm_convers.py:149
+msgid "No conversations found for search term: '{}'"
+msgstr "Nenhuma conversa encontrada para o termo de pesquisa: '{}'"
+
+#: base/views/utils_llm_convers.py:161
 msgid "Liked status updated successfully"
-msgstr ""
+msgstr "Status de curtido atualizado com sucesso"
 
-#: base/views/utils_gpt_convers.py:162
+#: base/views/utils_llm_convers.py:164
 msgid "Invalid request method"
-msgstr ""
+msgstr "Método de solicitação inválido"
 
-#: base/views/utils_gpt_convers.py:171
+#: base/views/utils_llm_convers.py:173
 msgid "Date format: %a %d %B %Y"
-msgstr ""
+msgstr "Formato da data: %a %d %B %Y"
 
-#: base/views/utils_gpt_convers.py:217
+#: base/views/utils_llm_convers.py:237
 #, python-brace-format
 msgid "Conversation with ID: 🔥{conversation_id}🔥 deleted 😎"
-msgstr ""
+msgstr "Conversa com ID: 🔥{conversation_id}🔥 deletada 😎"
+
+#: base/views/utils_llm_convers.py:241
+msgid "Invalid form submission. Please check your input."
+msgstr "Envio de formulário inválido. Verifique sua entrada."
 
 #: chat_forum/forms.py:15 chat_forum/models.py:20
 #: chat_forum/templates/chat_forum/room_form.html:50
 msgid "Room Name"
-msgstr ""
+msgstr "Nome da Sala"
 
 #: chat_forum/forms.py:16 chat_forum/models.py:21
 #: chat_forum/templates/chat_forum/room_form.html:55
 msgid "Room Description"
-msgstr ""
+msgstr "Descrição da Sala"
 
 #: chat_forum/forms.py:17
 msgid "Room Topic"
-msgstr ""
+msgstr "Tópico da Sala"
 
 #: chat_forum/forms.py:26 templates/main.html:115 two_factor_auth/models.py:38
 msgid "Avatar"
-msgstr ""
+msgstr "Avatar"
 
 #: chat_forum/forms.py:27 two_factor_auth/forms.py:29
 #: two_factor_auth/models.py:35
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: chat_forum/forms.py:28 two_factor_auth/forms.py:30
 msgid "Username"
-msgstr ""
+msgstr "Nome de Usuário"
 
 #: chat_forum/forms.py:29
 msgid "Email Address"
-msgstr ""
+msgstr "Endereço de E-mail"
 
 #: chat_forum/forms.py:30
 msgid "Biography"
-msgstr ""
+msgstr "Biografia"
 
 #: chat_forum/models.py:11
 msgid "Topic Name"
-msgstr ""
+msgstr "Nome do Tópico"
 
 #: chat_forum/models.py:18
 msgid "Host"
-msgstr ""
+msgstr "Anfitrião"
 
 #: chat_forum/models.py:19
 #: chat_forum/templates/chat_forum/feed_component.html:40
 msgid "Topic"
-msgstr ""
+msgstr "Tópico"
 
 #: chat_forum/models.py:22 chat_forum/templates/chat_forum/room.html:147
 msgid "Participants"
-msgstr ""
+msgstr "Participantes"
 
 #: chat_forum/models.py:23 chat_forum/models.py:39
 msgid "Last Updated"
-msgstr ""
+msgstr "Última Atualização"
 
 #: chat_forum/models.py:24 chat_forum/models.py:40 chatgpt/models.py:11
 msgid "Created At"
-msgstr ""
+msgstr "Criado Em"
 
 #: chat_forum/models.py:28 chat_forum/models.py:37
 msgid "Room"
-msgstr ""
+msgstr "Sala"
 
 #: chat_forum/models.py:29
 msgid "Rooms"
-msgstr ""
+msgstr "Salas"
 
 #: chat_forum/models.py:36 two_factor_auth/models.py:51
 msgid "User"
-msgstr ""
+msgstr "Usuário"
 
 #: chat_forum/models.py:38
 msgid "Message Body"
-msgstr ""
+msgstr "Corpo da Mensagem"
 
 #: chat_forum/models.py:44 chatgpt/models.py:9
 msgid "Message"
-msgstr ""
+msgstr "Mensagem"
 
 #: chat_forum/models.py:45
 #: env/lib/python3.12/site-packages/django/contrib/messages/apps.py:16
 msgid "Messages"
-msgstr ""
+msgstr "Mensagens"
 
 #: chat_forum/templates/chat_forum/activity.html:12
 msgid "Activity Template"
-msgstr ""
+msgstr "Modelo de Atividade"
 
 #: chat_forum/templates/chat_forum/activity.html:25
 #: chat_forum/templates/chat_forum/delete.html:25
@@ -581,258 +607,258 @@ msgstr ""
 #: chat_forum/templates/chat_forum/topics.html:24
 #: chat_forum/templates/chat_forum/update_user.html:27
 msgid "arrow-left"
-msgstr ""
+msgstr "seta-esquerda"
 
 #: chat_forum/templates/chat_forum/activity.html:31
 #: chat_forum/templates/chat_forum/activity_component.html:7
 #: chat_forum/templates/chat_forum/chat_forum.html:39
 msgid "Recent Activities"
-msgstr ""
+msgstr "Atividades Recentes"
 
 #: chat_forum/templates/chat_forum/activity.html:45
 #: chat_forum/templates/chat_forum/activity_component.html:18
 #: chat_forum/templates/chat_forum/feed_component.html:16
 #: chat_forum/templates/chat_forum/room.html:124
 msgid "ago"
-msgstr ""
+msgstr "atrás"
 
 #: chat_forum/templates/chat_forum/activity.html:53
 #: chat_forum/templates/chat_forum/activity_component.html:26
 #: chat_forum/templates/chat_forum/room.html:66
 #: chat_forum/templates/chat_forum/room.html:113
 msgid "remove"
-msgstr ""
+msgstr "remover"
 
 #: chat_forum/templates/chat_forum/activity.html:64
 #: chat_forum/templates/chat_forum/activity_component.html:37
 msgid "replied to post"
-msgstr ""
+msgstr "respondeu ao post"
 
 #: chat_forum/templates/chat_forum/activity.html:71
 #: chat_forum/templates/chat_forum/activity_component.html:44
 msgid "No activity found."
-msgstr ""
+msgstr "Nenhuma atividade encontrada."
 
 #: chat_forum/templates/chat_forum/chat_forum.html:8
 msgid "Chat Forum Template"
-msgstr ""
+msgstr "Modelo de Fórum de Chat"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:29
 #: chat_forum/templates/chat_forum/topics.html:37
 msgid "search"
-msgstr ""
+msgstr "pesquisar"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:34
 #: chat_forum/templates/chat_forum/topics.html:41
 msgid "Search for posts"
-msgstr ""
+msgstr "Buscar por postagens"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:38
 #: chat_forum/templates/chat_forum/topics.html:29
 #: chat_forum/templates/chat_forum/topics_component.html:7
 msgid "Browse Topics"
-msgstr ""
+msgstr "Explorar Tópicos"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:45
 #: chat_forum/templates/chat_forum/room.html:22
 msgid "Study Room"
-msgstr ""
+msgstr "Sala de Estudo"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:46
 msgid " Rooms available"
-msgstr ""
+msgstr " Salas disponíveis"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:51
 msgid "add"
-msgstr ""
+msgstr "adicionar"
 
 #: chat_forum/templates/chat_forum/chat_forum.html:56
 msgid "Create Room"
-msgstr ""
+msgstr "Criar Sala"
 
 #: chat_forum/templates/chat_forum/delete.html:12
 msgid "Delete Template"
-msgstr ""
+msgstr "Modelo de Exclusão"
 
 #: chat_forum/templates/chat_forum/delete.html:31
 msgid "DELETE"
-msgstr ""
+msgstr "EXCLUIR"
 
 #: chat_forum/templates/chat_forum/delete.html:39
 msgid "Are you sure you want to delete"
-msgstr ""
+msgstr "Tem certeza de que deseja excluir"
 
 #: chat_forum/templates/chat_forum/delete.html:43
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: chat_forum/templates/chat_forum/feed_component.html:24
 msgid "user-group"
-msgstr ""
+msgstr "grupo-de-usuário"
 
 #: chat_forum/templates/chat_forum/feed_component.html:38
 #: chat_forum/templates/chat_forum/room.html:147
 msgid "Joined"
-msgstr ""
+msgstr "Entrou"
 
 #: chat_forum/templates/chat_forum/profile.html:12
 msgid "Profile Template"
-msgstr ""
+msgstr "Modelo de Perfil"
 
 #: chat_forum/templates/chat_forum/profile.html:36
 msgid "PROFILE"
-msgstr ""
+msgstr "PERFIL"
 
 #: chat_forum/templates/chat_forum/profile.html:41
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
 #: chat_forum/templates/chat_forum/profile.html:48
 msgid "Study Rooms Hosted by"
-msgstr ""
+msgstr "Salas de Estudo Hospedadas por"
 
 #: chat_forum/templates/chat_forum/profile.html:63 templates/navbar.html:62
 msgid "Chat Forum"
-msgstr ""
+msgstr "Fórum de Chat"
 
 #: chat_forum/templates/chat_forum/room.html:12
 msgid "Room Template"
-msgstr ""
+msgstr "Modelo de Sala"
 
 #: chat_forum/templates/chat_forum/room.html:48
 msgid "edit"
-msgstr ""
+msgstr "editar"
 
 #: chat_forum/templates/chat_forum/room.html:83
 msgid "Hosted By"
-msgstr ""
+msgstr "Hospedado por"
 
 #: chat_forum/templates/chat_forum/room.html:92
 msgid "Descriptions"
-msgstr ""
+msgstr "Descrições"
 
 #: chat_forum/templates/chat_forum/room.html:138
 msgid "Write your message here..."
-msgstr ""
+msgstr "Escreva sua mensagem aqui..."
 
 #: chat_forum/templates/chat_forum/room.html:139
 #: chatgpt/templates/chatgpt/index.html:43
 msgid "Send"
-msgstr ""
+msgstr "Enviar"
 
 #: chat_forum/templates/chat_forum/room.html:168
 msgid "Back to Forum"
-msgstr ""
+msgstr "Voltar ao Fórum"
 
 #: chat_forum/templates/chat_forum/room_form.html:12
 msgid "Room Form Template"
-msgstr ""
+msgstr "Modelo de Formulário de Sala"
 
 #: chat_forum/templates/chat_forum/room_form.html:30
 msgid "Create/Update Study Room"
-msgstr ""
+msgstr "Criar/Atualizar Sala de Estudo"
 
 #: chat_forum/templates/chat_forum/room_form.html:38
 msgid "Enter a Topic"
-msgstr ""
+msgstr "Digite um Tópico"
 
 #: chat_forum/templates/chat_forum/room_form.html:60
 #: chat_forum/templates/chat_forum/update_user.html:48
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: chat_forum/templates/chat_forum/room_form.html:61
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: chat_forum/templates/chat_forum/topics.html:12
 msgid "Topics Template"
-msgstr ""
+msgstr "Modelo de Tópicos"
 
 #: chat_forum/templates/chat_forum/topics.html:48
 #: chat_forum/templates/chat_forum/topics_component.html:12
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
 #: chat_forum/templates/chat_forum/topics_component.html:26
 msgid "More"
-msgstr ""
+msgstr "Mais"
 
 #: chat_forum/templates/chat_forum/topics_component.html:28
 msgid "chevron-down"
-msgstr ""
+msgstr "seta-para-baixo"
 
 #: chat_forum/templates/chat_forum/update_user.html:12
 msgid "Update User Template"
-msgstr ""
+msgstr "Modelo de Atualização de Usuário"
 
 #: chat_forum/templates/chat_forum/update_user.html:33
 msgid "Update Profile"
-msgstr ""
+msgstr "Atualizar Perfil"
 
 #: chat_forum/templates/chat_forum/update_user.html:49
 msgid "Update"
-msgstr ""
+msgstr "Atualizar"
 
 #: chat_forum/views/chat_forum_views.py:70
 #: chat_forum/views/chat_forum_views.py:71
 #: chat_forum/views/utils_chat_forum.py:86
 #: chat_forum/views/utils_chat_forum.py:87
 msgid "%Y-%m-%d"
-msgstr ""
+msgstr "%d-%m-%Y"
 
 #: chat_forum/views/chat_forum_views.py:74
 #, python-brace-format
 msgid "Room data: {room_data}"
-msgstr ""
+msgstr "Dados da sala: {room_data}"
 
 #: chat_forum/views/utils_chat_forum.py:49
 #: chat_forum/views/utils_chat_forum.py:74
 #: chat_forum/views/utils_chat_forum.py:108
 msgid "You're not Allowed 😝"
-msgstr ""
+msgstr "Você não tem permissão 😝"
 
 #: chatgpt/models.py:10
 msgid "Response"
-msgstr ""
+msgstr "Resposta"
 
 #: chatgpt/models.py:14
 msgid "Chat Data"
-msgstr ""
+msgstr "Dados do Chat"
 
 #: chatgpt/models.py:15
 msgid "Chat Data Entries"
-msgstr ""
+msgstr "Entradas de Dados do Chat"
 
 #: chatgpt/templates/chatgpt/index.html:15
 msgid "Home"
-msgstr ""
+msgstr "Início"
 
 #: chatgpt/templates/chatgpt/index.html:22
 msgid "Chat AI"
-msgstr ""
+msgstr "Chat IA"
 
 #: chatgpt/templates/chatgpt/index.html:23
 msgid "Welcome to the website ·SìįSí·Dbt·"
-msgstr ""
+msgstr "Bem-vindo ao site ·SìįSí·Dbt·"
 
 #: chatgpt/templates/chatgpt/index.html:40
 msgid "Type your message here..."
-msgstr ""
+msgstr "Digite sua mensagem aqui..."
 
 #: chatgpt/templates/chatgpt/index.html:53
 msgid "-¡!¡- Login User -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Entrar como Usuário -¡!¡-"
 
 #: chatgpt/templates/chatgpt/index.html:63
 msgid "Login to User Dashboard"
-msgstr ""
+msgstr "Entrar no Painel do Usuário"
 
 #: chatgpt/templates/chatgpt/index.html:66
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:46
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:95
 msgid "Access your account and manage your User profile."
-msgstr ""
+msgstr "Acesse sua conta e gerencie seu perfil de usuário."
 
 #: chatgpt/templates/chatgpt/index.html:72 templates/navbar.html:23
 #: two_factor_auth/templates/two_factor_auth/login_register.html:17
@@ -841,28 +867,28 @@ msgstr ""
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:52
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:112
 msgid "Login"
-msgstr ""
+msgstr "Entrar"
 
 #: chatgpt/templates/chatgpt/index.html:81
 #: two_factor_auth/templates/two_factor_auth/login_register.html:67
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:61
 msgid "Haven't signed up yet?"
-msgstr ""
+msgstr "Ainda não se cadastrou?"
 
 #: chatgpt/templates/chatgpt/index.html:83
 #: two_factor_auth/templates/two_factor_auth/login_register.html:68
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:63
 msgid "Sign Up"
-msgstr ""
+msgstr "Cadastre-se"
 
 #: chatgpt/templates/chatgpt/index.html:92
 #, python-format
 msgid "© DBT Copyright %(date)s"
-msgstr ""
+msgstr "© DBT Copyright %(date)s"
 
-#: chatgpt/views.py:50
+#: chatgpt/views.py:44
 msgid "You are a helpful assistant."
-msgstr ""
+msgstr "Você é um assistente útil."
 
 #: env/lib/python3.12/site-packages/click/_termui_impl.py:518
 #, python-brace-format
@@ -2359,23 +2385,23 @@ msgstr ""
 #: env/lib/python3.12/site-packages/django_recaptcha/fields.py:20
 #: env/lib/python3.12/site-packages/django_recaptcha/fields.py:21
 msgid "Error verifying reCAPTCHA, please try again."
-msgstr ""
+msgstr "Erro ao verificar o reCAPTCHA, por favor tente novamente."
 
 #: siisi/settings.py:227
 msgid "English"
-msgstr ""
+msgstr "Inglês"
 
 #: siisi/settings.py:228
 msgid "French"
-msgstr ""
+msgstr "Francês"
 
 #: siisi/settings.py:229
 msgid "Spanish"
-msgstr ""
+msgstr "Espanhol"
 
 #: siisi/settings.py:230
 msgid "Portuguese"
-msgstr ""
+msgstr "Português"
 
 #: templates/main.html:11
 msgid ""
@@ -2383,361 +2409,371 @@ msgid ""
 "by ChatGPT. Enhance productivity, streamline tasks, and get personalized "
 "assistance."
 msgstr ""
+"Experimente o poder da IA com ·SìįSí·Dbt·, seu assistente pessoal alimentado "
+"pelo ChatGPT. Aumente a produtividade, otimize tarefas e receba assistência "
+"personalizada."
 
 #: templates/main.html:12 templates/main.html:18
 msgid "·SìįSí·Dbt· - AI Personal Assistant"
-msgstr ""
+msgstr "·SìįSí·Dbt· - Assistente Pessoal IA"
 
 #: templates/main.html:14 templates/main.html:20
 msgid ""
 "·SìįSí·Dbt· - Your personal assistant powered by ChatGPT AI. Increase "
 "productivity, automate tasks, and receive personalized recommendations."
 msgstr ""
+"·SìįSí·Dbt· - Seu assistente pessoal alimentado pela IA ChatGPT. Aumente "
+"a produtividade, automatize tarefas e receba recomendações personalizadas."
 
 #: templates/main.html:23
 msgid ""
 "AI assistant, ChatGPT, productivity, automation, personalized "
 "recommendations, ·SìįSí·Dbt·"
 msgstr ""
+"Assistente de IA, ChatGPT, produtividade, automação, recomendações "
+"personalizadas, ·SìįSí·Dbt·"
 
 #: templates/main.html:24
 msgid "Developer"
-msgstr ""
+msgstr "Desenvolvedor"
 
 #: templates/main.html:39
 msgid "·SìįSí·Dbt· App"
-msgstr ""
+msgstr "Aplicativo ·SìįSí·Dbt·"
 
 #: templates/main.html:69
 msgid "·SìįSí·Dbt· OpenAI"
-msgstr ""
+msgstr "·SìįSí·Dbt· OpenAI"
 
 #: templates/main.html:83
 msgid "Dark Mode"
-msgstr ""
+msgstr "Modo Escuro"
 
 #: templates/main.html:103
 msgid "Work in Progress Animation"
-msgstr ""
+msgstr "Animação de Trabalho em Progresso"
 
 #: templates/main.html:117
 msgid "Default Avatar"
-msgstr ""
+msgstr "Avatar Padrão"
 
 #: templates/main.html:126
 msgid "Edit Profile"
-msgstr ""
+msgstr "Editar Perfil"
 
 #: templates/main.html:157
 msgid "SìįSí FastAPI"
-msgstr ""
+msgstr "SìįSí FastAPI"
 
 #: templates/main.html:166
 msgid "Instagram DBTEvolution"
-msgstr ""
+msgstr "Instagram DBTEvolution"
 
 #: templates/main.html:174
 msgid "FastAPI Documentation"
-msgstr ""
+msgstr "Documentação do FastAPI"
 
 #: templates/main.html:182
 msgid "Isaac Aisha\\"
-msgstr ""
+msgstr "Isaac Aisha\\"
 
 #: templates/main.html:193
 msgid "Copyright"
-msgstr ""
+msgstr "Copyright"
 
 #: templates/navbar.html:6
 msgid "SìįSí Dbt Documentation"
-msgstr ""
+msgstr "Documentação do SìįSí Dbt"
 
 #: templates/navbar.html:8
 msgid "SìįSí Dbt"
-msgstr ""
+msgstr "SìįSí Dbt"
 
 #: templates/navbar.html:12
 msgid "Toggle navigation"
-msgstr ""
+msgstr "Alternar navegação"
 
 #: templates/navbar.html:13
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: templates/navbar.html:21
 msgid "New session"
-msgstr ""
+msgstr "Nova sessão"
 
 #: templates/navbar.html:31
 msgid "Super User"
-msgstr ""
+msgstr "Superusuário"
 
 #: templates/navbar.html:36
 msgid "Conversation Interface"
-msgstr ""
+msgstr "Interface de Conversação"
 
 #: templates/navbar.html:41
 msgid "All Your Conversations"
-msgstr ""
+msgstr "Todas as Suas Conversas"
 
 #: templates/navbar.html:46
 msgid "Liked Conversations"
-msgstr ""
+msgstr "Conversas Curtidas"
 
 #: templates/navbar.html:52
 msgid "ID Conversation"
-msgstr ""
+msgstr "ID da Conversa"
 
 #: templates/navbar.html:57
 msgid "Delete Conversation"
-msgstr ""
+msgstr "Excluir Conversa"
 
 #: templates/navbar.html:69
 msgid "Drawing Generator"
-msgstr ""
+msgstr "Gerador de Desenho"
 
 #: templates/navbar.html:74
 msgid "Website Review Generator"
-msgstr ""
+msgstr "Gerador de Avaliação de Website"
 
 #: templates/navbar.html:79
 msgid "Liked Reviews"
-msgstr ""
+msgstr "Avaliações Curtidas"
 
 #: templates/navbar.html:85
 msgid "Extras Features"
-msgstr ""
+msgstr "Recursos Extras"
 
 #: templates/navbar.html:92
 msgid "Logout"
-msgstr ""
+msgstr "Sair"
 
 #: two_factor_auth/forms.py:19 two_factor_auth/forms.py:34
 #: two_factor_auth/forms.py:43
 msgid "Captcha"
-msgstr ""
+msgstr "Captcha"
 
 #: two_factor_auth/forms.py:31 two_factor_auth/models.py:36
 #: two_factor_auth/templates/two_factor_auth/login_register.html:41
 msgid "Email"
-msgstr ""
+msgstr "Email"
 
 #: two_factor_auth/forms.py:32
 #: two_factor_auth/templates/two_factor_auth/login_register.html:46
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: two_factor_auth/forms.py:33
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:41
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmar Senha"
 
 #: two_factor_auth/forms.py:38
 msgid "e.g. siisiChacal@gmail.com"
-msgstr ""
+msgstr "ex: siisiChacal@gmail.com"
 
 #: two_factor_auth/forms.py:39
 msgid "••••••••"
-msgstr ""
+msgstr "••••••••"
 
 #: two_factor_auth/forms.py:55
 msgid "ReCAPTCHA validation failed. Please try again."
-msgstr ""
+msgstr "Falha na validação do ReCAPTCHA. Tente novamente."
 
 #: two_factor_auth/models.py:14
 msgid "The Email field must be set"
-msgstr ""
+msgstr "O campo Email deve ser preenchido"
 
 #: two_factor_auth/models.py:27
 msgid "Superuser must have is_staff=True."
-msgstr ""
+msgstr "O superusuário deve ter is_staff=True."
 
 #: two_factor_auth/models.py:29
 msgid "Superuser must have is_superuser=True."
-msgstr ""
+msgstr "O superusuário deve ter is_superuser=True."
 
 #: two_factor_auth/models.py:37
 msgid "Bio"
-msgstr ""
+msgstr "Bio"
 
 #: two_factor_auth/models.py:52
 msgid "Users"
-msgstr ""
+msgstr "Usuários"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:15
 #: two_factor_auth/templates/two_factor_auth/login_register.html:134
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:101
 msgid "Register"
-msgstr ""
+msgstr "Registrar"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:31
 #: two_factor_auth/templates/two_factor_auth/login_register.html:85
 #, python-format
 msgid "%(page)s"
-msgstr ""
+msgstr "%(page)s"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:35
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:32
 msgid "-¡!¡- SìįSí Chacal -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- SìįSí Chacal -¡!¡-"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:42
 msgid "e.g. siisiAi@gmail.com"
-msgstr ""
+msgstr "ex: siisiAi@gmail.com"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:72
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Esqueceu sua senha?"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:73
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:54
 msgid "Reset Password"
-msgstr ""
+msgstr "Redefinir Senha"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:89
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:81
 msgid "-¡!¡- Good or Good -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- Bom ou Bom -¡!¡-"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:140
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:110
 msgid "Already Signed Up?"
-msgstr ""
+msgstr "Já se Inscreveu?"
 
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:15
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:92
 msgid "Register Super User"
-msgstr ""
+msgstr "Registrar Superusuário"
 
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:17
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:43
 msgid "Login Super User"
-msgstr ""
+msgstr "Entrar como Superusuário"
 
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:77
 #, python-format
 msgid "-¡!¡- %(page)s -¡!¡-"
-msgstr ""
+msgstr "-¡!¡- %(page)s -¡!¡-"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:7
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:22
 msgid "Password Reset Complete"
-msgstr ""
+msgstr "Redefinição de Senha Concluída"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:24
 msgid ""
 "Your password has been successfully reset. You can now log in with your new "
 "password."
 msgstr ""
+"Sua senha foi redefinida com sucesso. Agora você pode entrar com sua nova senha."
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:27
 #: two_factor_auth/templates/two_factor_auth/password_reset_done.html:28
 msgid "Back to Login"
-msgstr ""
+msgstr "Voltar para o Login"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:7
 msgid "Password Reset Confirm"
-msgstr ""
+msgstr "Confirmação de Redefinição de Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:22
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:39
 msgid "Confirm New Password"
-msgstr ""
+msgstr "Confirmar Nova Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:23
 msgid "Please enter your new password below."
-msgstr ""
+msgstr "Por favor, insira sua nova senha abaixo."
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:31
 msgid "New Password"
-msgstr ""
+msgstr "Nova Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:33
 msgid "Enter Password"
-msgstr ""
+msgstr "Digite a Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:47
 msgid "reCAPTCHA"
-msgstr ""
+msgstr "reCAPTCHA"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_done.html:7
 msgid "Password Reset Done"
-msgstr ""
+msgstr "Redefinição de Senha Concluída"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_done.html:22
 msgid "Password Reset"
-msgstr ""
+msgstr "Redefinir Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_done.html:24
 msgid ""
 "If an account with that email exists, you will receive a password reset "
 "email shortly."
 msgstr ""
+"Se uma conta com esse e-mail existir, você receberá um e-mail para redefinir sua senha em breve."
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_request.html:8
 msgid "Password Reset Request"
-msgstr ""
+msgstr "Solicitação de Redefinição de Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_request.html:23
 msgid "Reset Your Password"
-msgstr ""
+msgstr "Redefina Sua Senha"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_request.html:24
 msgid ""
 "Enter your email address below, and we’ll send you a link to reset your "
 "password."
 msgstr ""
+"Digite seu endereço de e-mail abaixo, e enviaremos um link para redefinir sua senha."
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_request.html:36
 msgid "Send Reset Link"
-msgstr ""
+msgstr "Enviar Link de Redefinição"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_request.html:41
 msgid "Back to login"
-msgstr ""
+msgstr "Voltar para o login"
 
 #: two_factor_auth/views.py:18
 msgid "register"
-msgstr ""
+msgstr "registrar"
 
 #: two_factor_auth/views.py:29
 msgid "Registration successful! Please login."
-msgstr ""
+msgstr "Registro bem-sucedido! Por favor, faça login."
 
 #: two_factor_auth/views.py:32
 msgid "Sorry, an error occurred: "
-msgstr ""
+msgstr "Desculpe, ocorreu um erro: "
 
 #: two_factor_auth/views.py:36
 msgid "Sorry, something went wrong during registration 😝. Details: "
-msgstr ""
+msgstr "Desculpe, algo deu errado durante o registro 😝. Detalhes: "
 
 #: two_factor_auth/views.py:49
 msgid "login"
-msgstr ""
+msgstr "entrar"
 
 #: two_factor_auth/views.py:65
 #, python-brace-format
 msgid "User email: {email} or Password doesn't exist 😝"
-msgstr ""
+msgstr "E-mail do usuário: {email} ou Senha não existe 😝"
 
 #: two_factor_auth/views.py:67
 msgid "Invalid reCAPTCHA. Please try again 😝."
-msgstr ""
+msgstr "reCAPTCHA inválido. Tente novamente 😝."
 
 #: two_factor_auth/views.py:80
 msgid "register superuser"
-msgstr ""
+msgstr "registrar superusuário"
 
 #: two_factor_auth/views.py:90
 msgid "login superuser"
-msgstr ""
+msgstr "entrar como superusuário"
 
 #: two_factor_auth/views.py:109
 msgid "Password reset email has been sent!"
-msgstr ""
+msgstr "E-mail de redefinição de senha foi enviado!"
 
 #: two_factor_auth/views.py:112
 msgid "Invalid email address."
-msgstr ""
+msgstr "Endereço de e-mail inválido."

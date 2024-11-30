@@ -18,6 +18,9 @@
   {% endif %}
 {% endblock %}
 
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
 {% block profile__avatar %}{% endblock %}
 
 {% block content %}
@@ -43,10 +46,11 @@
           </div>
 
           <div class="form__group" style="position: relative;">
-            <label for="password">{% blocktrans %}Password{% endblocktrans %}</label>
-            <input id="password" name="password" type="password" placeholder="••••••••" />
-            <i class="fa fa-eye-slash position-absolute" id="togglePassword"
-              style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"></i>
+            <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+            {{ form.password }}
+            <i class="fa fa-eye-slash position-absolute"
+              style="cursor: pointer; top: 73%; right: 10px; transform: translateY(-50%);"
+              onclick="togglePassword('{{ form.password.id_for_label }}')"></i>
           </div>
 
           <div class="form__group">

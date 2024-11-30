@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-29 11:08+0000\n"
+"POT-Creation-Date: 2024-11-30 00:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -32,12 +32,6 @@ msgstr "Generador de Dibujos"
 #| msgid "Conversation ID:"
 msgid "Conversation ID"
 msgstr "ID de la Conversación:"
-
-#: base/forms.py:23
-#, fuzzy
-#| msgid "- Conversation ID: "
-msgid "Enter Conversation ID to delete"
-msgstr "- ID de Conversación: "
 
 #: base/models.py:23 base/models.py:35 base/models.py:49 base/models.py:61
 msgid "{} - {}"
@@ -181,6 +175,29 @@ msgstr "-¡!¡- Conversación a eliminar -¡!¡-"
 msgid "Delete"
 msgstr "Eliminar"
 
+#: base/templates/base/conversation_forbidden.html:7
+#: base/templates/base/conversation_forbidden.html:51
+#, fuzzy
+#| msgid "Forbidden"
+msgid "Access Forbidden"
+msgstr "Prohibido"
+
+#: base/templates/base/conversation_forbidden.html:39
+#: base/templates/base/conversation_not_found.html:38
+#: base/templates/base/conversation_selected.html:22
+msgid "Conversation"
+msgstr "Conversación"
+
+#: base/templates/base/conversation_forbidden.html:53
+msgid "You do not have permission to view this conversation."
+msgstr "No tienes permiso para ver esta conversación."
+
+#: base/templates/base/conversation_forbidden.html:55
+#: base/templates/base/conversation_not_found.html:51
+#: base/templates/base/conversation_selected.html:103
+msgid "Click to Go Back to Select Conversation"
+msgstr "Haz clic para volver y seleccionar una conversación"
+
 #: base/templates/base/conversation_interface.html:12
 msgid "Conversation Interface Template"
 msgstr "Plantilla de interfaz de conversación"
@@ -291,17 +308,23 @@ msgstr "Detener la Respuesta de ·SìįSí·Dbt·"
 msgid "-¡!¡- PlayBack Audio -¡!¡-"
 msgstr "-¡!¡- Reproducir Audio -¡!¡-"
 
-#: base/templates/base/conversation_interface.html:134
+#: base/templates/base/conversation_interface.html:135
 msgid "Analize, Generate, Edit..., Your Images"
 msgstr "Analiza, Genera, Edita..., Tus Imágenes"
+
+#: base/templates/base/conversation_not_found.html:7
+#: base/templates/base/conversation_not_found.html:49
+msgid "Conversation Not Found"
+msgstr "Conversación no encontrada"
+
+#: base/templates/base/conversation_not_found.html:50
+msgid ""
+"The conversation you are looking for does not exist or has been deleted."
+msgstr "La conversación que buscas no existe o ha sido eliminada."
 
 #: base/templates/base/conversation_selected.html:8
 msgid "Conversations Detailed Template"
 msgstr "Plantilla Detallada de Conversaciones"
-
-#: base/templates/base/conversation_selected.html:22
-msgid "Conversation"
-msgstr "Conversación"
 
 #: base/templates/base/conversation_selected.html:39
 msgid "Conversation Detailed"
@@ -315,10 +338,6 @@ msgstr "Detalles de la Conversación"
 #: base/templates/base/conversations_liked.html:98
 msgid "Created on:"
 msgstr "Creado el:"
-
-#: base/templates/base/conversation_selected.html:103
-msgid "Click to Go Back to Select Conversation"
-msgstr "Haz clic para volver y seleccionar una conversación"
 
 #: base/templates/base/conversation_selected.html:111
 msgid "Back Home"
@@ -424,19 +443,19 @@ msgstr "¡Gracias!"
 msgid "@wakana-k"
 msgstr "@wakana-k"
 
-#: base/views/chat_gpt_views.py:47 base/views/chat_gpt_views.py:153
 #: base/views/extras_feats.py:13 base/views/extras_feats.py:21
 #: base/views/extras_feats.py:29 base/views/extras_feats.py:37
-#: base/views/utils_gpt_convers.py:107 base/views/utils_gpt_convers.py:142
-#: base/views/utils_gpt_convers.py:188 base/views/utils_gpt_convers.py:203
-#: chat_forum/views/chat_forum_views.py:33
+#: base/views/llm_interface.py:48 base/views/llm_interface.py:159
+#: base/views/utils_llm_convers.py:107 base/views/utils_llm_convers.py:143
+#: base/views/utils_llm_convers.py:191 base/views/utils_llm_convers.py:199
+#: base/views/utils_llm_convers.py:214 chat_forum/views/chat_forum_views.py:33
 #: chat_forum/views/chat_forum_views.py:57 chat_forum/views/profile_views.py:28
 #: chat_forum/views/profile_views.py:46 chat_forum/views/utils_chat_forum.py:37
 #: chat_forum/views/utils_chat_forum.py:64
 #: chat_forum/views/utils_chat_forum.py:97
 #: chat_forum/views/utils_chat_forum.py:118
 #: chat_forum/views/utils_chat_forum.py:132
-#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:31
+#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:28
 #: two_factor_auth/views.py:43 two_factor_auth/views.py:74
 #: two_factor_auth/views.py:84 two_factor_auth/views.py:94
 #: two_factor_auth/views.py:118 two_factor_auth/views.py:133
@@ -444,56 +463,65 @@ msgstr "@wakana-k"
 msgid "%a %d %B %Y"
 msgstr "%a %d %B %Y"
 
-#: base/views/chat_gpt_views.py:61
+#: base/views/llm_interface.py:62
 msgid "Using embedding method for medusadbt@gmail.com"
 msgstr "Usando el método de incrustación para medusadbt@gmail.com"
 
-#: base/views/chat_gpt_views.py:75
+#: base/views/llm_interface.py:73
 msgid "Embedding data not found, generating new response."
 msgstr "Datos de incrustación no encontrados, generando nueva respuesta."
 
-#: base/views/chat_gpt_views.py:78
+#: base/views/llm_interface.py:80
 msgid "Response successfully generated."
 msgstr "Respuesta generada con éxito."
 
-#: base/views/chat_gpt_views.py:134
+#: base/views/llm_interface.py:140
 msgid "Audio not found"
 msgstr "Audio no encontrado"
 
-#: base/views/chat_gpt_views.py:144
+#: base/views/llm_interface.py:150
 msgid "No audio found"
 msgstr "No se encontró audio"
 
 # Corrected from fuzzy translation
-#: base/views/utils_chat_gpt.py:105
+#: base/views/utils_llm_chat.py:105
 #, python-brace-format
 msgid "Language '{detected_lang}' not supported, falling back to English."
 msgstr "El idioma '{detected_lang}' no es compatible, volviendo a inglés."
 
-#: base/views/utils_gpt_convers.py:112 base/views/utils_gpt_convers.py:147
-#, python-brace-format
-msgid "No conversations found for search term: '{filters.search}'"
+#: base/views/utils_llm_convers.py:112 base/views/utils_llm_convers.py:148
+msgid "No search term provided"
+msgstr "No se proporcionó término de búsqueda"
+
+#: base/views/utils_llm_convers.py:113 base/views/utils_llm_convers.py:149
+#, fuzzy
+#| msgid "No conversations found for search term: '{filters.search}'"
+msgid "No conversations found for search term: '{}'"
 msgstr ""
 "No se encontraron conversaciones para el término de búsqueda: '{filters."
 "search}'"
 
-#: base/views/utils_gpt_convers.py:159
+#: base/views/utils_llm_convers.py:161
 msgid "Liked status updated successfully"
 msgstr "Estado de 'Me gusta' actualizado con éxito"
 
-#: base/views/utils_gpt_convers.py:162
+#: base/views/utils_llm_convers.py:164
 msgid "Invalid request method"
 msgstr "Método de solicitud no válido"
 
-#: base/views/utils_gpt_convers.py:171
+#: base/views/utils_llm_convers.py:173
 msgid "Date format: %a %d %B %Y"
 msgstr "Formato de fecha: %a %d %B %Y"
 
 # No translation needed for date format.
-#: base/views/utils_gpt_convers.py:217
+#: base/views/utils_llm_convers.py:237
 #, python-brace-format
 msgid "Conversation with ID: 🔥{conversation_id}🔥 deleted 😎"
 msgstr "Conversación con ID: 🔥{conversation_id}🔥 eliminada 😎"
+
+#: base/views/utils_llm_convers.py:241
+msgid "Invalid form submission. Please check your input."
+msgstr "Envío de formulario no válido. Por favor, revise su entrada."
 
 #: chat_forum/forms.py:15 chat_forum/models.py:20
 #: chat_forum/templates/chat_forum/room_form.html:50
@@ -899,7 +927,7 @@ msgstr "Registrarse"
 msgid "© DBT Copyright %(date)s"
 msgstr "© DBT Copyright %(date)s"
 
-#: chatgpt/views.py:50
+#: chatgpt/views.py:44
 msgid "You are a helpful assistant."
 msgstr "Eres un asistente útil."
 
@@ -2910,6 +2938,10 @@ msgstr "¡Se ha enviado el correo para restablecer la contraseña!"
 #| msgid "Enter a valid email address."
 msgid "Invalid email address."
 msgstr "Introduce una dirección de correo electrónico válida."
+
+#, fuzzy
+#~ msgid "Enter Conversation ID to delete"
+#~ msgstr "Introduce el ID de la conversación para eliminar"
 
 #, python-format
 #~ msgid "%(form.name.label)s"

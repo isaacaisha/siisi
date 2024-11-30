@@ -1,4 +1,4 @@
-# base/views/utils_chat_gpt.py
+# base/views/utils_llm_chat.py
 
 import os
 import json

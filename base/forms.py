@@ -18,7 +18,4 @@ class ConversationIdForm(forms.Form):
     
 
 class DeleteForm(forms.Form):
-    conversation_id = forms.IntegerField(label=_('Conversation ID'), required=True, widget=forms.NumberInput(attrs={
-        'class': 'form-control',
-        'placeholder': _('Enter Conversation ID to delete')
-    }))
+    conversation_id = forms.IntegerField(label=_('Conversation ID'))

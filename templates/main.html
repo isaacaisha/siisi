@@ -74,7 +74,7 @@
     </div>
     {% endblock %}
     
-    <div class="darkmode-selectlang-container">
+    <div class="darkmode-selectlang-container mb-3">
       <div class="togglebutton">
         <label>
           <input type="checkbox" id="theme-toggle">
@@ -196,13 +196,6 @@
           </div>
         </div>
       </div>
-      {% if user.id == 1 %}
-      <div class="mb-3 text-center">
-        <a href="{ url 'llm_conversation:get_conversations_jsonify' }" class="nav-link white">
-          APP DATABASES 😎
-        </a>
-      </div>
-      {% endif %}
     </footer>
     {% endblock %}
     
