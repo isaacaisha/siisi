@@ -497,7 +497,7 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
 
 .layout__boxTitle h3 {
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 300;
   color: var(--color-light);
 }
 
@@ -1411,6 +1411,26 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
     color: rgb(0, 255, 171);
 }
 
+.btn-close {
+  border: 2px solid #000; /* Light gray border */
+  border-radius: 50%; /* Makes the border circular */
+  background-color: transparent; /* Transparent background */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  cursor: pointer; /* Changes the pointer to indicate it's clickable */
+  font-size: 16px; /* Size of the `×` symbol */
+  line-height: 1;
+  /* Add margin or padding to adjust the position */
+  margin-top: 8px; /* Adjust this value to control vertical spacing */
+  margin-right: 8px; /* Adjust this value to control horizontal spacing */
+}
+
+.btn-close:hover {
+  background-color: #f8f9fa; /* Subtle background on hover */
+  border-color: #aaa; /* Darker border on hover */
+}
+
 /*==============================
 =>  Text Colors
 ================================*/
@@ -2012,3 +2032,7 @@ label {
 .replay-btn:hover {
   background-color: #45a049;
 }
+
+.alert-success { background-color: #d4edda; border-color: #c3e6cb; }
+.alert-info { background-color: #d1ecf1; border-color: #bee5eb; }
+.alert-error { background-color: #f8d7da; border-color: #f5c6cb; }

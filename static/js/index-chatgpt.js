@@ -42,11 +42,18 @@ chatForm.addEventListener("submit", function (event) {
       .then((response) => {
         // Check for a valid response
         if (!response.ok) {
-          throw new Error("Network response was not ok");
+          throw new Error(
+            `Network response was not ok: ${response.statusText}`
+          );
         }
         return response.json(); // Parse JSON response
       })
       .then((data) => {
+        // Handle the case where data is not in the expected format
+        if (!data.response) {
+          throw new Error("Invalid response format from server.");
+        }
+
         const response = data.response; // Extract AI response text
         const audioUrl = data.audio_url; // Extract audio URL
 

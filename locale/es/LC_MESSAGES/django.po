@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-30 00:07+0000\n"
+"POT-Creation-Date: 2024-12-01 08:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -176,7 +176,7 @@ msgid "Delete"
 msgstr "Eliminar"
 
 #: base/templates/base/conversation_forbidden.html:7
-#: base/templates/base/conversation_forbidden.html:51
+#: base/templates/base/conversation_forbidden.html:53
 #, fuzzy
 #| msgid "Forbidden"
 msgid "Access Forbidden"
@@ -188,12 +188,12 @@ msgstr "Prohibido"
 msgid "Conversation"
 msgstr "Conversación"
 
-#: base/templates/base/conversation_forbidden.html:53
+#: base/templates/base/conversation_forbidden.html:55
 msgid "You do not have permission to view this conversation."
 msgstr "No tienes permiso para ver esta conversación."
 
-#: base/templates/base/conversation_forbidden.html:55
-#: base/templates/base/conversation_not_found.html:51
+#: base/templates/base/conversation_forbidden.html:57
+#: base/templates/base/conversation_not_found.html:54
 #: base/templates/base/conversation_selected.html:103
 msgid "Click to Go Back to Select Conversation"
 msgstr "Haz clic para volver y seleccionar una conversación"
@@ -295,8 +295,8 @@ msgstr "Cargando"
 msgid "Get The Response"
 msgstr "Obtener la Respuesta"
 
-#: base/templates/base/conversation_interface.html:95 templates/main.html:68
-#: templates/main.html:70
+#: base/templates/base/conversation_interface.html:95 templates/main.html:70
+#: templates/main.html:72
 msgid "Crown Icon"
 msgstr "Ícono de Corona"
 
@@ -313,11 +313,11 @@ msgid "Analize, Generate, Edit..., Your Images"
 msgstr "Analiza, Genera, Edita..., Tus Imágenes"
 
 #: base/templates/base/conversation_not_found.html:7
-#: base/templates/base/conversation_not_found.html:49
+#: base/templates/base/conversation_not_found.html:52
 msgid "Conversation Not Found"
 msgstr "Conversación no encontrada"
 
-#: base/templates/base/conversation_not_found.html:50
+#: base/templates/base/conversation_not_found.html:53
 msgid ""
 "The conversation you are looking for does not exist or has been deleted."
 msgstr "La conversación que buscas no existe o ha sido eliminada."
@@ -455,7 +455,7 @@ msgstr "@wakana-k"
 #: chat_forum/views/utils_chat_forum.py:97
 #: chat_forum/views/utils_chat_forum.py:118
 #: chat_forum/views/utils_chat_forum.py:132
-#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:28
+#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:33
 #: two_factor_auth/views.py:43 two_factor_auth/views.py:74
 #: two_factor_auth/views.py:84 two_factor_auth/views.py:94
 #: two_factor_auth/views.py:118 two_factor_auth/views.py:133
@@ -539,7 +539,7 @@ msgstr "Descripción de la Sala"
 msgid "Room Topic"
 msgstr "Tema"
 
-#: chat_forum/forms.py:26 templates/main.html:115 two_factor_auth/models.py:38
+#: chat_forum/forms.py:26 templates/main.html:118 two_factor_auth/models.py:38
 msgid "Avatar"
 msgstr "Avatar"
 
@@ -903,21 +903,21 @@ msgstr "Accede a tu cuenta y administra tu perfil de usuario."
 
 #: chatgpt/templates/chatgpt/index.html:72 templates/navbar.html:23
 #: two_factor_auth/templates/two_factor_auth/login_register.html:17
-#: two_factor_auth/templates/two_factor_auth/login_register.html:61
-#: two_factor_auth/templates/two_factor_auth/login_register.html:141
+#: two_factor_auth/templates/two_factor_auth/login_register.html:65
+#: two_factor_auth/templates/two_factor_auth/login_register.html:149
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:52
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:112
 msgid "Login"
 msgstr "Iniciar sesión"
 
 #: chatgpt/templates/chatgpt/index.html:81
-#: two_factor_auth/templates/two_factor_auth/login_register.html:67
+#: two_factor_auth/templates/two_factor_auth/login_register.html:71
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:61
 msgid "Haven't signed up yet?"
 msgstr "¿Aún no te has registrado?"
 
 #: chatgpt/templates/chatgpt/index.html:83
-#: two_factor_auth/templates/two_factor_auth/login_register.html:68
+#: two_factor_auth/templates/two_factor_auth/login_register.html:73
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:63
 msgid "Sign Up"
 msgstr "Registrarse"
@@ -927,9 +927,29 @@ msgstr "Registrarse"
 msgid "© DBT Copyright %(date)s"
 msgstr "© DBT Copyright %(date)s"
 
-#: chatgpt/views.py:44
+#: chatgpt/views.py:48
+#, fuzzy
+#| msgid "No search term provided"
+msgid "No message provided"
+msgstr "No se proporcionó término de búsqueda"
+
+#: chatgpt/views.py:58
 msgid "You are a helpful assistant."
 msgstr "Eres un asistente útil."
+
+#: chatgpt/views.py:67
+msgid " For more privileges, register and log in to access exclusive features!"
+msgstr "¡Para obtener más privilegios, regístrate e inicia sesión para acceder a funciones exclusivas!"
+
+#: chatgpt/views.py:74
+msgid ""
+"\n"
+"\n"
+"You can reach out via WhatsApp at: +34 631 06 90\n"
+msgstr ""
+"\n"
+"\n"
+"Puedes contactarnos por WhatsApp al: +34 631 06 90\n"
 
 #: env/lib/python3.12/site-packages/click/_termui_impl.py:518
 #, python-brace-format
@@ -2572,43 +2592,43 @@ msgstr "Desarrollador"
 msgid "·SìįSí·Dbt· App"
 msgstr "Aplicación ·SìįSí·Dbt·"
 
-#: templates/main.html:69
+#: templates/main.html:71
 msgid "·SìįSí·Dbt· OpenAI"
 msgstr "·SìįSí·Dbt· OpenAI"
 
-#: templates/main.html:83
+#: templates/main.html:86
 msgid "Dark Mode"
 msgstr "Modo Oscuro"
 
-#: templates/main.html:103
+#: templates/main.html:107
 msgid "Work in Progress Animation"
 msgstr "Animación de Trabajo en Progreso"
 
-#: templates/main.html:117
+#: templates/main.html:120
 msgid "Default Avatar"
 msgstr "Avatar Predeterminado"
 
-#: templates/main.html:126
+#: templates/main.html:129
 msgid "Edit Profile"
 msgstr "Editar Perfil"
 
-#: templates/main.html:157
+#: templates/main.html:163
 msgid "SìįSí FastAPI"
 msgstr "SìįSí FastAPI"
 
-#: templates/main.html:166
+#: templates/main.html:172
 msgid "Instagram DBTEvolution"
 msgstr "Instagram DBTEvolution"
 
-#: templates/main.html:174
+#: templates/main.html:180
 msgid "FastAPI Documentation"
 msgstr "Documentación de FastAPI"
 
-#: templates/main.html:182
+#: templates/main.html:188
 msgid "Isaac Aisha\\"
 msgstr "Isaac Aisha\\"
 
-#: templates/main.html:193
+#: templates/main.html:199
 msgid "Copyright"
 msgstr "Derechos de Autor"
 
@@ -2682,12 +2702,11 @@ msgid "Captcha"
 msgstr "Captcha"
 
 #: two_factor_auth/forms.py:31 two_factor_auth/models.py:36
-#: two_factor_auth/templates/two_factor_auth/login_register.html:41
+#: two_factor_auth/templates/two_factor_auth/login_register.html:44
 msgid "Email"
 msgstr "Correo Electrónico"
 
 #: two_factor_auth/forms.py:32
-#: two_factor_auth/templates/two_factor_auth/login_register.html:46
 msgid "Password"
 msgstr "Contraseña"
 
@@ -2731,48 +2750,48 @@ msgid "Users"
 msgstr "Usuarios"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:15
-#: two_factor_auth/templates/two_factor_auth/login_register.html:134
+#: two_factor_auth/templates/two_factor_auth/login_register.html:142
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:101
 msgid "Register"
 msgstr "Registrar"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:31
-#: two_factor_auth/templates/two_factor_auth/login_register.html:85
+#: two_factor_auth/templates/two_factor_auth/login_register.html:34
+#: two_factor_auth/templates/two_factor_auth/login_register.html:93
 #, fuzzy, python-format
 #| msgid "%(page)s page"
 msgid "%(page)s"
 msgstr "Página de %(page)s"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:35
+#: two_factor_auth/templates/two_factor_auth/login_register.html:38
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:32
 #, fuzzy
 #| msgid "-¡!¡-SìįSí-¡!¡-"
 msgid "-¡!¡- SìįSí Chacal -¡!¡-"
 msgstr "-¡!¡-SìįSí-¡!¡-"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:42
+#: two_factor_auth/templates/two_factor_auth/login_register.html:45
 #, fuzzy
 #| msgid "e.g. siisiChacal@gmail.com"
 msgid "e.g. siisiAi@gmail.com"
 msgstr "por ejemplo, siisiChacal@gmail.com"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:72
+#: two_factor_auth/templates/two_factor_auth/login_register.html:78
 msgid "Forgot your password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:73
+#: two_factor_auth/templates/two_factor_auth/login_register.html:80
 #: two_factor_auth/templates/two_factor_auth/password_reset_confirm.html:54
 msgid "Reset Password"
 msgstr "Restablecer la contraseña"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:89
+#: two_factor_auth/templates/two_factor_auth/login_register.html:97
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:81
 #, fuzzy
 #| msgid "-¡!¡- Login User -¡!¡-"
 msgid "-¡!¡- Good or Good -¡!¡-"
 msgstr "-¡!¡- Bueno o Bueno -¡!¡-"
 
-#: two_factor_auth/templates/two_factor_auth/login_register.html:140
+#: two_factor_auth/templates/two_factor_auth/login_register.html:148
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:110
 msgid "Already Signed Up?"
 msgstr "¿Ya estás registrado?"
@@ -2876,7 +2895,7 @@ msgstr ""
 msgid "Send Reset Link"
 msgstr "Enviar enlace de restablecimiento"
 
-#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:41
+#: two_factor_auth/templates/two_factor_auth/password_reset_request.html:42
 #, fuzzy
 #| msgid "Back to Forum"
 msgid "Back to login"

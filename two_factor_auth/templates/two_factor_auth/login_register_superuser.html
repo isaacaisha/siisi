@@ -20,7 +20,7 @@
 
 {% block content %}
 <main class="auth layout">
-  {% if page == 'login superuser' %}
+  {% if page == 'login superuser' or page == 'connexion superutilisateur' or page == 'entrar como superusuário' %}
   <div class="">
     <div class="container">
       <div class="layout__boxHeader">
@@ -59,7 +59,7 @@
             <!-- Sign Up Action -->
             <div class="auth__action text-center mt-3">
               <p>{% blocktrans trimmed %}Haven't signed up yet?{% endblocktrans %}</p>
-              <a href="{% url 'register-superuser' %}" class="btn btn--link">
+              <a href="{% url 'register-superuser' %}" class="btn btn--main p-2">
                 {% blocktrans trimmed %}Sign Up{% endblocktrans %}
               </a>
             </div>
@@ -108,7 +108,7 @@
             <!-- Login Action -->
             <div class="auth__action text-center mt-3">
               <p>{% blocktrans trimmed %}Already Signed Up?{% endblocktrans %}</p>
-              <a href="{% url 'login-superuser' %}" class="btn btn--link">
+              <a href="{% url 'login-superuser' %}" class="btn btn--main p-2">
                 {% blocktrans trimmed %}Login{% endblocktrans %}
               </a>
             </div>

@@ -44,14 +44,14 @@
 </div>
 {% endblock %}
 
-{% block content %}
-<div class="container mb-5">
-    <h1 class="crimson">n°{{ conversation_id }} - {{ _("Conversation Not Found") }}</h1>
-    <p class="text-dark">{{ _("The conversation you are looking for does not exist or has been deleted.") }}</p>
-    <a href="javascript:history.back()">{{ _("Click to Go Back to Select Conversation") }}</a>
-</div>
-</body>
+{% block profile__avatar %}{% endblock %}
 
-</html>
+{% block content %}
+
+    <div class="container mt-5 mb-5">
+        <h1 class="crimson">n°{{ conversation_id }} - {{ _("Conversation Not Found") }}</h1>
+        <p class="text-dark">{{ _("The conversation you are looking for does not exist or has been deleted.") }}</p>
+        <a href="javascript:history.back()">{{ _("Click to Go Back to Select Conversation") }}</a>
+    </div>
 
 {% endblock %}

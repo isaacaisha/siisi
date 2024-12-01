@@ -45,9 +45,11 @@
 </div>
 {% endblock %}
 
+{% block profile__avatar %}{% endblock %}
+
 {% block content %}
 
-<div class="container mb-5">
+<div class="container mt-5 mb-5">
     <h1 class="crimson">n°{{ conversation_id }} - {{ _("Access Forbidden") }}</h1>
     <p class="text-dark">
         {{ _("You do not have permission to view this conversation.") }}
