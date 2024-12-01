@@ -186,6 +186,3 @@ dump.rdb
 # Ignore the static images and media directories
 /static/images/
 /static/media/
-
-# Ignore migrations folder
-**/migrations/

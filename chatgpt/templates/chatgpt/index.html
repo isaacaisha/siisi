@@ -1,8 +1,9 @@
 <!-- chat_forum/templates/chatgpt/index.html -->
 
 {% extends 'main.html' %}
-{% load i18n %}
-{% load static %}
+
+{% load custom_filters %} <!-- Load the custom filter -->
+{% load static i18n %}
 
 {% block navbar %}{% endblock %}
 {% block work_in_progress %}{% endblock %}
@@ -13,6 +14,19 @@
 {% endblock %}
 
 {% block title %}{% trans "Home" %}{% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .visible {
+        display: block;
+    }
+</style>
+{% endblock stylesheets %}
 
 {% block content %}
 
@@ -27,7 +41,7 @@
     <!-- Main Chat Section -->
     <main class="flex flex-col flex-grow p-4">
         <!-- Chat History -->
-        <div id="chat-history" class="chat-history mb-4" role="log" aria-live="polite">
+        <div id="chat-history" class="chat-history mb-4" role="log" aria-live="polite" style="white-space: pre-wrap;">
             <!-- Messages will be dynamically added here -->
         </div>
         

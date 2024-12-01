@@ -544,10 +544,12 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
 .chat-message {
     display: flex;
     margin-bottom: 0.5rem;
+    word-wrap: break-word;
 }
 
 .chat-message.ai {
     justify-content: flex-start;
+    max-width: 100%;  /* Ensure the parent doesn't overflow */
 }
 
 .chat-message.user {
@@ -558,12 +560,16 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
     max-width: 70%;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .message.ai {
     background-color: #bfdbfe;
     color: rgb(22, 20, 20);
     text-align: left;
+    max-width: 100%;  /* Ensure the message box doesn't overflow */
 }
 
 .message.user {
@@ -572,8 +578,21 @@ div.p-3.rounded-3.jumbotron.bg-dark.text-light.my-4 {
     text-align: right;
 }
 
+#chat-history > div.chat-message.ai > div > a {
+    color: darkviolet;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%; /* Ensure the link respects the container width */
+    text-overflow: ellipsis; /* Optional: Add ellipsis if link is too long */
+    overflow: hidden; /* Hide any overflow of the link */
+    display: inline-block; /* Make the link behave like a block element */
+    white-space: normal; /* Allow the link to wrap */
+}
+
 #chat-input {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 /*==============================
