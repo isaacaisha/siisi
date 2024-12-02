@@ -24,7 +24,7 @@ def registerPage(request):
         if form.is_valid():
             try:
                 user = form.save(commit=False)
-                user.username = user.username.lower()
+                user.email = user.email.lower()
                 user.save()
                 messages.success(request, _('Registration successful! Please login.'))
                 return redirect('login')
