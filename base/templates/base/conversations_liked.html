@@ -54,7 +54,7 @@
                         <input type="text" id="search" name="search" class="form-control form-control-sm mb-4">
 
                         <div class="text-center">
-                            <button class="btn btn-outline-info mb-5" type="submit">{% trans "Look for" %}</button>
+                            <button class="btn btn--main mb-5" type="submit">{% trans "Look for" %}</button>
                         </div>
                     </div>
                 </form>
@@ -122,7 +122,7 @@
                 {% endfor %}
 
                 <div class="center">
-                    <button class="btn grey mb-5" onclick="toggleHistories()">
+                    <button class="btn btn--dark mb-5" onclick="toggleHistories()">
                         {% trans "Show Conversations" %}
                     </button>
                 </div>
@@ -139,7 +139,7 @@
                 </div>
 
                 <div class="text-center mb-5">
-                    <button class="btn grey mb-3" onclick="toggleHistoriesJson()">
+                    <button class="btn btn--dark mb-3" onclick="toggleHistoriesJson()">
                         {% trans "Show Conversations JSON" %}
                     </button>
                 </div>

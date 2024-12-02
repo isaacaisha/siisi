@@ -67,8 +67,8 @@ def response(request):
             # Check if "rasta" or "dread" is mentioned in the message
             if "rasta" in message.lower() or "dread" in message.lower():
                 contact_details = _(
-                    f"\n\nYou can reach out via WhatsApp at: +34 631 06 90\n"
-                    "Instagram: [dbtevolution](https://www.instagram.com/dbtevolution)"
+                    f"\n\nYou can reach out via WhatsApp at: +34 631 06 90\n\n"
+                    "Instagram: https://www.instagram.com/dbtevolution"
                 )
                 answer = contact_details
                 print("Contact details appended to the response.")

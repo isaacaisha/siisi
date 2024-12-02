@@ -71,7 +71,7 @@ def serialize_conversation(conversation, last_summary_only=True):
         "user_message": conversation.user_message,
         "llm_response": conversation.llm_response,
         "conversations_summary": summary,
-        "created_at": conversation.created_at.strftime("%a %d %B %Y %H:%M:%S"),
+        "created_at": conversation.created_at.strftime("%a %d %B %Y %H:%M"),
         "liked": conversation.liked,
     }
 
