@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 08:03+0000\n"
+"POT-Creation-Date: 2024-12-04 03:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -447,15 +447,16 @@ msgstr "@wakana-k"
 #: base/views/extras_feats.py:29 base/views/extras_feats.py:37
 #: base/views/llm_interface.py:48 base/views/llm_interface.py:159
 #: base/views/utils_llm_convers.py:107 base/views/utils_llm_convers.py:143
-#: base/views/utils_llm_convers.py:191 base/views/utils_llm_convers.py:199
-#: base/views/utils_llm_convers.py:214 chat_forum/views/chat_forum_views.py:33
+#: base/views/utils_llm_convers.py:173 base/views/utils_llm_convers.py:191
+#: base/views/utils_llm_convers.py:199 base/views/utils_llm_convers.py:214
+#: chat_forum/views/chat_forum_views.py:33
 #: chat_forum/views/chat_forum_views.py:57 chat_forum/views/profile_views.py:28
 #: chat_forum/views/profile_views.py:46 chat_forum/views/utils_chat_forum.py:37
 #: chat_forum/views/utils_chat_forum.py:64
 #: chat_forum/views/utils_chat_forum.py:97
 #: chat_forum/views/utils_chat_forum.py:118
 #: chat_forum/views/utils_chat_forum.py:132
-#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:33
+#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:29
 #: two_factor_auth/views.py:43 two_factor_auth/views.py:74
 #: two_factor_auth/views.py:84 two_factor_auth/views.py:94
 #: two_factor_auth/views.py:118 two_factor_auth/views.py:133
@@ -508,10 +509,6 @@ msgstr "Estado de 'Me gusta' actualizado con éxito"
 #: base/views/utils_llm_convers.py:164
 msgid "Invalid request method"
 msgstr "Método de solicitud no válido"
-
-#: base/views/utils_llm_convers.py:173
-msgid "Date format: %a %d %B %Y"
-msgstr "Formato de fecha: %a %d %B %Y"
 
 # No translation needed for date format.
 #: base/views/utils_llm_convers.py:237
@@ -633,7 +630,7 @@ msgstr "Mensajes"
 msgid "Activity Template"
 msgstr "Plantilla de Actividad"
 
-#: chat_forum/templates/chat_forum/activity.html:25
+#: chat_forum/templates/chat_forum/activity.html:32
 #: chat_forum/templates/chat_forum/delete.html:25
 #: chat_forum/templates/chat_forum/room.html:31
 #: chat_forum/templates/chat_forum/room_form.html:24
@@ -642,32 +639,32 @@ msgstr "Plantilla de Actividad"
 msgid "arrow-left"
 msgstr "flecha-izquierda"
 
-#: chat_forum/templates/chat_forum/activity.html:31
+#: chat_forum/templates/chat_forum/activity.html:38
 #: chat_forum/templates/chat_forum/activity_component.html:7
 #: chat_forum/templates/chat_forum/chat_forum.html:39
 msgid "Recent Activities"
 msgstr "Actividades Recientes"
 
-#: chat_forum/templates/chat_forum/activity.html:45
+#: chat_forum/templates/chat_forum/activity.html:52
 #: chat_forum/templates/chat_forum/activity_component.html:18
 #: chat_forum/templates/chat_forum/feed_component.html:16
 #: chat_forum/templates/chat_forum/room.html:124
 msgid "ago"
 msgstr "hace"
 
-#: chat_forum/templates/chat_forum/activity.html:53
+#: chat_forum/templates/chat_forum/activity.html:60
 #: chat_forum/templates/chat_forum/activity_component.html:26
 #: chat_forum/templates/chat_forum/room.html:66
 #: chat_forum/templates/chat_forum/room.html:113
 msgid "remove"
 msgstr "eliminar"
 
-#: chat_forum/templates/chat_forum/activity.html:64
+#: chat_forum/templates/chat_forum/activity.html:71
 #: chat_forum/templates/chat_forum/activity_component.html:37
 msgid "replied to post"
 msgstr "respondió a la publicación"
 
-#: chat_forum/templates/chat_forum/activity.html:71
+#: chat_forum/templates/chat_forum/activity.html:78
 #: chat_forum/templates/chat_forum/activity_component.html:44
 msgid "No activity found."
 msgstr "No se encontró actividad."
@@ -775,7 +772,7 @@ msgid "Write your message here..."
 msgstr "Escribe tu mensaje aquí..."
 
 #: chat_forum/templates/chat_forum/room.html:139
-#: chatgpt/templates/chatgpt/index.html:43
+#: chatgpt/templates/chatgpt/index.html:57
 msgid "Send"
 msgstr "Enviar"
 
@@ -869,39 +866,37 @@ msgstr "Chat IA"
 msgid "Chat Data Entries"
 msgstr "Entradas de Datos del Chat"
 
-#: chatgpt/templates/chatgpt/index.html:15
+#: chatgpt/templates/chatgpt/index.html:16
 msgid "Home"
 msgstr "Inicio"
 
-#: chatgpt/templates/chatgpt/index.html:22
+#: chatgpt/templates/chatgpt/index.html:36
 msgid "Chat AI"
 msgstr "Chat IA"
 
-#: chatgpt/templates/chatgpt/index.html:23
-#, fuzzy
-#| msgid "Welcome to the website!"
+#: chatgpt/templates/chatgpt/index.html:37
 msgid "Welcome to the website ·SìįSí·Dbt·"
-msgstr "¡Bienvenido al sitio web!"
+msgstr "Bienvenido al sitio web ·SìįSí·Dbt·"
 
-#: chatgpt/templates/chatgpt/index.html:40
+#: chatgpt/templates/chatgpt/index.html:54
 msgid "Type your message here..."
 msgstr "Escribe tu mensaje aquí..."
 
-#: chatgpt/templates/chatgpt/index.html:53
+#: chatgpt/templates/chatgpt/index.html:67
 msgid "-¡!¡- Login User -¡!¡-"
 msgstr "-¡!¡- Iniciar sesión -¡!¡-"
 
-#: chatgpt/templates/chatgpt/index.html:63
+#: chatgpt/templates/chatgpt/index.html:77
 msgid "Login to User Dashboard"
 msgstr "Iniciar sesión en el panel de usuario"
 
-#: chatgpt/templates/chatgpt/index.html:66
+#: chatgpt/templates/chatgpt/index.html:80
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:46
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:95
 msgid "Access your account and manage your User profile."
 msgstr "Accede a tu cuenta y administra tu perfil de usuario."
 
-#: chatgpt/templates/chatgpt/index.html:72 templates/navbar.html:23
+#: chatgpt/templates/chatgpt/index.html:86 templates/navbar.html:23
 #: two_factor_auth/templates/two_factor_auth/login_register.html:17
 #: two_factor_auth/templates/two_factor_auth/login_register.html:65
 #: two_factor_auth/templates/two_factor_auth/login_register.html:149
@@ -910,46 +905,52 @@ msgstr "Accede a tu cuenta y administra tu perfil de usuario."
 msgid "Login"
 msgstr "Iniciar sesión"
 
-#: chatgpt/templates/chatgpt/index.html:81
+#: chatgpt/templates/chatgpt/index.html:95
 #: two_factor_auth/templates/two_factor_auth/login_register.html:71
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:61
 msgid "Haven't signed up yet?"
 msgstr "¿Aún no te has registrado?"
 
-#: chatgpt/templates/chatgpt/index.html:83
+#: chatgpt/templates/chatgpt/index.html:97
 #: two_factor_auth/templates/two_factor_auth/login_register.html:73
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:63
 msgid "Sign Up"
 msgstr "Registrarse"
 
-#: chatgpt/templates/chatgpt/index.html:92
+#: chatgpt/templates/chatgpt/index.html:106
 #, python-format
 msgid "© DBT Copyright %(date)s"
 msgstr "© DBT Copyright %(date)s"
 
-#: chatgpt/views.py:48
+#: chatgpt/views.py:44
 #, fuzzy
 #| msgid "No search term provided"
 msgid "No message provided"
 msgstr "No se proporcionó término de búsqueda"
 
-#: chatgpt/views.py:58
+#: chatgpt/views.py:54
 msgid "You are a helpful assistant."
 msgstr "Eres un asistente útil."
 
-#: chatgpt/views.py:67
+#: chatgpt/views.py:63
 msgid " For more privileges, register and log in to access exclusive features!"
-msgstr "¡Para obtener más privilegios, regístrate e inicia sesión para acceder a funciones exclusivas!"
+msgstr ""
+"¡Para obtener más privilegios, regístrate e inicia sesión para acceder a "
+"funciones exclusivas!"
 
-#: chatgpt/views.py:74
+#: chatgpt/views.py:70
 msgid ""
 "\n"
 "\n"
 "You can reach out via WhatsApp at: +34 631 06 90\n"
+"\n"
+"Instagram: https://www.instagram.com/dbtevolution"
 msgstr ""
 "\n"
 "\n"
 "Puedes contactarnos por WhatsApp al: +34 631 06 90\n"
+"\n"
+"Instagram: https://www.instagram.com/dbtevolution"
 
 #: env/lib/python3.12/site-packages/click/_termui_impl.py:518
 #, python-brace-format
@@ -2757,6 +2758,8 @@ msgstr "Registrar"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:34
 #: two_factor_auth/templates/two_factor_auth/login_register.html:93
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:77
 #, fuzzy, python-format
 #| msgid "%(page)s page"
 msgid "%(page)s"
@@ -2805,12 +2808,6 @@ msgstr "Registrar Superusuario"
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:43
 msgid "Login Super User"
 msgstr "Iniciar Sesión como Superusuario"
-
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:77
-#, python-format
-msgid "-¡!¡- %(page)s -¡!¡-"
-msgstr "-¡!¡- %(page)s -¡!¡-"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:7
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:22
@@ -2957,39 +2954,3 @@ msgstr "¡Se ha enviado el correo para restablecer la contraseña!"
 #| msgid "Enter a valid email address."
 msgid "Invalid email address."
 msgstr "Introduce una dirección de correo electrónico válida."
-
-#, fuzzy
-#~ msgid "Enter Conversation ID to delete"
-#~ msgstr "Introduce el ID de la conversación para eliminar"
-
-#, python-format
-#~ msgid "%(form.name.label)s"
-#~ msgstr "%(form.name.label)s"
-
-#, python-format
-#~ msgid "%(form.username.label)s"
-#~ msgstr "%(form.username.label)s"
-
-#, python-format
-#~ msgid "%(form.email.label)s"
-#~ msgstr "%(form.email.label)s"
-
-#, python-format
-#~ msgid "%(form.password1.label)s"
-#~ msgstr "%(form.password1.label)s"
-
-#, python-format
-#~ msgid "%(form.password2.label)s"
-#~ msgstr "%(form.password2.label)s"
-
-#~ msgid "Welcome to my site."
-#~ msgstr "Bienvenido a mi sitio."
-
-#~ msgid "Hello, World!"
-#~ msgstr "¡Hola, Mundo!"
-
-#~ msgid "Current language: "
-#~ msgstr "Idioma actual: "
-
-#~ msgid "Change language"
-#~ msgstr "Cambiar idioma"

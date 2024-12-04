@@ -170,7 +170,7 @@ def ConversationById(request):
     context = {
         'select_conversation_form': select_conversation_form,
         'current_user': request.user,
-        'date': timezone.now().strftime(_("Date format: %a %d %B %Y")),
+        'date': timezone.now().strftime(_("%a %d %B %Y")),
     }
 
     if request.method == "POST" and select_conversation_form.is_valid():

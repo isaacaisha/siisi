@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-01 09:03+0000\n"
+"POT-Creation-Date: 2024-12-04 03:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -441,15 +441,16 @@ msgstr "@wakana-k"
 #: base/views/extras_feats.py:29 base/views/extras_feats.py:37
 #: base/views/llm_interface.py:48 base/views/llm_interface.py:159
 #: base/views/utils_llm_convers.py:107 base/views/utils_llm_convers.py:143
-#: base/views/utils_llm_convers.py:191 base/views/utils_llm_convers.py:199
-#: base/views/utils_llm_convers.py:214 chat_forum/views/chat_forum_views.py:33
+#: base/views/utils_llm_convers.py:173 base/views/utils_llm_convers.py:191
+#: base/views/utils_llm_convers.py:199 base/views/utils_llm_convers.py:214
+#: chat_forum/views/chat_forum_views.py:33
 #: chat_forum/views/chat_forum_views.py:57 chat_forum/views/profile_views.py:28
 #: chat_forum/views/profile_views.py:46 chat_forum/views/utils_chat_forum.py:37
 #: chat_forum/views/utils_chat_forum.py:64
 #: chat_forum/views/utils_chat_forum.py:97
 #: chat_forum/views/utils_chat_forum.py:118
 #: chat_forum/views/utils_chat_forum.py:132
-#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:33
+#: chat_forum/views/utils_chat_forum.py:148 chatgpt/views.py:29
 #: two_factor_auth/views.py:43 two_factor_auth/views.py:74
 #: two_factor_auth/views.py:84 two_factor_auth/views.py:94
 #: two_factor_auth/views.py:118 two_factor_auth/views.py:133
@@ -497,10 +498,6 @@ msgstr "Status de curtido atualizado com sucesso"
 #: base/views/utils_llm_convers.py:164
 msgid "Invalid request method"
 msgstr "Método de solicitação inválido"
-
-#: base/views/utils_llm_convers.py:173
-msgid "Date format: %a %d %B %Y"
-msgstr "Formato da data: %a %d %B %Y"
 
 #: base/views/utils_llm_convers.py:237
 #, python-brace-format
@@ -600,7 +597,7 @@ msgstr "Mensagens"
 msgid "Activity Template"
 msgstr "Modelo de Atividade"
 
-#: chat_forum/templates/chat_forum/activity.html:25
+#: chat_forum/templates/chat_forum/activity.html:32
 #: chat_forum/templates/chat_forum/delete.html:25
 #: chat_forum/templates/chat_forum/room.html:31
 #: chat_forum/templates/chat_forum/room_form.html:24
@@ -609,32 +606,32 @@ msgstr "Modelo de Atividade"
 msgid "arrow-left"
 msgstr "seta-esquerda"
 
-#: chat_forum/templates/chat_forum/activity.html:31
+#: chat_forum/templates/chat_forum/activity.html:38
 #: chat_forum/templates/chat_forum/activity_component.html:7
 #: chat_forum/templates/chat_forum/chat_forum.html:39
 msgid "Recent Activities"
 msgstr "Atividades Recentes"
 
-#: chat_forum/templates/chat_forum/activity.html:45
+#: chat_forum/templates/chat_forum/activity.html:52
 #: chat_forum/templates/chat_forum/activity_component.html:18
 #: chat_forum/templates/chat_forum/feed_component.html:16
 #: chat_forum/templates/chat_forum/room.html:124
 msgid "ago"
 msgstr "atrás"
 
-#: chat_forum/templates/chat_forum/activity.html:53
+#: chat_forum/templates/chat_forum/activity.html:60
 #: chat_forum/templates/chat_forum/activity_component.html:26
 #: chat_forum/templates/chat_forum/room.html:66
 #: chat_forum/templates/chat_forum/room.html:113
 msgid "remove"
 msgstr "remover"
 
-#: chat_forum/templates/chat_forum/activity.html:64
+#: chat_forum/templates/chat_forum/activity.html:71
 #: chat_forum/templates/chat_forum/activity_component.html:37
 msgid "replied to post"
 msgstr "respondeu ao post"
 
-#: chat_forum/templates/chat_forum/activity.html:71
+#: chat_forum/templates/chat_forum/activity.html:78
 #: chat_forum/templates/chat_forum/activity_component.html:44
 msgid "No activity found."
 msgstr "Nenhuma atividade encontrada."
@@ -742,7 +739,7 @@ msgid "Write your message here..."
 msgstr "Escreva sua mensagem aqui..."
 
 #: chat_forum/templates/chat_forum/room.html:139
-#: chatgpt/templates/chatgpt/index.html:43
+#: chatgpt/templates/chatgpt/index.html:57
 msgid "Send"
 msgstr "Enviar"
 
@@ -830,37 +827,37 @@ msgstr "Dados do Chat"
 msgid "Chat Data Entries"
 msgstr "Entradas de Dados do Chat"
 
-#: chatgpt/templates/chatgpt/index.html:15
+#: chatgpt/templates/chatgpt/index.html:16
 msgid "Home"
 msgstr "Início"
 
-#: chatgpt/templates/chatgpt/index.html:22
+#: chatgpt/templates/chatgpt/index.html:36
 msgid "Chat AI"
 msgstr "Chat IA"
 
-#: chatgpt/templates/chatgpt/index.html:23
+#: chatgpt/templates/chatgpt/index.html:37
 msgid "Welcome to the website ·SìįSí·Dbt·"
 msgstr "Bem-vindo ao site ·SìįSí·Dbt·"
 
-#: chatgpt/templates/chatgpt/index.html:40
+#: chatgpt/templates/chatgpt/index.html:54
 msgid "Type your message here..."
 msgstr "Digite sua mensagem aqui..."
 
-#: chatgpt/templates/chatgpt/index.html:53
+#: chatgpt/templates/chatgpt/index.html:67
 msgid "-¡!¡- Login User -¡!¡-"
 msgstr "-¡!¡- Entrar como Usuário -¡!¡-"
 
-#: chatgpt/templates/chatgpt/index.html:63
+#: chatgpt/templates/chatgpt/index.html:77
 msgid "Login to User Dashboard"
 msgstr "Entrar no Painel do Usuário"
 
-#: chatgpt/templates/chatgpt/index.html:66
+#: chatgpt/templates/chatgpt/index.html:80
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:46
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:95
 msgid "Access your account and manage your User profile."
 msgstr "Acesse sua conta e gerencie seu perfil de usuário."
 
-#: chatgpt/templates/chatgpt/index.html:72 templates/navbar.html:23
+#: chatgpt/templates/chatgpt/index.html:86 templates/navbar.html:23
 #: two_factor_auth/templates/two_factor_auth/login_register.html:17
 #: two_factor_auth/templates/two_factor_auth/login_register.html:65
 #: two_factor_auth/templates/two_factor_auth/login_register.html:149
@@ -869,48 +866,52 @@ msgstr "Acesse sua conta e gerencie seu perfil de usuário."
 msgid "Login"
 msgstr "Entrar"
 
-#: chatgpt/templates/chatgpt/index.html:81
+#: chatgpt/templates/chatgpt/index.html:95
 #: two_factor_auth/templates/two_factor_auth/login_register.html:71
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:61
 msgid "Haven't signed up yet?"
 msgstr "Ainda não se cadastrou?"
 
-#: chatgpt/templates/chatgpt/index.html:83
+#: chatgpt/templates/chatgpt/index.html:97
 #: two_factor_auth/templates/two_factor_auth/login_register.html:73
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:63
 msgid "Sign Up"
 msgstr "Cadastre-se"
 
-#: chatgpt/templates/chatgpt/index.html:92
+#: chatgpt/templates/chatgpt/index.html:106
 #, python-format
 msgid "© DBT Copyright %(date)s"
 msgstr "© DBT Copyright %(date)s"
 
-#: chatgpt/views.py:48
+#: chatgpt/views.py:44
 #, fuzzy
 #| msgid "No search term provided"
 msgid "No message provided"
 msgstr "Nenhum termo de pesquisa fornecido"
 
-#: chatgpt/views.py:58
+#: chatgpt/views.py:54
 msgid "You are a helpful assistant."
 msgstr "Você é um assistente útil."
 
-#: chatgpt/views.py:67
+#: chatgpt/views.py:63
 msgid " For more privileges, register and log in to access exclusive features!"
 msgstr ""
 "Para mais privilégios, registre-se e faça login para acessar recursos "
 "exclusivos!"
 
-#: chatgpt/views.py:74
+#: chatgpt/views.py:70
 msgid ""
 "\n"
 "\n"
 "You can reach out via WhatsApp at: +34 631 06 90\n"
+"\n"
+"Instagram: https://www.instagram.com/dbtevolution"
 msgstr ""
 "\n"
 "\n"
 "Você pode entrar em contato pelo WhatsApp: +34 631 06 90\n"
+"\n"
+"Instagram: https://www.instagram.com/dbtevolution"
 
 #: env/lib/python3.12/site-packages/click/_termui_impl.py:518
 #, python-brace-format
@@ -2719,6 +2720,8 @@ msgstr "Registrar"
 
 #: two_factor_auth/templates/two_factor_auth/login_register.html:34
 #: two_factor_auth/templates/two_factor_auth/login_register.html:93
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
+#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:77
 #, python-format
 msgid "%(page)s"
 msgstr "%(page)s"
@@ -2760,12 +2763,6 @@ msgstr "Registrar Superusuário"
 #: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:43
 msgid "Login Super User"
 msgstr "Entrar como Superusuário"
-
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:28
-#: two_factor_auth/templates/two_factor_auth/login_register_superuser.html:77
-#, python-format
-msgid "-¡!¡- %(page)s -¡!¡-"
-msgstr "-¡!¡- %(page)s -¡!¡-"
 
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:7
 #: two_factor_auth/templates/two_factor_auth/password_reset_complete.html:22

@@ -14,6 +14,13 @@
 
 {% block content %}
 
+<div class="text-center btn-outline-info scroll-down" 
+onclick="scrollDown()" 
+id="scrollDownButton" 
+style="top: 73%; position: fixed; bottom: auto;">
+  ⇩
+</div>
+
 <main class="layout">
   <div class="container-fluid">
     <!--<div class="layout__box">-->
@@ -74,5 +81,7 @@
     </div>
   </div>
 </main>
+
+<script src="{% static 'js/toggle-histories.js' %}" defer></script>
 
 {% endblock %}
