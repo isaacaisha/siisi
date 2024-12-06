@@ -5,8 +5,8 @@
 <head>
   {% block head %}
   <meta charset="utf-8">
-  <meta name="geo.place-name" content="Spain">
-  <meta property="og:type" content="website">
+  <meta name="geo.place-name" content="{% trans 'Spain' %}">
+  <meta property="og:type" content="{% trans 'website' %}">
   <meta name="description"
     content="{% trans 'Experience the power of AI with ·SìįSí·Dbt·, your personal assistant powered by ChatGPT. Enhance productivity, streamline tasks, and get personalized assistance.' %}">
   <meta property="og:title" content="{% trans '·SìįSí·Dbt· - AI Personal Assistant' %}">
@@ -23,8 +23,8 @@
     content="{% trans 'AI assistant, ChatGPT, productivity, automation, personalized recommendations, ·SìįSí·Dbt·' %}">
   <meta name="author" content="{% trans 'Developer' %}">
   <meta name="google-site-verification" content="bYBQsihs2g2t3_99rBWJO60qaXSCS7ay3kIz5urnBGs">
-  <meta name="robots" content="index, follow">
-  <meta name="googlebot" content="index, follow">
+  <meta name="robots" content="{% trans 'index, follow' %}">
+  <meta name="googlebot" content="{% trans 'index, follow' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
@@ -86,16 +86,19 @@
         <span class="dark-mode-text">{% trans 'Dark Mode' %}</span>
       </div>
     
-      <form class="language-form" method="post" action="{% url 'set_language' %}">
-        {% csrf_token %}
-        <select name="language" onchange="this.form.submit()">
-          {% for lang_code, lang_name in LANGUAGES %}
-          <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
-            {{ lang_name }}
-          </option>
-          {% endfor %}
-        </select>
-      </form>
+      <div>
+        <form class="language-form" method="post" action="{% url 'set_language' %}">
+          {% csrf_token %}
+          <select name="language" onchange="this.form.submit()">
+            {% for lang_code, lang_name in LANGUAGES %}
+            <option value="{{ lang_code }}" {% if lang_code == LANGUAGE_CODE %}selected{% endif %}>
+              {{ lang_name }}
+            </option>
+            {% endfor %}
+          </select>
+          <i class="fa-solid fa-globe"></i>
+        </form>
+      </div>
     </div>
     {% endblock %}
 

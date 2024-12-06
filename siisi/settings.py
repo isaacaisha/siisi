@@ -36,7 +36,7 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 ALLOWED_HOSTS = [
     'siisi.copromanager.pro',
     'www.siisi.copromanager.pro',
-    '142.93.235.205', '0.0.0.0', '192.168.86.182',
+    '142.93.235.205', '0.0.0.0', '192.168.230.182',
     '127.0.0.1', config('SERVER', default='127.0.0.1')
 ]
 
@@ -49,8 +49,6 @@ PROXY = {
 CSRF_TRUSTED_ORIGINS = [
     'https://siisi.copromanager.pro',
     'https://www.siisi.copromanager.pro',
-    'http://127.0.0.1:8000',
-    'http://0.0.0.0:8000'
 ]
 
 # Allow all origins to access the API
@@ -232,8 +230,7 @@ LANGUAGES = [
 
 # Set the directory for translation files
 LOCALE_PATHS = [
-    #os.path.join(BASE_DIR, 'locale'),
-    '/Users/lesanebyby/Desktop/siisi/locale',
+    #'/Users/lesanebyby/Desktop/siisi/locale',
     os.path.join(BASE_DIR, 'locale'),
     os.path.join(BASE_DIR, 'env', 'lib', 'python3.12', 'site-packages', 'two_factor', 'locale')  # two_factor app's locale folder
 ]

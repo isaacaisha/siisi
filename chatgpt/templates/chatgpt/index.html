@@ -50,10 +50,12 @@
             <form method="POST" id="chat-form" class="flex w-full">
                 {% csrf_token %}
                 <div>
+                    <i class="fa-solid fa-keyboard"></i>
                     <input id="chat-input" type="text" class="border border-primary bg-white text-dark" 
                            placeholder="{% trans 'Type your message here...' %}">
-                    <br>
-                    <button type="submit" class="btn bg-secondary text-white p-4">
+                           
+                    <button type="submit" class="center-icon btn bg-secondary text-white mt-3">
+                        <i class="fa-solid fa-check"></i>
                         {% blocktrans trimmed %}Send{% endblocktrans %}
                     </button>
                 </div>
@@ -68,7 +70,7 @@
                 </div>
             </div>
             <div class="layout__body">
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mb-5">
                     <!-- Login Card -->
                     <div class="col-md-4">
                         <div class="card shadow-sm border-success">
@@ -82,7 +84,8 @@
                                     {% endblocktrans %}
                                 </p>
                                 <a href="{% url 'login' %}" 
-                                class="btn btn-success bg-success justify-content-center w-100">
+                                class="center-icon btn btn-success bg-success justify-content-center w-100">
+                                    <i class="fa-solid fa-check"></i>
                                     {% blocktrans trimmed %}Login{% endblocktrans %}
                                 </a>
                             </div>

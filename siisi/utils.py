@@ -3,6 +3,7 @@
 from django.utils.translation import activate
 from siisi.middleware import get_current_request
 
+
 def activate_current_language():
     """
     Activates the current language based on the LANGUAGE_CODE in the request.
